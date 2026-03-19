@@ -52,7 +52,7 @@ After enabling the plugin, the timeline opens automatically. If it is hidden, cl
 > - Shift + wheel → zoom around the current record
 > - Alt + hover cursor → show preview of the file
 
-> [!TIP]
+> [!IMPORTANT]
 > Activating Pro
 
 ## Timeline
@@ -70,7 +70,9 @@ The timeline is a scrollable, zoomable surface that collects records from all fi
 > *my_note.md* → placed by its file creation date.  
 > *01.01.2026.md* → January 1, 2026.  
 > ```yaml
+> ---
 > date: 2026-02-02 # → override date
+> ---
 > ```
 > *May 1, 2026* in content → adds another timeline record.  
 > **Track changes (Pro)**  enabled → edits appear on the timeline day by day.
@@ -143,13 +145,17 @@ Not every record deserves space on the timeline. Some, such as minor tracked cha
 
 You can create recurring records, which will appear on the timeline. To add one, set the `recur` or `repeat` property in YAML. Supported formats (see [RRULE](https://icalendar.org/iCalendar-RFC-5545/3-8-5-3-recurrence-rule.html)):
 
-```recur: every day
+```
+---
+recur: every day
 repeat: every N days
 repeat: every week on mon,tue
 repeat: every N weeks on mon,tue
 repeat: every month on D
 repeat: every year on MM-DD
-repeat: FREQ=DAILY;COUNT=5 # RRULE```
+repeat: FREQ=DAILY;COUNT=5 # RRULE
+---
+```
  
 ## Similarity (Pro)
 
@@ -178,7 +184,6 @@ When you open a record, all related records on the timeline are highlighted usin
 **Similarity** also groups related records automatically: when you mark one record, related records inherit the same color. These records behave as one group, so changing or removing the color updates the whole group, and inherited marks are recalculated automatically if the relation later disappears.
 
 > [!TIP]
-> Tips
 > - **⌘ Epochgram: Toggle mark for current file** or the file context menu → assign the next unique color from the palette.
 > - In addition to the standard red-to-violet palette, an extended palette is available in the submenu. This makes it easy to choose colors by activity. For example, I use <span style="color: rgb(158, 208, 203);">Glacier</span> for ski trip reports.
 
@@ -194,7 +199,7 @@ You can use context placeholders. File summaries support `{{filePath}}` (full fi
 > Language tip
 > Chrome's built-in Gemini Nano currently officially supports English, Spanish, and Japanese for input and output text. You can still try forcing another output language in the prompt context; for example, I used this context for Ukrainian:
 >
-> ```text
+> ```
 > OUTPUT ONLY IN UKRAINIAN!
 > ...
 > ```
@@ -214,13 +219,17 @@ You can use context placeholders. File summaries support `{{filePath}}` (full fi
 
 Epochgram supports the following custom YAML properties:
 
-```yamldate: 2026-01-01 # override the anchor date
+```yaml
+---
+date: 2026-01-01 # override the anchor date
 description: my summary # set a hard-coded summary
 notracked: # don't use tracked edits for this file
 noparsed: # don't parse dates from this file's content
 nosimilar: # don't match this file by similarity
 similar: [links, tags, title, semantics, topics] # match similarity only by these relations
-recur: every day # create recurring records```
+recur: every day # create recurring records
+---
+```
 
 ## Settings & Data
 
@@ -238,7 +247,7 @@ If Obsidian Sync is enabled, this data should sync between devices as long as **
 > [!TIP]
 > **Double-click** a setting name/description → reset it to default.
 
-Epochgram also provides **Rebuild** and **Reset** popups for rebuilding or clearing stored data.
+Epochgram also provides **Rebuild** and **Reset** popups for rebuilding or clearing stored data:
 
 - **⛭ Rebuild**
     - **⛭ All** → rebuild all data
@@ -286,4 +295,3 @@ Epochgram also provides **Rebuild** and **Reset** popups for rebuilding or clear
 - No ads and no client-side telemetry.
 - All vault data is processed locally on your device and is NEVER sent over the internet.
 - Source code is closed.
-- [Privacy policy]().
