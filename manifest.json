@@ -1,0 +1,10 @@
+{
+	"id": "epochgram",
+	"name": "Epochgram",
+	"version": "0.4.0",
+	"minAppVersion": "1.12.4",
+	"description": "A chronological activity timeline with local AI summaries and semantic matching.",
+	"author": "Andriy Babets",
+	"authorUrl": "https://2brn.ai",
+	"isDesktopOnly": false
+}
