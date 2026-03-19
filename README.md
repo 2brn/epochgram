@@ -1,0 +1,1 @@
+﻿# Epochgram releasesThis repository contains **releases only** for the Epochgram Obsidian plugin.- Source code lives in https://github.com/2brn/epochgram-core- Use the Releases page for downloadable artifacts
