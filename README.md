@@ -1,15 +1,11 @@
----
-notracked:
-noparsed:
-description: Epochgram Docs
----
 <h2 align="center">Epochgram Essentials</h2>
 
 > **Pain**: Your vault fills up with quick capture notes. A week later, youâ€™ve lost the thread. A month later, you canâ€™t reconstruct the story â€” and you donâ€™t see the themes, the slow stretches, or the bursts of activity.
 
 > **Solution**: Epochgram turns your vault into a scalable timeline retrospective. Browse day by day to scan changes in order, spot bigger patterns across unsorted notes, and edit directly on the timeline â€” so you can focus on what really matters.
 
-> [!tip] Epochgram Pro adds even more overview:
+> [!TIP]
+> Epochgram Pro adds even more overview:
 > - On-device AI summarization (via Google Chrome)
 > - Epochs: a zoomable time map, from day details to big-picture overview, with support for standalone HTML export
 > - Similarity: find related notes via links, tags, titles, and semantic matching
@@ -21,29 +17,31 @@ description: Epochgram Docs
 
 ## Table of Contents
 
-- [[#Get Started]]
-- [[#Timeline]]
-- [[#Filters & Search]]
-- [[#Actions]]
-- [[#Review State]]
-- [[#Recurring (Pro)]]
-- [[#Similarity (Pro)]]
-- [[#AI Bridge (Pro, Desktop-only)]]
-- [[#AI Summaries & Epochs (Pro, Desktop-only)]]
-- [[#Custom Frontmatter]]
-- [[#Settings & Data]]
-- [[#FAQ]]
-- [[#Disclosures]]
+- [Get Started](#get-started)
+- [Timeline](#timeline)
+- [Filters & Search](#filters--search)
+- [Actions](#actions)
+- [Review State](#review-state)
+- [Recurring (Pro)](#recurring-pro)
+- [Similarity (Pro)](#similarity-pro)
+- [AI Bridge (Pro, Desktop-only)](#ai-bridge-pro-desktop-only)
+- [AI Summaries & Epochs (Pro, Desktop-only)](#ai-summaries--epochs-pro-desktop-only)
+- [Custom Frontmatter](#custom-frontmatter)
+- [Settings & Data](#settings--data)
+- [FAQ](#faq)
+- [Disclosures](#disclosures)
 
 ---
 
 ## Get Started
 
-After enabling the plugin, the timeline opens automatically. If it is hidden, click the Epochgram ribbon icon <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.4418 13.9406C4.5189 10.8368 5.9231 7.4146 8.9147 5.9097C11.9063 4.4049 15.4914 5.3184 17.4326 7.9104C18.362 7.5622 19.2119 7.2705 19.9675 7.0295C17.4276 2.9362 12.1364 1.3873 7.7501 3.5935C3.3637 5.7997 1.452 10.9707 3.224 15.4505C3.8682 14.9872 4.6086 14.4791 5.4425 13.9406H5.4418Z" fill="currentColor"/><path d="M20.7304 8.5495C22.8657 7.015 23.9544 5.9756 23.9544 5.9756C23.9544 5.9756 18.8275 9.1416 12.2131 12.4683C5.5981 15.795 0 18.0237 0 18.0237C0 18.0237 1.4831 17.7696 3.9883 16.9705C6.5282 21.0637 11.8194 22.6127 16.2058 20.4064C20.5922 18.2003 22.5038 13.0293 20.7318 8.5495H20.7304ZM15.0404 18.0903C12.0488 19.5951 8.4637 18.6816 6.5224 16.0896C8.3074 15.4208 10.3884 14.5392 12.6757 13.3883C14.9637 12.2374 16.9115 11.0923 18.5126 10.0587C19.4355 13.1624 18.0312 16.5847 15.0397 18.0895L15.0404 18.0903Z" fill="currentColor"/></svg> or run **âŒ˜ Epochgram: Open timeline** to open it in the right panel. On mobile, it opens as a slide-in panel from the right.
+After enabling the plugin, the timeline opens automatically. If it is hidden, click the Epochgram ribbon icon or run **âŒ˜ Epochgram: Open timeline** to open it in the right panel. On mobile, it opens as a slide-in panel from the right.
 
-> [!info] **â›­ Open timeline on startup** â†’ open timeline automatically on Obsidian launch.
+> [!NOTE]
+> **â›­ Open timeline on startup** â†’ open timeline automatically on Obsidian launch.
 
-> [!info] Cheat sheet (â˜ž touchscreen)
+> [!NOTE]
+> Cheat sheet (â˜ž touchscreen)
 > - Click (tap) record â†’ open file; click date â†’ open daily note
 > - Ctrl + click record â†’ open file in a  new tab 
 > - Right-click (long-tap) record/date â†’ open context menu  
@@ -56,8 +54,8 @@ After enabling the plugin, the timeline opens automatically. If it is hidden, cl
 > - Shift + wheel â†’ zoom around the current record
 > - Alt + hover cursor â†’ show preview of the file
 
-> [!tip] Activating Pro
-> 
+> [!TIP]
+> Activating Pro
 
 ---
 
@@ -71,13 +69,14 @@ The timeline is a scrollable, zoomable surface that collects records from all fi
 - Frontmatter date â†’ a date from YAML property `date`
 - Created dates â†’ file creation date
 
-> [!info] Examples
+> [!NOTE]
+> Examples
 > *my_note.md* â†’ placed by its file creation date.  
 > *01.01.2026.md* â†’ January 1, 2026.  
 > ```yaml
 > date: 2026-02-02 # â†’ override date
 > ```
-*May 1, 2026* in content â†’ adds another timeline record.  
+> *May 1, 2026* in content â†’ adds another timeline record.  
 > **Track changes (Pro)**  enabled â†’ edits appear on the timeline day by day.
 
 Each record appears as *note name â¸± summary* (if **â›­ Show note name** is enabled), *summary*, or *image.jpg* for non-text files. The summary is either the first _N_ words (**â›­ Summary length** setting) or an AI summary (Pro). A custom summary can be set with YAML (`description: ...`) or from the context menu; manual summaries are never overwritten by AI, and clearing the field removes the override.
@@ -102,7 +101,8 @@ There are collapsible filters under <svg xmlns="http://www.w3.org/2000/svg" widt
 
 A search bar at the bottom lets you search timeline records. Click it or run **âŒ˜ Epochgram: Search timeline**. Search covers file names, content, AI summaries, epochs, and more, with support for fuzzy search and `"exact text"` matching.
   
-> [!info] Search shortcuts  
+> [!NOTE]
+> Search shortcuts
 > - Enter â†’ open the matched file
 > - Alt + Enter â†’ filter timeline records by the current search
 > - Marked â†’ show only marked records
@@ -135,7 +135,8 @@ Record context menu:
 
 - <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg> Delete â†’ move **the file** to trash or permanently delete it (depending on Obsidian settings)
 
-> [!info] **âŒ˜ Epochgram: Clear tracked changes for current file** â†’ clear all file history at once.
+> [!NOTE]
+> **âŒ˜ Epochgram: Clear tracked changes for current file** â†’ clear all file history at once.
 
 ---
 
@@ -145,13 +146,14 @@ Epochgram is designed around the [C.O.D.E.](https://fortelabs.com/blog/basboverv
 
 Not every record deserves space on the timeline. Some, such as minor tracked changes, can be marked **Hidden**. Hidden is applied per record, not per file. Hidden records disappear from the timeline or muted when the relevant filter is enabled.
 
-> [!info] **âŒ˜ Epochgram: Review all** â†’ mark all records across the vault as reviewed.
+> [!NOTE]
+> **âŒ˜ Epochgram: Review all** â†’ mark all records across the vault as reviewed.
 
 ---
 
 ## Recurring (Pro)
 
-You can create recurring records, which will appear on the timeline. To add one, set the `recur` or `repeat` property in YAML. Supported formats (see [RRULE](https://icalendar.org/iCalendar-RFC-5545/3-8-5-3-recurrence-rule.html)):`
+You can create recurring records, which will appear on the timeline. To add one, set the `recur` or `repeat` property in YAML. Supported formats (see [RRULE](https://icalendar.org/iCalendar-RFC-5545/3-8-5-3-recurrence-rule.html)):
 
 ```
 ---
@@ -183,15 +185,18 @@ Epochgram includes multiple intelligent similarity settings that work on all pla
   
 - **â›­ Topic threshold** â†’ topics use a zero-shot [model](https://huggingface.co/MoritzLaurer/deberta-v3-xsmall-zeroshot-v1.1-all-33) for similarity grouping. When you assign a topic to a note, Epochgram finds related records across the vault. This is useful for broad themes like travel, projects, health, or astrophotography, where notes may share meaning without direct links or tags.
 
-> [!info] Building semantic vectors and running zero-shot topic classification can take a long time on slower machines, with progress shown in the status bar, for example: *Topics... 1/100*; click the progress item to cancel the job.
+> [!NOTE]
+> Building semantic vectors and running zero-shot topic classification can take a long time on slower machines, with progress shown in the status bar, for example: *Topics... 1/100*; click the progress item to cancel the job.
 
 When you open a record, all related records on the timeline are highlighted using the current theme color.
 
-> [!info] **Alt + scroll** â†’ move through related records.
+> [!NOTE]
+> **Alt + scroll** â†’ move through related records.
 
 **Similarity** also groups related records automatically: when you mark one record, related records inherit the same color. These records behave as one group, so changing or removing the color updates the whole group, and inherited marks are recalculated automatically if the relation later disappears.
 
-> [!info] Tips
+> [!NOTE]
+> Tips
 > - **âŒ˜ Epochgram: Toggle mark for current file** or the file context menu â†’ assign the next unique color from the palette.
 > - In addition to the standard red-to-violet palette, an extended palette is available in the submenu. This makes it easy to choose colors by activity. For example, I use <span style="color: rgb(158, 208, 203);">Glacier</span> for ski trip reports.
 
@@ -205,7 +210,8 @@ On first use, Chrome may need a user gesture to download the built-in Gemini Nan
 
 You can use context placeholders. File summaries support `{{filePath}}` (full file path), `{{fileName}}` (file name), and `{{related}}` (summaries of related records). Epoch summaries support `{{bucket}}` (`day`, `2days`, `4days`, `week`, `2weeks`, `month`, `3months`, `6months`, `year`) and `{{related}}`.
 
-> [!info] Language tip
+> [!NOTE]
+> Language tip
 > Chromeâ€™s built-in Gemini Nano currently officially supports English, Spanish, and Japanese for input and output text. You can still try forcing another output language in the prompt context; for example, I used this context for Ukrainian:
 >
 > ```text
@@ -221,8 +227,9 @@ You can use context placeholders. File summaries support `{{filePath}}` (full fi
 
 **â›­ Generate epochs** â†’ when enabled, Epochgram creates a zoomable time map that groups many days into larger period summaries, helping you see the bigger picture and spot patterns without reading the timeline day by day. Epochs are generated hierarchically from day up to year, in essence, summaries of summaries. If highlighted records are present, epochs are colored by the most common highlight color in that range. You can also edit or regenerate epochs from the context menu.
 
-> [!info] Commands
-> **âŒ˜ Epochgram: Summarize all** â†’ generate all missing AI summaries and epochs. 
+> [!NOTE]
+> Commands
+> **âŒ˜ Epochgram: Summarize all** â†’ generate all missing AI summaries and epochs.
 > **âŒ˜ Epochgram: Export epochs** â†’ export as standalone HTML to your daily notes folder.
 
 ---
@@ -258,7 +265,8 @@ All plugin data is stored in the vault config directory, usually `.obsidian/`:
 
 If Obsidian Sync is enabled, this data should sync between devices as long as **â›­ Sync â†’ Vault configuration sync â†’ Other file types** is turned on.
 
-> [!info] **Double-click** a setting name/description â†’ reset it to default.
+> [!NOTE]
+> **Double-click** a setting name/description â†’ reset it to default.
 
 Epochgram also provides **Rebuild** and **Reset** popups for rebuilding or clearing stored data.
 
