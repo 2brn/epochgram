@@ -1,4 +1,8 @@
-<h2 align="center">Epochgram Essentials</h2>
+<h1 align="center"><img src="docs/icons/epochgram.svg" width="22" height="22" alt="Epochgram"> Epochgram for Obsidian</h1>
+
+<h6 align="center">
+A Time Map of Your Mind
+</h2>
 
 > [!CAUTION]
 > **Pain**: Your vault fills up with quick capture notes. A week later, you've lost the thread. A month later, you can't reconstruct the story — and you don't see the themes, the slow stretches, or the bursts of activity.
@@ -295,3 +299,4 @@ Epochgram also provides **Rebuild** and **Reset** popups for rebuilding or clear
 - No ads and no client-side telemetry.
 - All vault data is processed locally on your device and is NEVER sent over the internet.
 - Source code is closed.
+- License: MIT (see [LICENSE](LICENSE)).
