@@ -290,13 +290,9 @@ Epochgram also provides **Rebuild** and **Reset** popups for rebuilding or clear
 ## Disclosures
 
 - **Epochgram Pro**:
-	- Requires an account, payment, and internet for license checks.
-	- Registration and license checks may process your email address, license key, and basic server-side telemetry for license validation.
-	- Is not affiliated with Obsidian Sync, Publish, or other Obsidian paid services.
+	- Requires an account, payment, and internet access for license checks; during validation, your email address, license key, and basic server-side telemetry may be processed (see [PRIVACY](PRIVACY)).
 	- **AI Bridge**: Epochgram starts a local server on `http://127.0.0.1` and opens a local bridge page in Google Chrome to use Chrome's on-device Summarizer API. The bridge communication stays on your device. Chrome [may download](https://developer.chrome.com/docs/ai/summarizer-api) its built-in model(s) (Gemini Nano) the first time you use these APIs. Epochgram may check common OS install paths to locate the Google Chrome executable and open the AI Bridge automatically.
 	- **Similarity**: embeddings and the zero-shot topic model may be downloaded on first use via `@xenova/transformers`, including [TaylorAI/bge-micro-v2](https://huggingface.co/TaylorAI/bge-micro-v2), [MoritzLaurer/deberta-v3-xsmall-zeroshot-v1.1-all-33](https://huggingface.co/MoritzLaurer/deberta-v3-xsmall-zeroshot-v1.1-all-33), and ONNX Runtime Web WASM from [jsDelivr](https://cdn.jsdelivr.net/npm/onnxruntime-web@1.14.0/dist/).
-
-- No ads and no client-side telemetry.
 - All vault data is processed locally on your device and is NEVER sent over the internet.
 - Source code is closed.
 - License: MIT (see [LICENSE](LICENSE)).

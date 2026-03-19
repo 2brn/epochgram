@@ -1,0 +1,40 @@
+# Epochgram privacy
+
+Effective: 2026-03-20
+
+## Summary
+
+- Epochgram is designed for local-first use.
+- Vault content is processed on your device.
+- Epochgram Pro uses the network for license validation.
+
+## What data Epochgram processes
+
+### Local (on your device)
+
+- Your vault files and metadata required to build the timeline, search, and similarity features.
+- Plugin data stored in your vault config directory (for example, `.obsidian/`), such as indexes, caches, summaries, and settings.
+
+Epochgram does not send your vault content to Epochgram servers.
+
+### Network (Epochgram Pro)
+
+If you use Epochgram Pro license checks, Epochgram may send the following to the license service for validation:
+
+- Email address
+- License key
+- Basic server-side telemetry necessary for license validation
+
+## On-device AI (Chrome AI Bridge)
+
+When using the Pro AI Bridge, Epochgram starts a local server on `http://127.0.0.1` and opens a local bridge page in Google Chrome. Summary text is processed in Chrome on your device and returned to the plugin.
+
+Chrome may download its built-in model(s) the first time you use these APIs.
+
+## Model and runtime downloads (Similarity)
+
+Similarity features may download embedding and classification models on first use via `@xenova/transformers`. ONNX Runtime Web WASM may also be downloaded depending on your configuration.
+
+## Contact
+
+For privacy questions related to Pro licensing, contact: contact@epochgram.com
