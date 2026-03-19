@@ -1,40 +1,54 @@
-# Epochgram privacy
+# Privacy Policy
 
 Effective: 2026-03-20
 
-## Summary
+Epochgram is operated by **Andriy Babets** ("Epochgram", "we", "us").
 
-- Epochgram is designed for local-first use.
-- Vault content is processed on your device.
-- Epochgram Pro uses the network for license validation.
+Website: **epochgram.com**  
+Contact: **contact@epochgram.com**
 
-## What data Epochgram processes
+## What Epochgram processes
 
-### Local (on your device)
+Epochgram processes your vault data **locally on your device**. Your notes, file content, summaries, epochs, embeddings, semantic matches, and timeline data are **not sent to our servers**.
 
-- Your vault files and metadata required to build the timeline, search, and similarity features.
-- Plugin data stored in your vault config directory (for example, `.obsidian/`), such as indexes, caches, summaries, and settings.
+## Epochgram Pro
 
-Epochgram does not send your vault content to Epochgram servers.
+Epochgram Pro requires an account, payment, and internet access for license checks. During account, billing, and license validation, we may process:
 
-### Network (Epochgram Pro)
+- your email address;
+- your license key;
+- basic server-side telemetry needed for license validation, fraud prevention, and service administration.
 
-If you use Epochgram Pro license checks, Epochgram may send the following to the license service for validation:
+Payments and billing may be handled by third-party providers.
 
-- Email address
-- License key
-- Basic server-side telemetry necessary for license validation
+## AI Bridge
 
-## On-device AI (Chrome AI Bridge)
+If you use AI Bridge, Epochgram starts a local server on `http://127.0.0.1` and opens a local bridge page in Google Chrome to use Chrome's on-device AI APIs. The bridge communication stays on your device.
 
-When using the Pro AI Bridge, Epochgram starts a local server on `http://127.0.0.1` and opens a local bridge page in Google Chrome. Summary text is processed in Chrome on your device and returned to the plugin.
+Chrome may download built-in model files the first time these APIs are used. Epochgram may also check common OS install paths to locate the Google Chrome executable and open the bridge automatically. This happens locally on your device.
 
-Chrome may download its built-in model(s) the first time you use these APIs.
+## Similarity and model downloads
 
-## Model and runtime downloads (Similarity)
+If you use semantic similarity or topic features, required model or runtime files may be downloaded to your device from third-party sources such as model hosts or CDNs. Those providers may receive standard request data such as your IP address and user agent when delivering files.
 
-Similarity features may download embedding and classification models on first use via `@xenova/transformers`. ONNX Runtime Web WASM may also be downloaded depending on your configuration.
+## Support
 
-## Contact
+If you contact us, we may process your email address and any information you send us in order to respond and provide support.
 
-For privacy questions related to Pro licensing, contact: contact@epochgram.com
+## Sharing
+
+We do not sell your personal data. We may share limited data with service providers only where needed to operate payments, licensing, hosting, support, or related infrastructure.
+
+## Retention
+
+We keep account, licensing, billing, and support data only as long as reasonably necessary to provide the service, comply with legal obligations, resolve disputes, and enforce agreements.
+
+## Your rights
+
+Depending on your location, you may have rights to access, correct, delete, or object to certain processing of your personal data.
+
+To make a privacy request, contact: **contact@epochgram.com**
+
+## Changes
+
+We may update this Privacy Policy from time to time. The latest version will always be available at **epochgram.com**.
