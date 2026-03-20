@@ -43,23 +43,23 @@ Click the <img src="docs/icons/epochgram_bw.svg" width="18" height="18" alt="Epo
 > Activating Pro
 
 > [!TIP]
-> - Click (tap) record → open file; click date → open daily note
-> - Ctrl + click record → open file in a  new tab 
-> - Right-click (long-tap) record/date → open context menu  
-> - Right-click (long-tap) empty space → toggle Epochs view (Pro)
-> - Double-click (double-tap) on empty space → scroll to Today
-> - Double-click (double-tap) on date → create new Daily note
-> - Wheel (pan) → scroll
-> - Ctrl + wheel (pinch) → zoom
-> - Alt + wheel or Alt + up/down (two-finger tap) → scroll to next record
-> - Shift + wheel → zoom around the current record
-> - Alt + hover cursor → show preview of the file
+> - **Click (tap) record** → open file; **click date** → open daily note
+> - **Ctrl + click record** → open file in a  new tab 
+> - **Right-click (long-tap) record/date** → open context menu  
+> - **Right-click (long-tap) on empty space** → toggle Epochs view (Pro)
+> - **Double-click (double-tap) on empty space** → scroll to Today
+> - **Double-click (double-tap) on date** → create new Daily note
+> - **Wheel (pan)** → scroll
+> - **Ctrl + wheel (pinch)** → zoom
+> - **Alt + wheel** or **Alt + up/down (two-finger tap)** → scroll to next record
+> - **Shift + wheel** → zoom around the current record
+> - **Alt + hover cursor** → show preview of the file
 
 ## Timeline
 
 The timeline is a scrollable, zoomable surface that collects records from all files in the vault, excluding folders ignored in Obsidian settings. It detects dates and date ranges in different formats and renders *one record per file per day*, in the following priority order:
 
-- Tracked edits (Pro) → per-block edit history (<img src="docs/icons/pen.svg" width="16" height="16" alt=""> added/modified, <img src="docs/icons/pen-line.svg" width="16" height="16" alt=""> removed); only when **⛭ Track changes** is On
+- Tracked edits (Pro) → per-block edit history (<img src="docs/icons/pen.svg" width="16" height="16" alt=""> added/modified, <img src="docs/icons/pen-line.svg" width="16" height="16" alt=""> removed); only when **⛭ Track changes** is enabled
 - Content dates → a date (range) parsed from note content
 - Filename dates → a date (range) parsed from the filename
 - Frontmatter date → a date from YAML property `date`
@@ -183,18 +183,17 @@ When you open a record, all related records on the timeline are highlighted usin
 
 > [!TIP]
 > - **⌘ Epochgram: Toggle mark for current file** or the file context menu → assign the next unique color from the palette.
-> - In addition to the standard red-to-violet palette, an extended palette is available in the submenu. This makes it easy to choose colors by activity. For example, I use <span style="color: rgb(158, 208, 203);">Glacier</span> for ski trip reports.
+> - In addition to the standard red-to-violet palette, an extended palette is available in the submenu. This makes it easy to choose colors by activity. For example, I use $${\color{lightblue}Glacier}$$ for ski trip reports.
 
 ## AI Bridge (Pro, Desktop-only)
 
-Epochgram Pro includes an **AI Bridge** that uses Google Chrome's on-device AI APIs for local summarization. When started, it runs a small local server on an available port at `http://127.0.0.1`. The bridge page can be opened from **Epochgram: Open AI bridge**, from the `⌀ AI` status bar button, or automatically on startup if **Open Bridge AI on startup** is enabled. This page processes summary jobs in Chrome and returns the results to the plugin. All summarization data stays **only on your device** and is not sent to external services.
+Epochgram Pro includes an **AI Bridge** that uses Google Chrome's on-device AI APIs for local summarization. When started, it runs a small local server on an available port at `http://127.0.0.1`. The bridge page can be opened from **⌘ Epochgram: Open AI bridge**, from the `⌀ AI` status bar button, or automatically on startup if **⛭ Open Bridge AI on startup** is enabled. This page processes summary jobs in Chrome and returns the results to the plugin. All summarization data stays **only on your device** and is not sent to external services.
 
 On first use, Chrome may need a user gesture to download the built-in Gemini Nano model, and the drive with your Chrome profile [should have](https://developer.chrome.com/docs/ai/summarizer-api#hardware-requirements) at least **22 GB** of free space. The bridge page also serves as a control panel, showing connection and model status, queue progress, the current text preview, the latest result, and a chart with progress in yellow and processing speed in blue. Keep it open while summaries are running. You can also adjust API settings and prompt/context texts. For larger notes, Epochgram can split input into chunks, summarize them separately, then merge the results.
 
 You can use context placeholders. File summaries support `{{filePath}}` (full file path), `{{fileName}}` (file name), and `{{related}}` (summaries of related records). Epoch summaries support `{{bucket}}` (`day`, `2days`, `4days`, `week`, `2weeks`, `month`, `3months`, `6months`, `year`) and `{{related}}`.
 
 > [!TIP]
-> Language tip
 > Chrome's built-in Gemini Nano currently officially supports English, Spanish, and Japanese for input and output text. You can still try forcing another output language in the prompt context; for example, I used this context for Ukrainian:
 >
 > ```
@@ -219,7 +218,7 @@ Epochgram supports the following custom YAML properties:
 ```yaml
 ---
 date: 2026-01-01 # override the anchor date
-description: my summary # set a hard-coded summary
+description: my summary # override the summary
 notracked: # don't use tracked edits for this file
 noparsed: # don't parse dates from this file's content
 nosimilar: # don't match this file by similarity
@@ -239,7 +238,7 @@ All plugin data is stored in the vault config directory, usually `.obsidian/`:
 - `epochgram-topics.json` → topic similarity store
 - `plugins/epochgram/data.json` → settings and view state
 
-If Obsidian Sync is enabled, this data should sync between devices as long as **⛭ Sync → Vault configuration sync → Other file types** is turned on.
+If Obsidian Sync is enabled, this data should synchronize between devices as long as **⛭ Sync → Vault configuration sync → Other file types** is turned on.
 
 > [!TIP]
 > **Double-click** a setting name/description → reset it to default.
@@ -265,14 +264,14 @@ Epochgram also provides **Rebuild** and **Reset** popups for rebuilding or clear
     - **⛭ Semantics** → remove all embedding vectors
     - **⛭ Topics** → remove all topics and classification data
     - **⛭ Tracked changes** → remove all tracked changes
-    - **⛭ Manual summaries** → remove all manual summaries
-    - **⛭ AI summaries** → remove all AI summaries and use default "first N words" summaries
+    - **⛭ Manual summaries** → remove all manual summaries in the index
+    - **⛭ AI summaries** → remove all AI summaries and use default "first N words"
     - **⛭ Epochs** → remove all epochs
 
 ## FAQ
 
 > **How do I get support?**  
-> Check the docs first. If you still cannot find relevant information, feel free to [open an issue on GitHub](https://github.com/2brn/Epochgram/issues) or [ask on the forum](FORUM_LINK). For private matters such as license or account issues, contact [contact@epochgram.com](mailto:contact@epochgram.com).
+> Check the docs first. If you still cannot find relevant information, feel free to [open an issue on GitHub](https://github.com/2brn/Epochgram/issues) or [ask on the forum](FORUM_LINK). For private matters such as license or account issues, email me at [hi@epochgram.com](mailto:hi@epochgram.com).
 
 > **What should I do if Epochgram feels slow?**  
 > On huge vaults or slower machines, performance may degrade. Try setting **⛭ Semantic threshold** and **⛭ Topic threshold** to `0`, and uncheck **⛭ Auto summarize** and **⛭ Generate epochs**. You can also uncheck **⛭ Enable animation** or reset plugin data.
