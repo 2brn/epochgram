@@ -30,7 +30,7 @@ A Time Map of Your Mind
 - [Similarity (Pro)](#similarity-pro)
 - [AI Bridge (Pro, Desktop-only)](#ai-bridge-pro-desktop-only)
 - [AI Summaries & Epochs (Pro, Desktop-only)](#ai-summaries--epochs-pro-desktop-only)
-- [Custom Frontmatter](#custom-frontmatter)
+- [Custom YAML](#custom-yaml)
 - [Settings & Data](#settings--data)
 - [FAQ](#faq)
 - [Disclosures](#disclosures)
@@ -38,9 +38,6 @@ A Time Map of Your Mind
 ## Get Started
 
 Click the <img src="docs/icons/epochgram_bw.svg" width="18" height="18" alt="Epochgram"> ribbon icon or run **⌘ Epochgram: Open timeline** to open the timeline in the right panel. To open it automatically on launch, enable **⛭ Open timeline on startup**.
-
-> [!NOTE]
-> Activating Pro
 
 > [!TIP]
 > - **Click (tap) record** → open file; **click date** → open daily note
@@ -54,6 +51,9 @@ Click the <img src="docs/icons/epochgram_bw.svg" width="18" height="18" alt="Epo
 > - **Alt + wheel** or **Alt + up/down (two-finger tap)** → scroll to next record
 > - **Shift + wheel** → zoom around the current record
 > - **Alt + hover cursor** → show preview of the file
+
+### Activating Pro
+Follow the instructions on [epochgram.com/pro](https://epochgram.com/pro) to get your activation key by email. Paste it into **⛭ License key** to activate; Epochgram may briefly contact the cloud service to verify the license.
 
 ## Timeline
 
@@ -211,7 +211,7 @@ You can use context placeholders. File summaries support `{{filePath}}` (full fi
 > - **⌘ Epochgram: Summarize all** → generate all missing AI summaries and epochs.
 > - **⌘ Epochgram: Export epochs** → export as standalone HTML to your daily notes folder.
 
-## Custom Frontmatter
+## Custom YAML
 
 Epochgram supports the following custom YAML properties:
 
