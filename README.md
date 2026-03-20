@@ -150,6 +150,7 @@ Not every record deserves space on the timeline. Some, such as minor tracked cha
 
 > [!TIP]
 > **⌘ Epochgram: Review all** → mark all records across the vault as reviewed.
+> **⌘ Epochgram: Toggle visibility for current file** → hide or show all records from the current file.
 
 ## Recurring (Pro)
 
