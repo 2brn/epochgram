@@ -153,11 +153,11 @@ Not every record deserves space on the timeline. Some, such as minor tracked cha
 
 ## Recurring (Pro)
 
-You can create recurring records, which will appear on the timeline. To add one, set the `recur` or `repeat` property in YAML. Supported formats (see [RRULE](https://icalendar.org/iCalendar-RFC-5545/3-8-5-3-recurrence-rule.html)):
+You can create recurring records, which will appear on the timeline. To add one, set the `repeat` property in YAML. Supported formats (see [RRULE](https://icalendar.org/iCalendar-RFC-5545/3-8-5-3-recurrence-rule.html)):
 
 ```
 ---
-recur: every day
+repeat: every day
 repeat: every N days
 repeat: every week on mon,tue
 repeat: every N weeks on mon,tue
@@ -235,7 +235,7 @@ notracked: # don't use tracked edits for this file
 noparsed: # don't parse dates from this file's content
 nosimilar: # don't match this file by similarity
 similar: [links, tags, title, semantics, topics] # match similarity only by these relations
-recur: every day # create recurring records
+repeat: every day # create recurring records
 ---
 ```
 
