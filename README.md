@@ -1,4 +1,4 @@
-<h1 align="center"><img src="docs/icons/epochgram.svg" width="22" height="22" alt="Epochgram"> Epochgram for Obsidian</h1>
+<h1 align="center"><img src="docs/icons/epochgram.svg" width="22" height="22" alt=""> Epochgram for Obsidian</h1>
 
 <h6 align="center">
 A Time Map of Your Mind
@@ -37,13 +37,12 @@ A Time Map of Your Mind
 
 ## Get Started
 
-Click the <img src="docs/icons/epochgram_bw.svg" width="18" height="18" alt="Epochgram"> ribbon icon or run **⌘ Epochgram: Open timeline** to open the timeline in the right panel. On mobile, it opens as a slide-in panel from the right.
+Click the <img src="docs/icons/epochgram_bw.svg" width="18" height="18" alt="Epochgram"> ribbon icon or run **⌘ Epochgram: Open timeline** to open the timeline in the right panel. To open it automatically on launch, enable **⛭ Open timeline on startup**.
+
+> [!NOTE]
+> Activating Pro
 
 > [!TIP]
-> **⛭ Open timeline on startup** → open timeline automatically on Obsidian launch.
-
-> [!TIP]
-> Cheat sheet (☞ touchscreen)
 > - Click (tap) record → open file; click date → open daily note
 > - Ctrl + click record → open file in a  new tab 
 > - Right-click (long-tap) record/date → open context menu  
@@ -56,9 +55,6 @@ Click the <img src="docs/icons/epochgram_bw.svg" width="18" height="18" alt="Epo
 > - Shift + wheel → zoom around the current record
 > - Alt + hover cursor → show preview of the file
 
-> [!IMPORTANT]
-> Activating Pro
-
 ## Timeline
 
 The timeline is a scrollable, zoomable surface that collects records from all files in the vault, excluding folders ignored in Obsidian settings. It detects dates and date ranges in different formats and renders *one record per file per day*, in the following priority order:
@@ -69,8 +65,7 @@ The timeline is a scrollable, zoomable surface that collects records from all fi
 - Frontmatter date → a date from YAML property `date`
 - Created dates → file creation date
 
-> [!TIP]
-> Examples
+> [!NOTE]
 > *my_note.md* → placed by its file creation date.  
 > *01.01.2026.md* → January 1, 2026.  
 > ```yaml
@@ -99,13 +94,12 @@ There are collapsible filters under <img src="docs/icons/settings.svg" width="18
 
 - <img src="docs/icons/hourglass.svg" width="18" height="18" alt=""> → toggle epochs view (Pro)
 
-A search bar at the bottom lets you search timeline records. Click it or run **⌘ Epochgram: Search timeline**. Search covers file names, content, AI summaries, epochs, and more, with support for fuzzy search and `"exact text"` matching.
+**A search bar** at the bottom lets you search timeline records. Click it or run **⌘ Epochgram: Search timeline**. Search covers file names, content, AI summaries, epochs, and more, with support for fuzzy search and `"exact text"` matching.
   
 > [!TIP]
-> Search shortcuts
-> - Enter → open the matched file
-> - Alt + Enter → filter timeline records by the current search
-> - Marked → show only marked records
+> - **Enter** → open the matched file
+> - **Alt + Enter** → filter timeline records by the current search
+> - *Marked* → show only marked records
 
 ## Actions
 
@@ -177,7 +171,7 @@ Epochgram includes multiple intelligent similarity settings that work on all pla
   
 - **⛭ Topic threshold** → topics use a zero-shot [model](https://huggingface.co/MoritzLaurer/deberta-v3-xsmall-zeroshot-v1.1-all-33) for similarity grouping. When you assign a topic to a note, Epochgram finds related records across the vault. This is useful for broad themes like travel, projects, health, or astrophotography, where notes may share meaning without direct links or tags.
 
-> [!TIP]
+> [!NOTE]
 > Building semantic vectors and running zero-shot topic classification can take a long time on slower machines, with progress shown in the status bar, for example: *Topics... 1/100*; click the progress item to cancel the job.
 
 When you open a record, all related records on the timeline are highlighted using the current theme color.
@@ -215,9 +209,8 @@ You can use context placeholders. File summaries support `{{filePath}}` (full fi
 **⛭ Generate epochs** → when enabled, Epochgram creates a zoomable time map that groups many days into larger period summaries, helping you see the bigger picture and spot patterns without reading the timeline day by day. Epochs are generated hierarchically from day up to year, in essence, summaries of summaries. If highlighted records are present, epochs are colored by the most common highlight color in that range. You can also edit or regenerate epochs from the context menu.
 
 > [!TIP]
-> Commands
-> **⌘ Epochgram: Summarize all** → generate all missing AI summaries and epochs.
-> **⌘ Epochgram: Export epochs** → export as standalone HTML to your daily notes folder.
+> - **⌘ Epochgram: Summarize all** → generate all missing AI summaries and epochs.
+> - **⌘ Epochgram: Export epochs** → export as standalone HTML to your daily notes folder.
 
 ## Custom Frontmatter
 
