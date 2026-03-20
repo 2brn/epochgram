@@ -299,4 +299,4 @@ Epochgram also provides **Rebuild** and **Reset** popups for rebuilding or clear
 	- **Similarity**: embeddings and the zero-shot topic model may be downloaded on first use via `@xenova/transformers`, including [TaylorAI/bge-micro-v2](https://huggingface.co/TaylorAI/bge-micro-v2), [MoritzLaurer/deberta-v3-xsmall-zeroshot-v1.1-all-33](https://huggingface.co/MoritzLaurer/deberta-v3-xsmall-zeroshot-v1.1-all-33), and ONNX Runtime Web WASM from [jsDelivr](https://cdn.jsdelivr.net/npm/onnxruntime-web@1.14.0/dist/).
 - All vault data is processed locally on your device and is NEVER sent over the internet.
 - Source code is closed.
-- License: Apache-2.0 (see [LICENSE](LICENSE)).
+- License: MIT (see [LICENSE](LICENSE)).
