@@ -3,8 +3,8 @@
 	"name": "Epochgram",
 	"version": "0.4.0",
 	"minAppVersion": "1.12.4",
-	"description": "A chronological activity timeline with local AI summaries and semantic matching.",
+	"description": "An AI-powered time map of your mind (Closed source).",
 	"author": "Andriy Babets",
-	"authorUrl": "https://2brn.ai",
+	"authorUrl": "https://epochgram.com",
 	"isDesktopOnly": false
 }

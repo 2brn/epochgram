@@ -1,8 +1,17 @@
 <h1 align="center"><img src="docs/icons/epochgram.svg" width="22" height="22" alt=""> Epochgram for Obsidian</h1>
 
-<h6 align="center">
+<h5 align="center">
 A Time Map of Your Mind
-</h2>
+</h5>
+
+<p align="center">
+  <a href="https://github.com/2brn/Epochgram/releases">
+    <img src="https://img.shields.io/github/v/release/2brn/Epochgram?style=for-the-badge&sort=semver" alt="GitHub release (latest SemVer)">
+  </a>
+  <a href="https://obsidian.md/plugins?id=epochgram">
+    <img src="https://img.shields.io/badge/dynamic/json?logo=obsidian&color=%23483699&label=downloads&query=%24%5B%22epochgram%22%5D.downloads&url=https%3A%2F%2Fraw.githubusercontent.com%2Fobsidianmd%2Fobsidian-releases%2Fmaster%2Fcommunity-plugin-stats.json&style=for-the-badge" alt="Obsidian Downloads">
+  </a>
+</p>
 
 > [!CAUTION]
 > **Pain**: Your vault fills up with quick capture notes. A week later, you've lost the thread. A month later, you can't reconstruct the story — and you don't see the themes, the slow stretches, or the bursts of activity.
@@ -28,8 +37,8 @@ A Time Map of Your Mind
 - [Review State](#review-state)
 - [Recurring (Pro)](#recurring-pro)
 - [Similarity (Pro)](#similarity-pro)
-- [AI Bridge (Pro, Desktop-only)](#ai-bridge-pro-desktop-only)
-- [AI Summaries & Epochs (Pro, Desktop-only)](#ai-summaries--epochs-pro-desktop-only)
+- [AI Bridge (Pro, desktop-only)](#ai-bridge-pro-desktop-only)
+- [AI Summaries & Epochs (Pro, desktop-only)](#ai-summaries--epochs-pro-desktop-only)
 - [Custom YAML](#custom-yaml)
 - [Settings & Data](#settings--data)
 - [FAQ](#faq)
@@ -37,7 +46,9 @@ A Time Map of Your Mind
 
 ## Get Started
 
-Click the <img src="docs/icons/epochgram_bw.svg" width="18" height="18" alt="Epochgram"> ribbon icon or run **⌘ Epochgram: Open timeline** to open the timeline in the right panel. To open it automatically on launch, enable **⛭ Open timeline on startup**.
+- Install via the [Obsidian Community plugins](https://obsidian.md/plugins?id=epochgram).
+- Click the <img src="docs/icons/epochgram_bw.svg" width="18" height="18" alt="Epochgram"> ribbon icon or run **⌘ Epochgram: Open timeline** to open the timeline in the right panel.
+- To open it automatically on launch, enable **⛭ Open timeline on startup**.
 
 > [!TIP]
 > - **Click (tap) record** → open file; **click date** → open daily note
@@ -53,7 +64,8 @@ Click the <img src="docs/icons/epochgram_bw.svg" width="18" height="18" alt="Epo
 > - **Alt + hover cursor** → show preview of the file
 
 ### Activating Pro
-Follow the instructions on [epochgram.com/pro](https://epochgram.com/pro) to get your activation key by email. Paste it into **⛭ License key** to activate; Epochgram may briefly contact the cloud service to verify the license.
+- Follow the instructions on [epochgram.com/pro](https://epochgram.com/pro) to get your activation key by email.
+- Paste it into **⛭ License key** to activate; Epochgram may briefly contact the cloud service to verify the license.
 
 ## Timeline
 
@@ -76,13 +88,13 @@ The timeline is a scrollable, zoomable surface that collects records from all fi
 > *May 1, 2026* in content → adds another timeline record.  
 > **Track changes (Pro)**  enabled → edits appear on the timeline day by day.
 
-Each record appears as *note name ⸱ summary* (if **⛭ Show note name** is enabled), *summary*, or *image.jpg* for non-text files. The summary is either the first _N_ words (**⛭ Summary length** setting) or an AI summary (Pro). A custom summary can be set with YAML (`description: ...`) or from the context menu; manual summaries are never overwritten by AI, and clearing the field removes the override.
+Each record appears as *note name ⸱ summary* (if **⛭ Show note name** is enabled), *summary*, or *image.jpg* for non-text files. The summary is either the first _N_ words, markdown-aware (**⛭ Summary length** setting) or an AI summary (Pro). A custom summary can be set with YAML (`description: ...`) or from the context menu; manual summaries are never overwritten by AI, and clearing the field removes the override.
 
 Timeline draws weekdays as <img src="docs/icons/circle.svg" width="18" height="18" alt=""> and weekends as <img src="docs/icons/circle-filled.svg" width="18" height="18" alt="">. Entries are shown stacked or side by side when space allows. Long entries are truncated with *...*, and if even that does not fit, the day collapses into a single interactive placeholder line <img src="docs/icons/minus.svg" width="18" height="18" alt="">, with extra hidden entries shown as `(+n)`. When zoomed out, records collapse into placeholder bars <img src="docs/icons/rectangle-horizontal.svg" width="18" height="18" alt="">, with height based on record count.
 
 ## Filters & Search
 
-There are collapsible filters under <img src="docs/icons/settings.svg" width="18" height="18" alt=""> button.
+There are collapsible filters under the <img src="docs/icons/settings.svg" width="18" height="18" alt=""> button.
 
 - <img src="docs/icons/scan-eye.svg" width="18" height="18" alt=""> → drafts & reviewed; <img src="docs/icons/pencil-ruler.svg" width="18" height="18" alt=""> → drafts; <img src="docs/icons/eye.svg" width="18" height="18" alt=""> → drafts & reviewed & hidden
 
@@ -111,7 +123,7 @@ Record context menu:
 
 - <img src="docs/icons/square-pen.svg" width="18" height="18" alt=""> Edit summary → edit the record summary
 
-- <img src="docs/icons/sparkles.svg" width="18" height="18" alt=""> Summarize AI → generate an on-device summary of the record using Google Chrome AI Bridge (Pro, desktop only)
+- <img src="docs/icons/sparkles.svg" width="18" height="18" alt=""> Summarize AI → generate an on-device summary of the record using Google Chrome AI Bridge (Pro, desktop-only)
 
 - <img src="docs/icons/tag.svg" width="18" height="18" alt=""> Edit topic… → open the topics assignment popup; to remove topics, clear the input (Pro)
 
@@ -132,9 +144,9 @@ Record context menu:
 
 ## Review State
 
-Epochgram is designed around the [C.O.D.E.](https://fortelabs.com/blog/basboverview/) process (capture → organize → distill → express). New or indexed files appear as *Draft*. After organizing the file and extracting the key points, the record can be marked as **Reviewed**. If the file changes later, the record returns to *Draft*, indicating it may need review again. The **Draft/Reviewed** actions applies to all records of the same file.
+Epochgram is designed around the [C.O.D.E.](https://fortelabs.com/blog/basboverview/) process (capture → organize → distill → express). New or indexed files appear as *Draft*. After organizing the file and extracting the key points, the record can be marked as **Reviewed**. If the file changes later, the record returns to *Draft*, indicating it may need review again. The **Draft/Reviewed** actions apply to all records of the same file.
 
-Not every record deserves space on the timeline. Some, such as minor tracked changes, can be marked **Hidden**. Hidden is applied per record, not per file. Hidden records disappear from the timeline or muted when the relevant filter is enabled.
+Not every record deserves space on the timeline. Some, such as minor tracked changes, can be marked **Hidden**. Hidden is applied per record, not per file. Hidden records disappear from the timeline or are muted when the relevant filter is enabled.
 
 > [!TIP]
 > **⌘ Epochgram: Review all** → mark all records across the vault as reviewed.
@@ -167,7 +179,7 @@ Epochgram includes multiple intelligent similarity settings that work on all pla
 
 - **⛭ Title threshold** → use Jaro–Winkler matching to group notes with similar names or paths (higher values match more, 0 disables it).
 
-- **⛭ Semantic threshold** → semantic similarity uses embedding [model](https://huggingface.co/TaylorAI/bge-micro-v2) to find notes with similar meaning across the vault. This is useful for notes that describe the same idea in different words.  
+- **⛭ Semantic threshold** → semantic similarity uses an embedding [model](https://huggingface.co/TaylorAI/bge-micro-v2) to find notes with similar meaning across the vault. This is useful for notes that describe the same idea in different words.  
   
 - **⛭ Topic threshold** → topics use a zero-shot [model](https://huggingface.co/MoritzLaurer/deberta-v3-xsmall-zeroshot-v1.1-all-33) for similarity grouping. When you assign a topic to a note, Epochgram finds related records across the vault. This is useful for broad themes like travel, projects, health, or astrophotography, where notes may share meaning without direct links or tags.
 
@@ -185,7 +197,7 @@ When you open a record, all related records on the timeline are highlighted usin
 > - **⌘ Epochgram: Toggle mark for current file** or the file context menu → assign the next unique color from the palette.
 > - In addition to the standard red-to-violet palette, an extended palette is available in the submenu. This makes it easy to choose colors by activity. For example, I use $${\color{lightblue}Glacier}$$ for ski trip reports.
 
-## AI Bridge (Pro, Desktop-only)
+## AI Bridge (Pro, desktop-only)
 
 Epochgram Pro includes an **AI Bridge** that uses Google Chrome's on-device AI APIs for local summarization. When started, it runs a small local server on an available port at `http://127.0.0.1`. The bridge page can be opened from **⌘ Epochgram: Open AI bridge**, from the `⌀ AI` status bar button, or automatically on startup if **⛭ Open Bridge AI on startup** is enabled. This page processes summary jobs in Chrome and returns the results to the plugin. All summarization data stays **only on your device** and is not sent to external services.
 
@@ -201,7 +213,7 @@ You can use context placeholders. File summaries support `{{filePath}}` (full fi
 > ...
 > ```
 
-## AI Summaries & Epochs (Pro, Desktop-only)
+## AI Summaries & Epochs (Pro, desktop-only)
 
 **⛭ Auto summarize** → when enabled, Epochgram automatically summarizes a record through the AI Bridge each time the file changes. Even when disabled, you can still run summarization for a specific record from its context menu.
 
@@ -287,4 +299,4 @@ Epochgram also provides **Rebuild** and **Reset** popups for rebuilding or clear
 	- **Similarity**: embeddings and the zero-shot topic model may be downloaded on first use via `@xenova/transformers`, including [TaylorAI/bge-micro-v2](https://huggingface.co/TaylorAI/bge-micro-v2), [MoritzLaurer/deberta-v3-xsmall-zeroshot-v1.1-all-33](https://huggingface.co/MoritzLaurer/deberta-v3-xsmall-zeroshot-v1.1-all-33), and ONNX Runtime Web WASM from [jsDelivr](https://cdn.jsdelivr.net/npm/onnxruntime-web@1.14.0/dist/).
 - All vault data is processed locally on your device and is NEVER sent over the internet.
 - Source code is closed.
-- License: MIT (see [LICENSE](LICENSE)).
+- License: Apache-2.0 (see [LICENSE](LICENSE)).
