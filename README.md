@@ -92,6 +92,9 @@ Each record appears as *note name ⸱ summary* (if **⛭ Show note name** is ena
 
 Timeline draws weekdays as <img src="docs/icons/circle.svg" width="18" height="18" alt=""> and weekends as <img src="docs/icons/circle-filled.svg" width="18" height="18" alt="">. Entries are shown stacked or side by side when space allows. Long entries are truncated with *...*, and if even that does not fit, the day collapses into a single interactive placeholder line <img src="docs/icons/minus.svg" width="18" height="18" alt="">, with extra hidden entries shown as `(+n)`. When zoomed out, records collapse into placeholder bars <img src="docs/icons/rectangle-horizontal.svg" width="18" height="18" alt="">, with height based on record count.
 
+> [!TIP]
+> A floating label at the top shows the current date on the timeline.
+
 ## Filters & Search
 
 There are collapsible filters under the <img src="docs/icons/settings.svg" width="18" height="18" alt=""> button.
@@ -106,7 +109,7 @@ There are collapsible filters under the <img src="docs/icons/settings.svg" width
 
 - <img src="docs/icons/hourglass.svg" width="18" height="18" alt=""> → toggle epochs view (Pro)
 
-**A search bar** at the bottom lets you search timeline records. Click it or run **⌘ Epochgram: Search timeline**. Search covers file names, content, AI summaries, epochs, and more, with support for fuzzy search and `"exact text"` matching.
+**A search bar** at the bottom lets you search timeline records and shows the number of matches. Click it or run **⌘ Epochgram: Search timeline**. Search covers file names, content, AI summaries, epochs, and more, with support for fuzzy search and `"exact text"` matching.
   
 > [!TIP]
 > - **Enter** → open the matched file
