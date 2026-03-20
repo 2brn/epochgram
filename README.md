@@ -37,7 +37,7 @@ A Time Map of Your Mind
 
 ## Get Started
 
-After enabling the plugin, the timeline opens automatically. If it is hidden, click the Epochgram ribbon icon or run **⌘ Epochgram: Open timeline** to open it in the right panel. On mobile, it opens as a slide-in panel from the right.
+Click the <img src="docs/icons/epochgram_bw.svg" width="18" height="18" alt="Epochgram"> ribbon icon or run **⌘ Epochgram: Open timeline** to open the timeline in the right panel. On mobile, it opens as a slide-in panel from the right.
 
 > [!TIP]
 > **⛭ Open timeline on startup** → open timeline automatically on Obsidian launch.
