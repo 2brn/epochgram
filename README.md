@@ -210,7 +210,9 @@ When you open a record, all related records on the timeline are highlighted usin
 
 ## AI Bridge (Pro, desktop-only)
 
+</br>
 <p align="center"><img src="docs/images/bridge.png" alt="AI Bridge screenshot"></p>
+</br>
 
 Epochgram Pro includes an **AI Bridge** that uses Google Chrome's on-device AI APIs for local summarization. When started, it runs a small local server on an available port at `http://127.0.0.1`. The bridge page can be opened from **⌘ Epochgram: Open AI bridge**, from the `⌀ AI` status bar button, or automatically on startup if **⛭ Open Bridge AI on startup** is enabled. This page processes summary jobs in Chrome and returns the results to the plugin. All summarization data stays **only on your device** and is not sent to external services.
 
