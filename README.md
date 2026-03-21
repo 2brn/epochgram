@@ -13,7 +13,9 @@ A Time Map of Your Mind
   </a>
 </p>
 
+</br>
 <p align="center"><img src="docs/images/epochgram.png" alt="Epochgram screenshot"></p>
+</br>
 
 > [!CAUTION]
 > **Pain**: Your vault fills up with quick capture notes. A week later, you've lost the thread. A month later, you can't reconstruct the story — and you don't see the themes, the slow stretches, or the bursts of activity.
