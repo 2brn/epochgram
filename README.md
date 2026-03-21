@@ -1,4 +1,4 @@
-<h1 align="center"><img src="images/epochgram-logo-full.svg" width="240" height="48" alt="Epochgram"> for Obsidian</h1>
+<h1 align="center"><img src="images/epochgram-logo-full.svg" width="160" height="30" alt="Epochgram" style="vertical-align:-0.25em;"> <span style="color: #8C9EA9">for Obsidian</span></h1>
 
 <h5 align="center">
 A Time Map of Your Mind
@@ -15,6 +15,7 @@ A Time Map of Your Mind
 
 </br>
 <p align="center"><img src="images/epochgram-full.png" alt="Epochgram screenshot"></p>
+</br>
 
 > [!CAUTION]
 > **Pain**: Your vault fills up with quick capture notes. A week later, you've lost the thread. A month later, you can't reconstruct the story — and you don't see the themes, the slow stretches, or the bursts of activity.
