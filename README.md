@@ -1,4 +1,4 @@
-<h1 align="center"><img src="docs/icons/epochgram.svg" width="22" height="22" alt=""> Epochgram for Obsidian</h1>
+<h1 align="center"><img src="docs/images/epochgram.svg" width="22" height="22" alt=""> Epochgram for Obsidian</h1>
 
 <h5 align="center">
 A Time Map of Your Mind
@@ -12,6 +12,8 @@ A Time Map of Your Mind
     <img src="https://img.shields.io/badge/dynamic/json?logo=obsidian&color=%23483699&label=downloads&query=%24%5B%22epochgram%22%5D.downloads&url=https%3A%2F%2Fraw.githubusercontent.com%2Fobsidianmd%2Fobsidian-releases%2Fmaster%2Fcommunity-plugin-stats.json&style=for-the-badge" alt="Obsidian Downloads">
   </a>
 </p>
+
+<p align="center"><img src="docs/images/epochgram.png" alt="Epochgram screenshot"></p>
 
 > [!CAUTION]
 > **Pain**: Your vault fills up with quick capture notes. A week later, you've lost the thread. A month later, you can't reconstruct the story — and you don't see the themes, the slow stretches, or the bursts of activity.
@@ -47,7 +49,7 @@ A Time Map of Your Mind
 ## Get Started
 
 - Install via the [Obsidian Community plugins](https://obsidian.md/plugins?id=epochgram).
-- Click the <img src="docs/icons/epochgram_bw.svg" width="18" height="18" alt="Epochgram"> ribbon icon or run **⌘ Epochgram: Open timeline** to open the timeline in the right panel.
+- Click the <img src="docs/images/epochgram_bw.svg" width="18" height="18" alt="Epochgram"> ribbon icon or run **⌘ Epochgram: Open timeline** to open the timeline in the right panel.
 - To open it automatically on launch, enable **⛭ Open timeline on startup**.
 
 > [!TIP]
@@ -71,7 +73,7 @@ A Time Map of Your Mind
 
 The timeline is a scrollable, zoomable surface that collects records from all files in the vault, excluding folders ignored in Obsidian settings. It detects dates and date ranges in different formats and renders *one record per file per day*, in the following priority order:
 
-- Tracked edits (Pro) → per-block edit history (<img src="docs/icons/pen.svg" width="16" height="16" alt=""> added/modified, <img src="docs/icons/pen-line.svg" width="16" height="16" alt=""> removed); only when **⛭ Track changes** is enabled
+- Tracked edits (Pro) → per-block edit history (<img src="docs/images/pen.svg" width="16" height="16" alt=""> added/modified, <img src="docs/images/pen-line.svg" width="16" height="16" alt=""> removed); only when **⛭ Track changes** is enabled
 - Content dates → a date (range) parsed from note content
 - Filename dates → a date (range) parsed from the filename
 - Frontmatter date → a date from YAML property `date`
@@ -90,24 +92,24 @@ The timeline is a scrollable, zoomable surface that collects records from all fi
 
 Each record appears as *note name ⸱ summary* (if **⛭ Show note name** is enabled), *summary*, or *image.jpg* for non-text files. The summary is either the first _N_ words, markdown-aware (**⛭ Summary length** setting) or an AI summary (Pro). A custom summary can be set with YAML (`description: ...`) or from the context menu; manual summaries are never overwritten by AI, and clearing the field removes the override.
 
-Timeline draws weekdays as <img src="docs/icons/circle.svg" width="18" height="18" alt=""> and weekends as <img src="docs/icons/circle-filled.svg" width="18" height="18" alt="">. Entries are shown stacked or side by side when space allows. Long entries are truncated with *...*, and if even that does not fit, the day collapses into a single interactive placeholder line <img src="docs/icons/minus.svg" width="18" height="18" alt="">, with extra hidden entries shown as `(+n)`. When zoomed out, records collapse into placeholder bars <img src="docs/icons/rectangle-horizontal.svg" width="18" height="18" alt="">, with height based on record count.
+Timeline draws weekdays as <img src="docs/images/circle.svg" width="18" height="18" alt=""> and weekends as <img src="docs/images/circle-filled.svg" width="18" height="18" alt="">. Entries are shown stacked or side by side when space allows. Long entries are truncated with *...*, and if even that does not fit, the day collapses into a single interactive placeholder line <img src="docs/images/minus.svg" width="18" height="18" alt="">, with extra hidden entries shown as `(+n)`. When zoomed out, records collapse into placeholder bars <img src="docs/images/rectangle-horizontal.svg" width="18" height="18" alt="">, with height based on record count.
 
 > [!TIP]
 > A floating label at the top shows the current date on the timeline.
 
 ## Filters & Search
 
-There are collapsible filters under the <img src="docs/icons/settings.svg" width="18" height="18" alt=""> button.
+There are collapsible filters under the <img src="docs/images/settings.svg" width="18" height="18" alt=""> button.
 
-- <img src="docs/icons/scan-eye.svg" width="18" height="18" alt=""> → drafts & reviewed; <img src="docs/icons/pencil-ruler.svg" width="18" height="18" alt=""> → drafts; <img src="docs/icons/eye.svg" width="18" height="18" alt=""> → drafts & reviewed & hidden
+- <img src="docs/images/scan-eye.svg" width="18" height="18" alt=""> → drafts & reviewed; <img src="docs/images/pencil-ruler.svg" width="18" height="18" alt=""> → drafts; <img src="docs/images/eye.svg" width="18" height="18" alt=""> → drafts & reviewed & hidden
 
-- <img src="docs/icons/history.svg" width="18" height="18" alt=""> → show tracked edits (Pro); only when **⛭ Track changes** is On
+- <img src="docs/images/history.svg" width="18" height="18" alt=""> → show tracked edits (Pro); only when **⛭ Track changes** is On
 
-- <img src="docs/icons/calendar.svg" width="18" height="18" alt=""> → show content dates; <img src="docs/icons/square-code.svg" width="18" height="18" alt=""> → including YAML
+- <img src="docs/images/calendar.svg" width="18" height="18" alt=""> → show content dates; <img src="docs/images/square-code.svg" width="18" height="18" alt=""> → including YAML
 
-- <img src="docs/icons/paperclip.svg" width="18" height="18" alt=""> → show non-text files
+- <img src="docs/images/paperclip.svg" width="18" height="18" alt=""> → show non-text files
 
-- <img src="docs/icons/hourglass.svg" width="18" height="18" alt=""> → toggle epochs view (Pro)
+- <img src="docs/images/hourglass.svg" width="18" height="18" alt=""> → toggle epochs view (Pro)
 
 **A search bar** at the bottom lets you search timeline records and shows the number of matches. Click it or run **⌘ Epochgram: Search timeline**. Search covers file names, content, AI summaries, epochs, and more, with support for fuzzy search and `"exact text"` matching.
   
@@ -122,25 +124,25 @@ Files in the vault are never modified unless you run an explicit file action. Al
 
 Record context menu:
 
-- <img src="docs/icons/file.svg" width="18" height="18" alt=""> MyNote.md → open the file
+- <img src="docs/images/file.svg" width="18" height="18" alt=""> MyNote.md → open the file
 
-- <img src="docs/icons/square-pen.svg" width="18" height="18" alt=""> Edit summary → edit the record summary
+- <img src="docs/images/square-pen.svg" width="18" height="18" alt=""> Edit summary → edit the record summary
 
-- <img src="docs/icons/sparkles.svg" width="18" height="18" alt=""> Summarize AI → generate an on-device summary of the record using Google Chrome AI Bridge (Pro, desktop-only)
+- <img src="docs/images/sparkles.svg" width="18" height="18" alt=""> Summarize AI → generate an on-device summary of the record using Google Chrome AI Bridge (Pro, desktop-only)
 
-- <img src="docs/icons/tag.svg" width="18" height="18" alt=""> Edit topic… → open the topics assignment popup; to remove topics, clear the input (Pro)
+- <img src="docs/images/tag.svg" width="18" height="18" alt=""> Edit topic… → open the topics assignment popup; to remove topics, clear the input (Pro)
 
-- <img src="docs/icons/pin.svg" width="18" height="18" alt=""> Pin / Unpin → pin the file at the *Today* position in addition to its date; also available via **⌘ Epochgram: Toggle pin for current file**
+- <img src="docs/images/pin.svg" width="18" height="18" alt=""> Pin / Unpin → pin the file at the *Today* position in addition to its date; also available via **⌘ Epochgram: Toggle pin for current file**
 
-- <img src="docs/icons/highlighter.svg" width="18" height="18" alt=""> Mark → highlight a record or similar records with a palette color; also available via **⌘ Epochgram: Toggle mark for current file**
+- <img src="docs/images/highlighter.svg" width="18" height="18" alt=""> Mark → highlight a record or similar records with a palette color; also available via **⌘ Epochgram: Toggle mark for current file**
 
-- <img src="docs/icons/pencil-ruler.svg" width="18" height="18" alt=""> Draft → <img src="docs/icons/eye.svg" width="18" height="18" alt=""> Reviewed → <img src="docs/icons/eye-off.svg" width="18" height="18" alt=""> Hidden → change the file review state
+- <img src="docs/images/pencil-ruler.svg" width="18" height="18" alt=""> Draft → <img src="docs/images/eye.svg" width="18" height="18" alt=""> Reviewed → <img src="docs/images/eye-off.svg" width="18" height="18" alt=""> Hidden → change the file review state
 
-- <img src="docs/icons/pen-line.svg" width="18" height="18" alt=""> Rename… → rename the file in the vault
+- <img src="docs/images/pen-line.svg" width="18" height="18" alt=""> Rename… → rename the file in the vault
 
-- <img src="docs/icons/folder-tree.svg" width="18" height="18" alt=""> Move to… → move the file to another folder
+- <img src="docs/images/folder-tree.svg" width="18" height="18" alt=""> Move to… → move the file to another folder
 
-- <img src="docs/icons/trash2.svg" width="18" height="18" alt=""> Delete → move **the file** to trash or permanently delete it (depending on Obsidian settings)
+- <img src="docs/images/trash2.svg" width="18" height="18" alt=""> Delete → move **the file** to trash or permanently delete it (depending on Obsidian settings)
 
 > [!TIP]
 > **⌘ Epochgram: Clear tracked changes for current file** → clear all file history at once.
@@ -188,7 +190,7 @@ Epochgram includes multiple intelligent similarity settings that work on all pla
 - **⛭ Topic threshold** → topics use a zero-shot [model](https://huggingface.co/MoritzLaurer/deberta-v3-xsmall-zeroshot-v1.1-all-33) for similarity grouping. When you assign a topic to a note, Epochgram finds related records across the vault. This is useful for broad themes like travel, projects, health, or astrophotography, where notes may share meaning without direct links or tags.
 
 [!TIP]
-Model picker: use ⛭ next to Semantic threshold or Topic threshold to set a Hugging Face model ID, or <img src="docs/icons/globe.svg" width="18" height="18" alt=""> to browse models in your browser. On first use, similarity models/runtime may be downloaded.
+Model picker: use ⛭ next to Semantic threshold or Topic threshold to set a Hugging Face model ID, or <img src="docs/images/globe.svg" width="18" height="18" alt=""> to browse models in your browser. On first use, similarity models/runtime may be downloaded.
 
 > [!NOTE]
 > Building semantic vectors and running topic classification can take a long time on slower machines, with progress shown in the status bar; click the progress item to cancel.
@@ -205,6 +207,8 @@ When you open a record, all related records on the timeline are highlighted usin
 > - In addition to the standard red-to-violet palette, an extended palette is available in the submenu. This makes it easy to choose colors by activity. For example, I use <font color="#ADD8E6">Glacier</font> for ski trip reports.
 
 ## AI Bridge (Pro, desktop-only)
+
+<p align="center"><img src="docs/images/bridge.png" alt="AI Bridge screenshot"></p>
 
 Epochgram Pro includes an **AI Bridge** that uses Google Chrome's on-device AI APIs for local summarization. When started, it runs a small local server on an available port at `http://127.0.0.1`. The bridge page can be opened from **⌘ Epochgram: Open AI bridge**, from the `⌀ AI` status bar button, or automatically on startup if **⛭ Open Bridge AI on startup** is enabled. This page processes summary jobs in Chrome and returns the results to the plugin. All summarization data stays **only on your device** and is not sent to external services.
 
