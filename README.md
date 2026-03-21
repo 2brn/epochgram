@@ -1,4 +1,4 @@
-<h1 align="center"><img src="images/epochgram-logo-full.svg" width="160" height="30" alt="Epochgram" style="vertical-align:-0.25em;"> <span style="color: #8C9EA9">for Obsidian</span></h1>
+<h1 align="center"><img src="images/epochgram-for-obsidian.svg" height="35" alt="Epochgram for Obsidian"></h1>
 
 <h5 align="center">
 A Time Map of Your Mind
