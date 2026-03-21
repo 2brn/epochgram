@@ -14,7 +14,7 @@ A Time Map of Your Mind
 </p>
 
 </br>
-<p align="center"><img src="docs/images/epochgram.png" alt="Epochgram screenshot"></p>
+<p align="center"><img src="docs/images/epochgram-full.png" alt="Epochgram screenshot"></p>
 </br>
 
 > [!CAUTION]
