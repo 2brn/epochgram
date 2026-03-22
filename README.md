@@ -195,7 +195,7 @@ Epochgram includes multiple intelligent similarity settings that work on all pla
 Model picker: use ⛭ next to Semantic threshold or Topic threshold to set a Hugging Face model ID, or <img src="images/globe.svg" width="18" height="18" alt=""> to browse models in your browser. On first use, similarity models/runtime may be downloaded.
 
 > [!NOTE]
-> Building semantic vectors and running topic classification can take a long time on slower machines, with progress shown in the status bar; click the progress item to cancel.
+> Building semantic vectors and running topic classification can take a long time on slower machines. Long-running jobs show their progress in the status bar; hover over the progress item to see all jobs, or click it to cancel.
 
 When you open a record, all related records on the timeline are highlighted using the current theme color.
 
