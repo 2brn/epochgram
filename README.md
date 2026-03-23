@@ -256,7 +256,7 @@ repeat: every day # create recurring records
 
 ## Settings & Data
 
-All plugin data is stored in the vault config directory, usually `.obsidian/`:
+Plugin data is mostly stored in the vault config directory, usually `.obsidian/`.
 
 - `epochgram-index.json` → timeline/index data
 - `epochgram-search.json` → search cache
@@ -265,7 +265,7 @@ All plugin data is stored in the vault config directory, usually `.obsidian/`:
 - `epochgram-topics.json` → topic similarity store
 - `plugins/epochgram/data.json` → settings and view state
 
-If Obsidian Sync is enabled, this data should synchronize between devices as long as **⛭ Sync → Vault configuration sync → Other file types** is turned on.
+If Obsidian Sync is enabled, this data should synchronize between devices as long as **⛭ Sync → Vault configuration sync → Other file types** is turned on. License data is stored separately in `localStorage` and is not synced through the vault config.
 
 > [!TIP]
 > **Double-click** a setting name/description → reset it to default.
@@ -309,7 +309,8 @@ Epochgram also provides **Rebuild** and **Reset** popups for rebuilding or clear
 ## Disclosures
 
 - **Epochgram Pro**:
-	- Requires an account, payment, and internet access for license checks; during validation, your email address, license key, and basic server-side telemetry may be processed (see [TERMS](https://epochgram.com/terms)).
+	- Requires an account, payment, and internet access for activation and occasional startup license checks; during activation/validation, your email address, license key, and basic server-side telemetry may be processed (see [TERMS](https://epochgram.com/terms)).
+  - Is not affiliated with Obsidian Sync, Publish, or other Obsidian paid services.
 	- **AI Bridge**: Epochgram starts a local server on `http://127.0.0.1` and opens a local bridge page in Google Chrome to use Chrome's on-device Summarizer API. The bridge communication stays on your device. Chrome [may download](https://developer.chrome.com/docs/ai/summarizer-api) its built-in model(s) (Gemini Nano) the first time you use these APIs. Epochgram may check common OS install paths to locate the Google Chrome executable and open the AI Bridge automatically.
   - **Similarity**: embeddings/topic models and runtime files may be downloaded on first use via `@xenova/transformers` (for example from [Hugging Face](https://huggingface.co)) and ONNX Runtime Web WASM from [jsDelivr](https://cdn.jsdelivr.net/npm/onnxruntime-web@1.14.0/dist/).
 - All vault data is processed locally on your device and is NEVER sent over the internet.
