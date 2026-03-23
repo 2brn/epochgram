@@ -163,7 +163,7 @@ Not every record deserves space on the timeline. Some, such as minor tracked cha
 
 You can create recurring records, which will appear on the timeline. To add one, set the `repeat` property in YAML. Supported formats (see [RRULE](https://icalendar.org/iCalendar-RFC-5545/3-8-5-3-recurrence-rule.html)):
 
-```
+```yaml
 ---
 repeat: every day
 repeat: every N days
