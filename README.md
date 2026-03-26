@@ -214,7 +214,7 @@ When you open a record, all related records on the timeline are highlighted usin
 <p align="center"><img src="images/bridge.png" alt="AI Bridge screenshot"></p>
 </br>
 
-Epochgram Pro includes an **AI Bridge** that uses Google Chrome's on-device AI APIs for local summarization. When started, it runs a small local server on an available port at `http://127.0.0.1`. The bridge page can be opened from **⌘ Epochgram: Open AI bridge**, from the `⌀ AI` status bar button, or automatically on startup if **⛭ Open Bridge AI on startup** is enabled. This page processes summary jobs in Chrome and returns the results to the plugin. All summarization data stays **only on your device** and is not sent to external services.
+Epochgram Pro includes an **AI Bridge** that uses Google Chrome's on-device AI APIs for local summarization. When started, it runs a small local server on an available port at `http://127.0.0.1`. The bridge page can be opened from **⌘ Epochgram: Open AI bridge**, from the `⌀ AI` status bar button (red = disconnected), or automatically on startup if **⛭ Open Bridge AI on startup** is enabled. This page processes summary jobs in Chrome and returns the results to the plugin. All summarization data stays **only on your device** and is not sent to external services.
 
 On first use, Chrome may need a user gesture to download the built-in Gemini Nano model, and the drive with your Chrome profile [should have](https://developer.chrome.com/docs/ai/summarizer-api#hardware-requirements) at least **22 GB** of free space. The bridge page also serves as a control panel, showing connection and model status, queue progress, the current text preview, the latest result, and a chart with progress in yellow and processing speed in blue. Keep it open while summaries are running. You can also adjust API settings and prompt/context texts. For larger notes, Epochgram can split input into chunks, summarize them separately, then merge the results.
 
@@ -246,6 +246,7 @@ Epochgram supports the following custom YAML properties:
 ---
 date: 2026-01-01 # override the anchor date
 description: my summary # override the summary
+noindex: # exclude this file from all indexing
 notracked: # don't use tracked edits for this file
 noparsed: # don't parse dates from this file's content
 nosimilar: # don't match this file by similarity
