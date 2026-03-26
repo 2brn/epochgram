@@ -316,4 +316,4 @@ Epochgram also provides **Rebuild** and **Reset** popups for rebuilding or clear
   - **Similarity**: embeddings/topic models and runtime files may be downloaded on first use via `@xenova/transformers` (for example from [Hugging Face](https://huggingface.co)) and ONNX Runtime Web WASM from [jsDelivr](https://cdn.jsdelivr.net/npm/onnxruntime-web@1.14.0/dist/).
 - All vault data is processed locally on your device and is NEVER sent over the internet.
 - Source code is closed.
-- License: MIT (see [LICENSE](LICENSE)).\n
+- License: MIT (see [LICENSE](LICENSE)).
