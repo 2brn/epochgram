@@ -127,25 +127,25 @@ Files in the vault are never modified unless you run an explicit file action. Al
 
 Record context menu:
 
-- <img src="images/file.svg" width="18" height="18" alt=""> MyNote.md → open the file
+- **<img src="images/file.svg" width="18" height="18" alt=""> MyNote.md** → open the file
 
-- <img src="images/square-pen.svg" width="18" height="18" alt=""> Edit summary → edit the record summary
+- **<img src="images/square-pen.svg" width="18" height="18" alt=""> Edit summary** → edit the record summary
 
-- <img src="images/sparkles.svg" width="18" height="18" alt=""> Summarize AI → generate an on-device summary of the record using Google Chrome AI Bridge (Pro, desktop-only)
+- **<img src="images/sparkles.svg" width="18" height="18" alt=""> Summarize AI** → generate an on-device summary of the record using Google Chrome AI Bridge (Pro, desktop-only)
 
-- <img src="images/tag.svg" width="18" height="18" alt=""> Edit topic… → open the topics assignment popup; to remove topics, clear the input (Pro)
+- **<img src="images/tag.svg" width="18" height="18" alt=""> Edit topic…** → open the topics assignment popup; to remove topics, clear the input (Pro)
 
-- <img src="images/pin.svg" width="18" height="18" alt=""> Pin / Unpin → pin the file at the *Today* position in addition to its date; also available via **⌘ Epochgram: Toggle pin for current file**
+- **<img src="images/pin.svg" width="18" height="18" alt=""> Pin** → pin the file at the *Today* position in addition to its date; also available via **⌘ Epochgram: Toggle pin for current file**
 
-- <img src="images/highlighter.svg" width="18" height="18" alt=""> Mark → highlight a record or similar records with a palette color; also available via **⌘ Epochgram: Toggle mark for current file**
+- **<img src="images/highlighter.svg" width="18" height="18" alt=""> Mark** → highlight a record or similar records with a palette color; also available via **⌘ Epochgram: Toggle mark for current file**
 
-- <img src="images/pencil-ruler.svg" width="18" height="18" alt=""> Draft → <img src="images/eye.svg" width="18" height="18" alt=""> Reviewed → <img src="images/eye-off.svg" width="18" height="18" alt=""> Hidden → change the file review state
+- **<img src="images/pencil-ruler.svg" width="18" height="18" alt=""> Draft** → <img src="images/eye.svg" width="18" height="18" alt=""> Reviewed → <img src="images/eye-off.svg" width="18" height="18" alt=""> Hidden → change the file review state
 
-- <img src="images/pen-line.svg" width="18" height="18" alt=""> Rename… → rename the file in the vault
+- **<img src="images/pen-line.svg" width="18" height="18" alt=""> Rename…** → rename the file in the vault
 
-- <img src="images/folder-tree.svg" width="18" height="18" alt=""> Move to… → move the file to another folder
+- **<img src="images/folder-tree.svg" width="18" height="18" alt=""> Move to…** → move the file to another folder
 
-- <img src="images/trash2.svg" width="18" height="18" alt=""> Delete → move **the file** to trash or permanently delete it (depending on Obsidian settings)
+- **<img src="images/trash2.svg" width="18" height="18" alt=""> Delete** → move **the file** to trash or permanently delete it (depending on Obsidian settings)
 
 > [!TIP]
 > **⌘ Epochgram: Clear tracked changes for current file** → clear all file history at once.
