@@ -69,7 +69,7 @@ A Timemap of Your Mind
 
 ### Activating Pro
 - Follow the instructions on [epochgram.com/pro](https://epochgram.com/pro) to get your activation key by email.
-- Paste it into **⛭ License key** to activate.
+- Follow the link in the email or paste the activation key into **⛭ License key** to activate.
 - Epochgram may periodically connect to the cloud service to verify your license.
 
 ## Timeline
