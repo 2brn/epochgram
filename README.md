@@ -192,7 +192,7 @@ Epochgram includes multiple intelligent similarity settings that work on all pla
   
 - **⛭ Topic threshold** → topics use a zero-shot [model](https://huggingface.co/MoritzLaurer/deberta-v3-xsmall-zeroshot-v1.1-all-33) for similarity grouping. When you assign a topic to a note, Epochgram finds related records across the vault. This is useful for broad themes like travel, projects, health, or astrophotography, where notes may share meaning without direct links or tags.
 
-[!TIP]
+> [!TIP]
 Model picker: use ⛭ next to Semantic threshold or Topic threshold to set a Hugging Face model ID, or <img src="images/globe.svg" width="18" height="18" alt=""> to browse models in your browser. On first use, similarity models/runtime may be downloaded.
 
 > [!NOTE]
