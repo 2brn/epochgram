@@ -68,7 +68,7 @@ A Timemap of Your Mind
 > - **Alt + hover cursor** → show preview of the file
 
 ### Activating Pro
-- Follow the instructions on [epochgram.com/pro](https://epochgram.com/pro) to get your activation key by email.
+- Follow the instructions on [epochgram.com/pro](https://www.epochgram.com/pro) to get your activation key by email.
 - Follow the link in the email or paste the activation key into **⛭ License key** to activate.
 - Epochgram may periodically connect to the cloud service to verify your license.
 
@@ -188,9 +188,9 @@ Epochgram includes multiple intelligent similarity settings that work on all pla
 
 - **⛭ Title threshold** → use Jaro–Winkler matching to group notes with similar names or paths (higher values match more, 0 disables it).
 
-- **⛭ Semantic threshold** → semantic similarity uses an embedding [model](https://huggingface.co/TaylorAI/bge-micro-v2) to find notes with similar meaning across the vault. This is useful for notes that describe the same idea in different words.  
+- **⛭ Semantic threshold** → semantic similarity uses an embedding [default model](https://huggingface.co/TaylorAI/bge-micro-v2) to find notes with similar meaning across the vault. This is useful for notes that describe the same idea in different words.  
   
-- **⛭ Topic threshold** → topics use a zero-shot [model](https://huggingface.co/MoritzLaurer/deberta-v3-xsmall-zeroshot-v1.1-all-33) for similarity grouping. When you assign a topic to a note, Epochgram finds related records across the vault. This is useful for broad themes like travel, projects, health, or astrophotography, where notes may share meaning without direct links or tags.
+- **⛭ Topic threshold** → topics use a zero-shot [default model](https://huggingface.co/MoritzLaurer/deberta-v3-xsmall-zeroshot-v1.1-all-33) for similarity grouping. When you assign a topic to a note, Epochgram finds related records across the vault. This is useful for broad themes like travel, projects, health, or astrophotography, where notes may share meaning without direct links or tags.
 
 > [!TIP]
 Model picker: use ⛭ next to Semantic threshold or Topic threshold to set a Hugging Face model ID, or <img src="images/globe.svg" width="18" height="18" alt=""> to browse models in your browser. On first use, similarity models/runtime may be downloaded.
@@ -300,7 +300,7 @@ Epochgram also provides **Rebuild** and **Reset** popups for rebuilding or clear
 ## FAQ
 
 > **How do I get support?**  
-> Check the docs first. If you still cannot find relevant information, feel free to [open an issue on GitHub](https://github.com/2brn/Epochgram/issues) or [ask on the forum](FORUM_LINK). For private matters such as license or account issues, email me at [hi@epochgram.com](mailto:hi@epochgram.com).
+> Check the docs first. If you still cannot find relevant information, feel free to [open an issue on GitHub](https://github.com/2brn/Epochgram/issues). For private matters such as license or account issues, email me at [hi@epochgram.com](mailto:hi@epochgram.com).
 
 > **What should I do if Epochgram feels slow?**  
 > On huge vaults or slower machines, performance may degrade. Try setting **⛭ Semantic threshold** and **⛭ Topic threshold** to `0`, and uncheck **⛭ Auto summarize** and **⛭ Generate epochs**. You can also uncheck **⛭ Enable animation** or reset plugin data.
@@ -311,7 +311,7 @@ Epochgram also provides **Rebuild** and **Reset** popups for rebuilding or clear
 ## Disclosures
 
 - **Epochgram Pro**:
-	- Requires an account, payment, and internet access for license validation; your email address, license key, and basic server-side telemetry may be processed (see [TERMS](https://epochgram.com/terms)).
+	- Requires an account, payment, and internet access for license validation; your email address, license key, and basic server-side telemetry may be processed (see [TERMS](https://www.epochgram.com/terms)).
   - Is not affiliated with Obsidian Sync, Publish, or other Obsidian paid services.
 	- **AI Bridge**: Epochgram starts a local server on `http://127.0.0.1` and opens a local bridge page in Google Chrome to use Chrome's on-device Summarizer API. The bridge communication stays on your device. Chrome [may download](https://developer.chrome.com/docs/ai/summarizer-api) its built-in model(s) (Gemini Nano) the first time you use these APIs. Epochgram may check common OS install paths to locate the Google Chrome executable and open the AI Bridge automatically.
   - **Similarity**: embeddings/topic models and runtime files may be downloaded on first use via `@xenova/transformers` (for example from [Hugging Face](https://huggingface.co)) and ONNX Runtime Web WASM from [jsDelivr](https://cdn.jsdelivr.net/npm/onnxruntime-web@1.14.0/dist/).
