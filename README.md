@@ -98,7 +98,7 @@ Each record appears as *note name ⸱ summary* (if **⛭ Show note name** is ena
 Timeline draws weekdays as <img src="images/circle.svg" width="18" height="18" alt=""> and weekends as <img src="images/circle-filled.svg" width="18" height="18" alt="">. Entries are shown stacked or side by side when space allows. Long entries are truncated with *...*, and if even that does not fit, the day collapses into a single interactive placeholder line <img src="images/minus.svg" width="18" height="18" alt="">, with extra hidden entries shown as `(+n)`. When zoomed out, records collapse into placeholder bars <img src="images/rectangle-horizontal.svg" width="18" height="18" alt="">, with height based on record count.
 
 > [!TIP]
-> A floating label at the top shows the current date on the timeline.
+> A top label shows the current date, and a vertical red line marks the distance from Today.
 
 ## Filters & Search
 
@@ -119,9 +119,12 @@ There are collapsible filters under the <img src="images/settings.svg" width="18
 > [!TIP]
 > - **Enter** → open the matched file
 > - **Alt + Enter** → filter timeline records by the current search
-> - *Marked* → show only marked records
+> - **Marked** → show only marked records
 
 ## Actions
+
+> [!TIP]
+> Enable **⛭ Simple mode** for a minimal UI: red marks, hide/show review, toggle filters, and fewer controls.
 
 Files in the vault are never modified unless you run an explicit file action. All attributes are stored in Epochgram data files, not in vault files.
 
