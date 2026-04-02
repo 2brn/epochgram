@@ -18,13 +18,13 @@ A Timemap of Your Mind
 </br>
 
 > [!CAUTION]
-> **Pain**: Your vault fills up with quick capture notes. A week later, you've lost the thread. A month later, you can't reconstruct the story — and you don't see the themes, the slow stretches, or the bursts of activity.
+> **<font color="#9a7a64">Pain</font>**: Your vault fills up with quick capture notes. A week later, you've lost the thread. A month later, you can't reconstruct the story — and you don't see the themes, the slow stretches, or the bursts of activity.
 
 > [!TIP]
-> **Solution**: Epochgram turns your vault into a scalable timeline retrospective. Browse day by day to scan changes in order, spot bigger patterns across unsorted notes, and edit directly on the timeline — so you can focus on what really matters.
+> **<font color="#5f9e79">Solution</font>**: Epochgram turns your vault into a scalable timeline retrospective. Browse day by day to scan changes in order, spot bigger patterns across unsorted notes, and edit directly on the timeline — so you can focus on what really matters.
 
 > [!IMPORTANT]
-> **Epochgram Pro** adds even more overview:
+> **<font color="#c14d58">Epochgram Pro</font>** adds even more overview:
 > - On-device AI summarization (via Google Chrome)
 > - Epochs: a zoomable time map, from day details to big-picture overview, with support for standalone HTML export
 > - Similarity: find related notes via links, tags, titles, and semantic matching
@@ -59,9 +59,9 @@ A Timemap of Your Mind
 > - **Click (tap) record** → open file; **click date** → open daily note
 > - **Ctrl + click record** → open file in a  new tab 
 > - **Right-click (long-tap) record/date** → open context menu  
-> - **Right-click (long-tap) on empty space** → toggle Epochs view (Pro)
-> - **Double-click (double-tap) on empty space** → scroll to Today
-> - **Double-click (double-tap) on date** → create new Daily note
+> - **Right-click (long-tap) empty space** → toggle Epochs view (Pro)
+> - **Double-click (double-tap) empty space** → scroll to Today
+> - **Double-click (double-tap) date** → create new Daily note
 > - **Wheel (pan)** → scroll
 > - **Ctrl + wheel (pinch)** → zoom
 > - **Alt + wheel** or **Alt + up/down (two-finger tap)** → scroll to next record
@@ -96,7 +96,7 @@ The timeline is a scrollable, zoomable surface that collects records from all fi
 
 Each record appears as *note name ⸱ summary* (if **⛭ Show note name** is enabled), *summary*, or *image.jpg* for non-text files. The summary is either the first _N_ words, markdown-aware (**⛭ Summary length** setting) or an AI summary (Pro). A custom summary can be set with YAML (`description: ...`) or from the context menu; manual summaries are never overwritten by AI, and clearing the field removes the override.
 
-Timeline draws weekdays as <img src="images/circle.svg" width="18" height="18" alt=""> and weekends as <img src="images/circle-filled.svg" width="18" height="18" alt="">. Entries are shown stacked or side by side when space allows. Long entries are truncated with *...*, and if even that does not fit, the day collapses into a single interactive placeholder line <img src="images/minus.svg" width="18" height="18" alt="">, with extra hidden entries shown as `(+n)`. When zoomed out, records collapse into placeholder bars <img src="images/rectangle-horizontal.svg" width="18" height="18" alt="">, with height based on record count.
+Timeline draws today as <img src="images/circle-today.svg" width="18" height="18" alt="">, weekdays as <img src="images/circle.svg" width="18" height="18" alt=""> and weekends as <img src="images/circle-filled.svg" width="18" height="18" alt="">. Entries are shown stacked or side by side when space allows. Long entries are truncated with *...*, and if even that does not fit, the day collapses into a single interactive placeholder line <img src="images/minus.svg" width="18" height="18" alt="">, with extra hidden entries shown as `(+n)`. When zoomed out, records collapse into placeholder bars <img src="images/rectangle-horizontal.svg" width="18" height="18" alt="">, with height based on record count.
 
 > [!TIP]
 > A top label shows the current date, and a vertical red line marks the distance from Today.
@@ -115,7 +115,7 @@ There are collapsible filters under the <img src="images/settings.svg" width="18
 
 - <img src="images/hourglass.svg" width="18" height="18" alt=""> → toggle epochs view (Pro)
 
-**A search bar** at the bottom lets you search timeline records and shows the number of matches. Click it or run **⌘ Epochgram: Search timeline**. Search covers file names, content, AI summaries, epochs, and more, with support for fuzzy search and `"exact text"` matching.
+A search bar at the bottom lets you search timeline records and shows the number of matches. Click it or run **⌘ Epochgram: Search timeline**. Search covers file names, content, AI summaries, epochs, and more, with support for fuzzy search and `"exact text"` matching.
   
 > [!TIP]
 > - **Enter** → open the matched file
@@ -211,7 +211,7 @@ When you open a record, all related records on the timeline are highlighted usin
 
 > [!TIP]
 > - **⌘ Epochgram: Toggle mark for current file** or the file context menu → assign the next unique color from the palette.
-> - In addition to the standard red-to-violet palette, an extended palette is available in the submenu. This makes it easy to choose colors by activity. For example, I use <font color="#ADD8E6">Glacier</font> for ski trip reports.
+> - In addition to the standard red-to-violet palette, an extended palette is available in the submenu. This makes it easy to choose colors by activity. For example, I use <font color="#ADD8E6">glacier</font> for ski trip reports.
 
 ## AI Bridge (Pro, desktop-only)
 
@@ -226,12 +226,7 @@ On first use, Chrome may need a user gesture to download the built-in Gemini Nan
 You can use context placeholders. File summaries support `{{filePath}}` (full file path), `{{fileName}}` (file name), and `{{related}}` (summaries of related records). Epoch summaries support `{{bucket}}` (`day`, `2days`, `4days`, `week`, `2weeks`, `month`, `3months`, `6months`, `year`) and `{{related}}`.
 
 > [!TIP]
-> Chrome's built-in Gemini Nano currently officially supports English, Spanish, and Japanese for input and output text. You can still try forcing another output language in the prompt context; for example, I used this context for Ukrainian:
->
-> ```
-> OUTPUT ONLY IN UKRAINIAN!
-> ...
-> ```
+> Chrome's built-in Gemini Nano currently officially supports English, Spanish, and Japanese for input and output text. You can still try forcing another output language in the prompt context; for example, I used this context for Ukrainian: `OUTPUT ONLY IN UKRAINIAN!`.
 
 ## AI Summaries & Epochs (Pro, desktop-only)
 
