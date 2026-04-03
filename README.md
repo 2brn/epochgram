@@ -18,10 +18,10 @@ A Timemap of Your Mind
 </br>
 
 > [!CAUTION]
-> **<font color="#f6c177">Pain</font>**: Your vault fills up with quick capture notes. A week later, you've lost the thread. A month later, you can't reconstruct the story — and you don't see the themes, the slow stretches, or the bursts of activity.
+> **<font color="#9a7a64">Pain</font>**: Your vault fills up with quick capture notes. A week later, you've lost the thread. A month later, you can't reconstruct the story — and you don't see the themes, the slow stretches, or the bursts of activity.
 
 > [!TIP]
-> **<font color="#9ccfd8">Solution</font>**: Epochgram turns your vault into a scalable timeline retrospective. Browse day by day to scan changes in order, spot bigger patterns across unsorted notes, and edit directly on the timeline — so you can focus on what really matters.
+> **<font color="#5f9e79">Solution</font>**: Epochgram turns your vault into a scalable timeline retrospective. Browse day by day to scan changes in order, spot bigger patterns across unsorted notes, and edit directly on the timeline — so you can focus on what really matters.
 
 > [!IMPORTANT]
 > **<font color="#c14d58">Epochgram Pro</font>** adds even more overview:
