@@ -18,10 +18,10 @@ A Timemap of Your Mind
 </br>
 
 > [!CAUTION]
-> **<font color="#9a7a64">Pain</font>**: Your vault fills up with quick capture notes. A week later, you've lost the thread. A month later, you can't reconstruct the story — and you don't see the themes, the slow stretches, or the bursts of activity.
+> **<font color="#f6c177">Pain</font>**: Your vault fills up with quick capture notes. A week later, you've lost the thread. A month later, you can't reconstruct the story — and you don't see the themes, the slow stretches, or the bursts of activity.
 
 > [!TIP]
-> **<font color="#5f9e79">Solution</font>**: Epochgram turns your vault into a scalable timeline retrospective. Browse day by day to scan changes in order, spot bigger patterns across unsorted notes, and edit directly on the timeline — so you can focus on what really matters.
+> **<font color="#9ccfd8">Solution</font>**: Epochgram turns your vault into a scalable timeline retrospective. Browse day by day to scan changes in order, spot bigger patterns across unsorted notes, and edit directly on the timeline — so you can focus on what really matters.
 
 > [!IMPORTANT]
 > **<font color="#c14d58">Epochgram Pro</font>** adds even more overview:
@@ -158,7 +158,7 @@ Record context menu:
 
 Epochgram is designed around the [C.O.D.E.](https://fortelabs.com/blog/basboverview/) process (capture → organize → distill → express). New or indexed files appear as *Draft*. After organizing the file and extracting the key points, the record can be marked as **Reviewed**. If the file changes later, the record returns to *Draft*, indicating it may need review again.
 
-Not every record deserves space on the timeline. Some, such as minor tracked changes, can be marked **Hidden**. Hidden records disappear from the timeline or are muted when the relevant filter is enabled.
+Not every record deserves space on the timeline. Some, such as minor tracked changes, can be marked **Hidden**. Hidden records either disappear from the timeline or are muted when the corresponding filter is on.
 
 > [!TIP]
 > **⌘ Epochgram: Review all** → mark all records across the vault as reviewed.
