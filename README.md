@@ -64,7 +64,7 @@ A Timemap of Your Mind
 > - **Double-click (double-tap) date** → create new Daily note
 > - **Wheel (pan)** → scroll
 > - **Ctrl + wheel (pinch)** → zoom
-> - **Alt + wheel** or **Alt + up/down (two-finger tap)** → scroll to next record
+> - **Alt + wheel** or **Alt + up/down (two-finger tap)** → scroll to next/previous similar record
 > - **Shift + wheel** → zoom around the current record
 > - **Alt + hover cursor** → show preview of the file
 
@@ -156,9 +156,9 @@ Record context menu:
 
 ## Review State
 
-Epochgram is designed around the [C.O.D.E.](https://fortelabs.com/blog/basboverview/) process (capture → organize → distill → express). New or indexed files appear as *Draft*. After organizing the file and extracting the key points, the record can be marked as **Reviewed**. If the file changes later, the record returns to *Draft*, indicating it may need review again. The **Draft/Reviewed** actions apply to all records of the same file.
+Epochgram is designed around the [C.O.D.E.](https://fortelabs.com/blog/basboverview/) process (capture → organize → distill → express). New or indexed files appear as *Draft*. After organizing the file and extracting the key points, the record can be marked as **Reviewed**. If the file changes later, the record returns to *Draft*, indicating it may need review again.
 
-Not every record deserves space on the timeline. Some, such as minor tracked changes, can be marked **Hidden**. Hidden is applied per record, not per file. Hidden records disappear from the timeline or are muted when the relevant filter is enabled.
+Not every record deserves space on the timeline. Some, such as minor tracked changes, can be marked **Hidden**. Hidden records disappear from the timeline or are muted when the relevant filter is enabled.
 
 > [!TIP]
 > **⌘ Epochgram: Review all** → mark all records across the vault as reviewed.
@@ -166,7 +166,7 @@ Not every record deserves space on the timeline. Some, such as minor tracked cha
 
 ## Recurring (Pro)
 
-You can create recurring records, which will appear on the timeline. To add one, set the `repeat` property in YAML. Supported formats (see [RRULE](https://icalendar.org/iCalendar-RFC-5545/3-8-5-3-recurrence-rule.html)):
+You can create recurring records, which will appear on the timeline. To add one, set the `repeat` or `recur` property in YAML. Supported formats (see [RRULE](https://icalendar.org/iCalendar-RFC-5545/3-8-5-3-recurrence-rule.html)):
 
 ```yaml
 ---
