@@ -18,18 +18,18 @@ A Timemap of Your Mind
 </br>
 
 > [!CAUTION]
-> **<font color="#9a7a64">Pain</font>**: Your vault fills up with quick capture notes. A week later, you've lost the thread. A month later, you can't reconstruct the story — and you don't see the themes, the slow stretches, or the bursts of activity.
+> **<font color="#9a7a64">Pain</font>**. Your vault fills up with quick capture notes. A week later, you've lost the thread. A month later, you can't reconstruct the story — and you don't see the themes, the slow stretches, or the bursts of activity.
 
 > [!TIP]
-> **<font color="#5f9e79">Solution</font>**: Epochgram turns your notes into a scalable timeline retrospective. Browse day by day to scan changes in order, spot bigger patterns across unsorted notes, and edit directly on the timeline — so you can focus on what really matters.
+> **<font color="#5f9e79">Solution</font>**. Epochgram turns your notes into a scalable timeline retrospective. Browse day by day to scan changes in order, spot bigger patterns across unsorted notes, and edit directly on the timeline — so you can focus on what really matters.
 
 > [!IMPORTANT]
 > **<font color="#c14d58">Epochgram Pro</font>** adds even more overview:
-> - On-device AI summarization (via Google Chrome)
-> - Epochs: a zoomable time map, from day details to big-picture overview, with support for standalone HTML export
-> - Similarity: find related notes via links, tags, titles, and semantic matching
-> - Topic clusters with auto detection
-> - Content change history with tracked edits
+> - On-device AI summaries via Google Chrome
+> - Epochs: a zoomable time map, from daily detail to a year overview
+> - Find related notes through links, tags, titles, and semantic similarity
+> - Topic clustering and highlighted related groups
+> - Tracked content edits
 > - Recurring events
 
 ## Table of Contents
@@ -67,6 +67,7 @@ A Timemap of Your Mind
 > - **Alt + wheel** or **Alt + up/down (two-finger tap)** → scroll to next/previous similar record
 > - **Shift + wheel** → zoom around the current record
 > - **Alt + hover cursor** → show preview of the file
+> - **Drag-n-drop record** → change its date
 
 ### Activating Pro
 - Follow the instructions on [epochgram.com/pro](https://www.epochgram.com/pro) to get your activation key by email.
@@ -77,22 +78,30 @@ A Timemap of Your Mind
 
 The timeline is a scrollable, zoomable surface that collects records from all files in the vault, excluding folders ignored in Obsidian settings. It detects dates and date ranges in different formats and renders *one record per file per day*, in the following priority order:
 
-- Tracked edits (Pro) → per-block edit history (<img src="images/pen.svg" width="16" height="16" alt=""> added/modified, <img src="images/pen-line.svg" width="16" height="16" alt=""> removed); only when **⛭ Track changes** is enabled
-- Content dates → a date (range) parsed from note content
-- Filename dates → a date (range) parsed from the filename
-- Frontmatter date → a date from YAML property `date`
-- Created dates → file creation date
+- Tracked edits (Pro) → per-block edit history: <img src="images/pen.svg" width="16" height="16" alt=""> added/modified, <img src="images/pen-line.svg" width="16" height="16" alt=""> removed; requires **⛭ Track changes**
+- Content dates → parsed content date (range), including recurring dates (Pro)
+
+Anchors:
+- Filename date → parsed filename date (range)
+- Frontmatter date → YAML `date` property
+- Created date → file creation time
+
+Each file has one anchor record that represents its canonical date. All other record types are optional. Drag and drop works only for anchor records and updates the YAML `date` property, and the filename for daily notes.
 
 > [!NOTE]
-> *my_note.md* → placed by its file creation date.  
-> *01.01.2026.md* → January 1, 2026.  
-> ```yaml
+> ```text
+> `my_note.md` → anchored by file creation date
+>
+> `daily-01.01.2026.md` → anchored by filename
+>
 > ---
-> date: 2026-02-02 # → override date
+> date: 2026-02-02 # → anchored by YAML `date`
 > ---
+> 
+> May 1, 2026 → record by parsed content
+> 
+> Added new line today... → record by tracked change for today
 > ```
-> *May 1, 2026* in content → adds another timeline record.  
-> **Track changes (Pro)**  enabled → edits appear on the timeline day by day.
 
 Each record appears as *note name ⸱ summary* (if **⛭ Show note name** is enabled), *summary*, or *image.jpg* for non-text files. The summary is either the first _N_ words, markdown-aware (**⛭ Summary length** setting) or an AI summary (Pro). A custom summary can be set with YAML (`description: ...`) or from the context menu; manual summaries are never overwritten by AI, and clearing the field removes the override.
 
@@ -107,7 +116,7 @@ There are collapsible filters under the <img src="images/settings.svg" width="18
 
 - <img src="images/scan-eye.svg" width="18" height="18" alt=""> → drafts & reviewed; <img src="images/pencil-ruler.svg" width="18" height="18" alt=""> → drafts; <img src="images/eye.svg" width="18" height="18" alt=""> → drafts & reviewed & hidden
 
-- <img src="images/history.svg" width="18" height="18" alt=""> → show tracked edits (Pro); only when **⛭ Track changes** is On
+- <img src="images/history.svg" width="18" height="18" alt=""> → show tracked edits (Pro); requires **⛭ Track changes**
 
 - <img src="images/calendar.svg" width="18" height="18" alt=""> → show content dates; <img src="images/square-code.svg" width="18" height="18" alt=""> → including YAML
 
