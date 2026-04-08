@@ -327,8 +327,8 @@ Epochgram also provides **Rebuild** and **Reset** popups for rebuilding or clear
 > **What should I do if Epochgram feels slow?**  
 > On huge vaults or slower machines, performance may degrade. Try setting **⛭ Semantic threshold** and **⛭ Topic threshold** to `0`, and uncheck **⛭ Auto summarize** and **⛭ Generate epochs**. You can also uncheck **⛭ Enable animation** or reset plugin data.
 
-> **What should I do if some dates are missing?**  
-> Try rebuilding the index.
+> **What should I do if some records are missing?**  
+> Try rebuilding the index or reload Obsidian.
 
 ## Disclosures
 
