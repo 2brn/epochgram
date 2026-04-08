@@ -57,17 +57,17 @@ A Timemap of Your Mind
 
 > [!TIP]
 > - **Click (tap) record** → open file; **click date** → open daily note
-> - **Ctrl + click record** → open file in a  new tab 
+> - **Ctrl + click record** → open file in a  new tab</br></br>
 > - **Right-click (long-tap) record/date** → open context menu  
-> - **Right-click (long-tap) empty space** → toggle Epochs view (Pro)
+> - **Right-click (long-tap) empty space** → toggle Epochs view (Pro)</br></br>
 > - **Double-click (double-tap) empty space** → scroll to Today
-> - **Double-click (double-tap) date** → create new Daily note
+> - **Double-click (double-tap) date** → create new Daily note</br></br>
 > - **Wheel (pan)** → scroll
 > - **Ctrl + wheel (pinch)** → zoom
 > - **Alt + wheel** or **Alt + up/down (two-finger tap)** → scroll to next/previous similar record
-> - **Shift + wheel** → zoom around the current record
+> - **Shift + wheel** → zoom around the current record</br></br>
 > - **Alt + hover cursor** → show preview of the file
-> - **Drag-n-drop record** → change its date
+> - **Drag + drop record** → change its date
 
 ### Activating Pro
 - Follow the instructions on [epochgram.com/pro](https://www.epochgram.com/pro) to get your activation key by email.
@@ -80,15 +80,15 @@ A Timemap of Your Mind
 
 The timeline is a scrollable, zoomable surface that collects records from all files in the vault, excluding folders ignored in Obsidian settings. It detects dates and date ranges in different formats and renders *one record per file per day*, in the following priority order:
 
-- Tracked edits (Pro) → per-block edit history: <img src="images/pen.svg" width="16" height="16" alt=""> added/modified, <img src="images/pen-line.svg" width="16" height="16" alt=""> removed; requires **⛭ Track changes**
-- Content dates → parsed content date (range), including recurring dates (Pro)
+- <img src="images/pen.svg" width="16" height="16" alt=""> **Tracked change** (Pro) → per-block edit history excluding YAML; requires **⛭ Track changes**
+- <img src="images/calendar.svg" width="16" height="16" alt=""> **Content date** → parsed content date (range), including **<img src="images/recurring.svg" width="16" height="16" alt=""> Recurring dates** (Pro)
 
 Anchors:
-- Filename date → parsed filename date (range)
-- Frontmatter date → YAML `date` property
-- Created date → file creation time
+- **Filename date** → parsed filename date
+- **Frontmatter date** → YAML `date` property
+- **Created date** → file creation time
 
-Each file has one anchor record that represents its canonical date. All other record types are optional. Drag and drop works only for anchor records and updates the YAML `date` property, and the filename for daily notes.
+Each file has one anchor record that represents its canonical date. All other record types are optional. Drag and drop works only for anchor records, it updates the YAML `date` property, and the filename for daily notes.
 
 > [!NOTE]
 > ```text
@@ -120,9 +120,9 @@ There are collapsible filters under the <img src="images/settings.svg" width="18
 
 - <img src="images/scan-eye.svg" width="18" height="18" alt=""> → drafts & reviewed; <img src="images/pencil-ruler.svg" width="18" height="18" alt=""> → drafts; <img src="images/eye.svg" width="18" height="18" alt=""> → drafts & reviewed & hidden
 
-- <img src="images/history.svg" width="18" height="18" alt=""> → show tracked edits (Pro); requires **⛭ Track changes**
+- <img src="images/history.svg" width="18" height="18" alt=""> → show tracked changes (Pro); requires **⛭ Track changes**
 
-- <img src="images/calendar.svg" width="18" height="18" alt=""> → show content dates; <img src="images/square-code.svg" width="18" height="18" alt=""> → including YAML
+- <img src="images/calendar.svg" width="18" height="18" alt=""> → show content dates, ranges, recurring; <img src="images/square-code.svg" width="18" height="18" alt=""> → including YAML
 
 - <img src="images/paperclip.svg" width="18" height="18" alt=""> → show non-text files
 
@@ -158,13 +158,13 @@ Record context menu:
 
 - **<img src="images/highlighter.svg" width="18" height="18" alt=""> Mark** → highlight a record or similar records with a palette color; also available via **⌘ Epochgram: Toggle mark for current file**
 
-- **<img src="images/pencil-ruler.svg" width="18" height="18" alt=""> Draft** → <img src="images/eye.svg" width="18" height="18" alt=""> Reviewed → <img src="images/eye-off.svg" width="18" height="18" alt=""> Hidden → change the file review state
+- **<img src="images/pencil-ruler.svg" width="18" height="18" alt=""> Draft**, **<img src="images/eye.svg" width="18" height="18" alt=""> Review**, **<img src="images/eye-off.svg" width="18" height="18" alt=""> Hide** → change the file review state
 
 - **<img src="images/pen-line.svg" width="18" height="18" alt=""> Rename…** → rename the file in the vault
 
 - **<img src="images/folder-tree.svg" width="18" height="18" alt=""> Move to…** → move the file to another folder
 
-- **<img src="images/trash2.svg" width="18" height="18" alt=""> Delete** → move **the file** to trash or permanently delete it (depending on Obsidian settings)
+- **<img src="images/trash2.svg" width="18" height="18" alt=""> Delete** → **permanently delete the file**, or move it to trash, depending on Obsidian settings
 
 > [!TIP]
 > **⌘ Epochgram: Clear tracked changes for current file** → clear all file history at once.
@@ -270,7 +270,7 @@ Epochgram supports the following custom YAML properties:
 date: 2026-01-01 # override the anchor date
 description: my summary # override the summary
 noindex: # exclude this file from all indexing
-notracked: # don't use tracked edits for this file
+notracked: # don't use tracked changes for this file
 noparsed: # don't parse dates from this file's content
 nosimilar: # don't match this file by similarity
 similar: [links, tags, title, semantics, topics] # match similarity only by these relations
