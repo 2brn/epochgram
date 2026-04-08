@@ -17,14 +17,10 @@ A Timemap of Your Mind
 <p align="center"><img src="images/epochgram-full.png" alt="Epochgram screenshot"></p>
 </br>
 
-> [!CAUTION]
-> **<font color="#9a7a64">Pain</font>**. Your vault fills up with quick capture notes. A week later, you've lost the thread. A month later, you can't reconstruct the story — and you don't see the themes, the slow stretches, or the bursts of activity.
 
-> [!TIP]
-> **<font color="#5f9e79">Solution</font>**. Epochgram turns your notes into a scalable timeline retrospective. Browse day by day to scan changes in order, spot bigger patterns across unsorted notes, and edit directly on the timeline — so you can focus on what really matters.
-
-> [!IMPORTANT]
-> **<font color="#c14d58">Epochgram Pro</font>** adds even more overview:
+> <font color="#c14d58">Pain</font>. Your vault fills up with quick capture notes. A week later, you've lost the thread. A month later, you can't reconstruct the story — and you don't see the themes, the slow stretches, or the bursts of activity.</br></br>
+> <font color="#c14d58">Solution</font>. Epochgram turns your notes into a scalable timeline retrospective. Browse day by day to scan changes in order, spot bigger patterns across unsorted notes, and edit directly on the timeline — so you can focus on what really matters.</br></br>
+> <font color="#c14d58">Epochgram Pro</font> adds even more overview:
 > - On-device AI summaries via Google Chrome
 > - Epochs: a zoomable time map, from daily detail to a year overview
 > - Find related notes through links, tags, titles, and semantic similarity
@@ -55,6 +51,8 @@ A Timemap of Your Mind
 - Click the <img src="images/epochgram_bw.svg" width="18" height="18" alt="Epochgram"> ribbon icon or run **⌘ Epochgram: Open timeline** to show the timeline in the right panel.
 - To open it automatically on launch, enable **⛭ Open timeline on startup**.
 
+### Cheatsheet
+
 > [!TIP]
 > - **Click (tap) record** → open file; **click date** → open daily note
 > - **Ctrl + click record** → open file in a  new tab</br></br>
@@ -80,13 +78,13 @@ A Timemap of Your Mind
 
 The timeline is a scrollable, zoomable surface that collects records from all files in the vault, excluding folders ignored in Obsidian settings. It detects dates and date ranges in different formats and renders *one record per file per day*, in the following priority order:
 
-- <img src="images/pen.svg" width="16" height="16" alt=""> **Tracked change** (Pro) → per-block edit history excluding YAML; requires **⛭ Track changes**
-- <img src="images/calendar.svg" width="16" height="16" alt=""> **Content date** → parsed content date (range), including **<img src="images/recurring.svg" width="16" height="16" alt=""> Recurring dates** (Pro)
+- <img src="images/pen.svg" width="16" height="16" alt="">**Tracked changes** (Pro) → per-block edit history excluding YAML; requires **⛭ Track changes**
+- <img src="images/calendar.svg" width="16" height="16" alt="">**Content dates** → parsed content date (range), including <img src="images/recurring.svg" width="16" height="16" alt="">**Recurring dates** (Pro)
 
 Anchors:
-- **Filename date** → parsed filename date
-- **Frontmatter date** → YAML `date` property
-- **Created date** → file creation time
+- **Filename dates** → parsed filename date
+- **Frontmatter dates** → YAML `date` property
+- **Created dates** → file creation time
 
 Each file has one anchor record that represents its canonical date. All other record types are optional. Drag and drop works only for anchor records, it updates the YAML `date` property, and the filename for daily notes.
 
