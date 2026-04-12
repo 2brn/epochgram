@@ -1,9 +1,9 @@
 {
 	"id": "epochgram",
 	"name": "Epochgram",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"minAppVersion": "1.12.4",
-	"description": "An AI-powered timemap of your mind (Closed source).",
+	"description": "A timemap of your mind (Closed source).",
 	"author": "Andriy Babets",
 	"authorUrl": "https://www.epochgram.com",
 	"isDesktopOnly": false
