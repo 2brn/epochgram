@@ -88,7 +88,7 @@ The timeline is a scrollable, zoomable surface that collects records from all fi
 | --- | --- |
 | <img src="images/pen.svg" width="16" height="16" alt=""> **Tracked changes** | Per-block edit history excluding YAML. Requires **⛭ Track changes** (Pro). |
 | <img src="images/calendar.svg" width="16" height="16" alt=""> **Content dates** | Parsed content date (ranges), including <img src="images/recurring.svg" width="16" height="16" alt=""> **Recurring dates** (Pro). |
-| -- Anchors -- |
+| -- Anchors -- | - - |
 | **Filename dates** | Parsed filename date. |
 | **Frontmatter dates** | YAML `date` property. |
 | **Created dates** | File creation time. |
