@@ -21,12 +21,12 @@ A Timemap of Your Mind
 > <font color="#c14d58">Pain</font>. Your vault fills up with quick capture notes. A week later, you've lost the thread. A month later, you can't reconstruct the story — and you don't see the themes, the slow stretches, or the bursts of activity.</br></br>
 > <font color="#c14d58">Solution</font>. Epochgram turns your notes into a scalable timeline retrospective. Browse day by day to scan changes in order, spot bigger patterns across unsorted notes, and edit directly on the timeline — so you can focus on what really matters.</br></br>
 > <font color="#c14d58">Epochgram Pro</font> adds even more overview:
-> - On-device AI summaries via Google Chrome
-> - Epochs: a zoomable time map, from daily detail to a year overview
-> - Find related notes through links, tags, titles, and semantic similarity
-> - Topic clustering and highlighted related groups
-> - Tracked content edits
-> - Recurring events
+> - On-device AI summaries via Google Chrome.
+> - Epochs: a zoomable time map, from daily detail to a year overview.
+> - Find related notes through links, tags, titles, and semantic similarity.
+> - Topic clustering and highlighted related groups.
+> - Tracked content edits.
+> - Recurring events.
 
 ## Table of Contents
 
@@ -53,19 +53,25 @@ A Timemap of Your Mind
 
 ### Cheatsheet
 
-> [!TIP]
-> **Click** (tap) record → open file; **click date** → open daily note.</br>
-> **Ctrl - click** record → open file in a new tab.</br></br>
-> **Right - click** (long-tap) record/date → open context menu.</br>
-> **Right - click** (long-tap) **empty space** → toggle Epochs view (Pro).</br></br>
-> **Double - click** (double-tap) **empty space** → scroll to Today.</br>
-> **Double - click** (double-tap) **date** → create new Daily note.</br></br>
-> **Wheel** (pan) → scroll.</br>
-> **Ctrl - wheel** (pinch) → zoom.</br>
-> **Alt - wheel** or **Alt - up/down** (two-finger tap) → scroll to next/previous similar record.</br>
-> **Shift - wheel** → zoom around the current record.</br></br>
-> **Alt - hover** cursor → show preview of the file.</br>
-> **Drag - drop** record → change its date.
+| Shortcut | Description |
+| --- | --- |
+| **Click / tap record** | Open the file |
+| **Click / tap date** | Open the daily note |
+| **Ctrl + click record** | Open the file in a new tab |
+| | |
+| **Right-click / long-tap record or date** | Open the context menu |
+| **Right-click / long-tap empty space** | Toggle Epochs view (Pro) |
+| | |
+| **Double-click / double-tap empty space** | Scroll to Today |
+| **Double-click / double-tap date** | Create a new daily note |
+| | |
+| **Wheel / pan** | Scroll |
+| **Ctrl + wheel / pinch** | Zoom |
+| **Alt + wheel / Alt + Up/Down / two-finger tap** | Jump to the next or previous similar record |
+| **Shift + wheel** | Zoom around the current record |
+| | |
+| **Alt + hover** | Show the file preview |
+| **Drag and drop record** | Change its date |
 
 ### Activating Pro
 - Follow the instructions on [epochgram.com/pro](https://www.epochgram.com/pro) to get your activation key by email.
@@ -78,13 +84,14 @@ A Timemap of Your Mind
 
 The timeline is a scrollable, zoomable surface that collects records from all files in the vault, excluding folders ignored in Obsidian settings. It detects dates and date ranges in different formats and renders *one record per file per day*, in the following priority order:
 
-- <img src="images/pen.svg" width="16" height="16" alt="">**Tracked changes** (Pro) → per-block edit history excluding YAML, requires **⛭ Track changes**.
-- <img src="images/calendar.svg" width="16" height="16" alt="">**Content dates** → parsed content date (range), including <img src="images/recurring.svg" width="16" height="16" alt="">**Recurring dates** (Pro).
-
-Anchors:
-- **Filename dates** → parsed filename date.
-- **Frontmatter dates** → YAML `date` property.
-- **Created dates** → file creation time.
+| Source | Description |
+| --- | --- |
+| <img src="images/pen.svg" width="16" height="16" alt=""> **Tracked changes** | Per-block edit history excluding YAML. Requires **⛭ Track changes** (Pro). |
+| <img src="images/calendar.svg" width="16" height="16" alt=""> **Content dates** | Parsed content date (ranges), including <img src="images/recurring.svg" width="16" height="16" alt=""> **Recurring dates** (Pro). |
+| -- Anchors -- |
+| **Filename dates** | Parsed filename date. |
+| **Frontmatter dates** | YAML `date` property. |
+| **Created dates** | File creation time. |
 
 Each file has one anchor record that represents its canonical date. All other record types are optional. Drag and drop works only for anchor records, it updates the YAML `date` property, and the filename for daily notes.
 
@@ -98,9 +105,9 @@ Each file has one anchor record that represents its canonical date. All other re
 > date: 2026-02-02 # → anchored by YAML `date`
 > ---
 > 
-> May 1, 2026 → record by parsed content
+> May 1, 2026 diary record → record by parsed content
 > 
-> Added new line today... → record by tracked change for today
+> Added new line... → record by tracked change on the date of the change
 > ```
 
 Each record appears as *note name ⸱ summary* (when **⛭ Show note name** is enabled). The summary is either the first _N_ words, markdown-aware (**⛭ Summary length** setting) or an AI summary (Pro). A custom summary can be set with YAML (`description: ...`) or from the context menu; manual summaries are never overwritten by AI, and clearing the field removes the override.
@@ -116,22 +123,29 @@ Timeline draws today as <img src="images/circle-today.svg" width="18" height="18
 
 There are collapsible filters under the <img src="images/settings.svg" width="18" height="18" alt=""> button.
 
-- <img src="images/scan-eye.svg" width="18" height="18" alt=""> → drafts & reviewed; <img src="images/pencil-ruler.svg" width="18" height="18" alt=""> → drafts; <img src="images/eye.svg" width="18" height="18" alt=""> → drafts & reviewed & hidden.
+| Filter | Description |
+| --- | --- |
+| <img src="images/scan-eye.svg" width="18" height="18" alt=""> | Drafts & reviewed. |
+| <img src="images/pencil-ruler.svg" width="18" height="18" alt=""> | Drafts. |
+| <img src="images/eye.svg" width="18" height="18" alt=""> | Drafts, reviewed, and hidden. |
+| | |
+| <img src="images/history.svg" width="18" height="18" alt=""> | Show tracked changes. |
+| | |
+| <img src="images/calendar.svg" width="18" height="18" alt=""> | Show content dates, ranges, and recurring. |
+| <img src="images/square-code.svg" width="18" height="18" alt=""> | Show content dates including YAML. |
+| | |
+| <img src="images/paperclip.svg" width="18" height="18" alt=""> | Show non-text files. |
+| | |
+| <img src="images/hourglass.svg" width="18" height="18" alt=""> | Toggle Epochs view (Pro). |
 
-- <img src="images/history.svg" width="18" height="18" alt=""> → show tracked changes (Pro); requires **⛭ Track changes**.
-
-- <img src="images/calendar.svg" width="18" height="18" alt=""> → show content dates, ranges, recurring; <img src="images/square-code.svg" width="18" height="18" alt=""> → including YAML.
-
-- <img src="images/paperclip.svg" width="18" height="18" alt=""> → show non-text files.
-
-- <img src="images/hourglass.svg" width="18" height="18" alt=""> → toggle epochs view (Pro).
-
-A search bar at the bottom lets you search timeline records and shows the number of matches. Click it or run **⌘ Epochgram: Search timeline**. Search covers file names, content, AI summaries, epochs, with support for fuzzy search and `"exact text"` matching.
+A search bar at the bottom lets you search timeline records and shows the number of matches. Click it or run **⌘ Epochgram: Search timeline**. Search covers file names, content, AI summaries, epochs, with support for fuzzy search.
   
-> [!TIP]
-> **Enter** → open the matched file.</br>
-> **Alt - Enter** → filter timeline records by the current query.</br>
-> **Marked** → show only marked records.
+| Search shortcut | Description |
+| --- | --- |
+| **Enter** | Open the matched file. |
+| **Alt + Enter** | Filter timeline records by the current query. |
+| **Marked** | Show only marked records. |
+| **"exact"** | Find exact string. |
 
 ## Actions
 
@@ -144,23 +158,17 @@ Files in the vault are never modified unless you run an explicit file action. Al
 
 Record context menu:
 
-- **<img src="images/square-pen.svg" width="18" height="18" alt=""> Edit summary** → edit the record summary.
-
-- **<img src="images/sparkles.svg" width="18" height="18" alt=""> Summarize AI** → summarize the record on-device with Chrome AI Bridge (Pro, desktop-only).
-
-- **<img src="images/tag.svg" width="18" height="18" alt=""> Edit topic…** → open the topics assignment popup; to remove topics, clear the input (Pro).
-
-- **<img src="images/pin.svg" width="18" height="18" alt=""> Pin** → pin the file at the *Today* position; same **⌘ Epochgram: Toggle pin for current file**.
-
-- **<img src="images/highlighter.svg" width="18" height="18" alt=""> Mark** → highlight similar records with a color; same **⌘ Epochgram: Toggle mark for current file**.
-
-- **<img src="images/pencil-ruler.svg" width="18" height="18" alt=""> Draft**, **<img src="images/eye.svg" width="18" height="18" alt=""> Review**, **<img src="images/eye-off.svg" width="18" height="18" alt=""> Hide** → change the file review state.
-
-- **<img src="images/pen-line.svg" width="18" height="18" alt=""> Rename…** → rename the file in the vault.
-
-- **<img src="images/folder-tree.svg" width="18" height="18" alt=""> Move to…** → move the file to another folder.
-
-- **<img src="images/trash2.svg" width="18" height="18" alt=""> Delete** → **permanently delete the file**, or move it to trash, depending on Obsidian settings.
+| Menu item | Description |
+| --- | --- |
+| **<img src="images/square-pen.svg" width="18" height="18" alt=""> Edit summary** | Edit the record summary. |
+| **<img src="images/sparkles.svg" width="18" height="18" alt=""> Summarize AI** | Summarize the record on-device with Chrome AI Bridge (Pro, desktop-only). |
+| **<img src="images/tag.svg" width="18" height="18" alt=""> Edit topic…** | Open the topics assignment popup; to remove topics, clear the input (Pro). |
+| **<img src="images/pin.svg" width="18" height="18" alt=""> Pin** | Pin the file at the *Today* position; same **⌘ Epochgram: Toggle pin for current file**. |
+| **<img src="images/highlighter.svg" width="18" height="18" alt=""> Mark** | Highlight similar records with a color; same **⌘ Epochgram: Toggle mark for current file**. |
+| **<img src="images/pencil-ruler.svg" width="18" height="18" alt=""> Draft**</br>**<img src="images/eye.svg" width="18" height="18" alt=""> Review**</br>**<img src="images/eye-off.svg" width="18" height="18" alt=""> Hide** | Change the file review state. |
+| **<img src="images/pen-line.svg" width="18" height="18" alt=""> Rename…** | Rename the file in the vault. |
+| **<img src="images/folder-tree.svg" width="18" height="18" alt=""> Move to…** | Move the file to another folder. |
+| **<img src="images/trash2.svg" width="18" height="18" alt=""> Delete** | **Permanently delete the file**, or move it to trash, depending on Obsidian settings. |
 
 > [!TIP]
 > **⌘ Epochgram: Clear tracked changes for current file** → clear all file history at once.
@@ -203,15 +211,13 @@ Once you have a few solid notes, **Similarity** helps connect them to related re
 
 Epochgram includes multiple intelligent similarity settings that work on all platforms, including iOS and Android:
 
-- **⛭ Links** → treat notes as related through inbound and outbound links.
-
-- **⛭ Tags** → treat notes as related when they share tags.
-
-- **⛭ Title threshold** → use Jaro–Winkler matching to group notes with similar names or paths (higher values match more, 0 disables it).
-
-- **⛭ Semantic threshold** → semantic similarity uses an embedding [default model](https://huggingface.co/TaylorAI/bge-micro-v2) to find notes with similar meaning across the vault. This is useful for notes that describe the same idea in different words.  
-  
-- **⛭ Topic threshold** → topics use a zero-shot [default model](https://huggingface.co/MoritzLaurer/deberta-v3-xsmall-zeroshot-v1.1-all-33) for similarity grouping. When you assign a topic to a note, Epochgram finds related records across the vault. This is useful for broad themes like travel, projects, health, or photography, where notes may share meaning without direct links or tags.
+| Settings | Description |
+| --- | --- |
+| **⛭ Links** | Treat notes as related through inbound and outbound links. |
+| **⛭ Tags** | Treat notes as related when they share tags. |
+| **⛭ Title threshold** | Use Jaro–Winkler matching to group notes with similar names or paths. Higher values match more; `0` disables it. |
+| **⛭ Semantic threshold** | Use an embedding [default model](https://huggingface.co/TaylorAI/bge-micro-v2) to find notes with similar meaning across the vault. Useful for notes that describe the same idea in different words. |
+| **⛭ Topic threshold** | Use a zero-shot [default model](https://huggingface.co/MoritzLaurer/deberta-v3-xsmall-zeroshot-v1.1-all-33) for similarity grouping. When you assign a topic to a note, Epochgram finds related records across the vault. Useful for broad themes like travel, projects, health, or photography, where notes may share meaning without direct links or tags. |
 
 > [!TIP]
 Model picker: use ⛭ next to Semantic threshold or Topic threshold to set a Hugging Face model ID, or <img src="images/globe.svg" width="18" height="18" alt=""> to browse models in your browser. On first use, similarity models/runtime may be downloaded.
@@ -222,7 +228,7 @@ Model picker: use ⛭ next to Semantic threshold or Topic threshold to set a Hug
 When you open a record, all related records on the timeline are highlighted using the current theme color.
 
 > [!TIP]
-> **Alt - scroll** → move through related records.
+> **Alt + scroll** → move through related records.
 
 **Similarity** also groups related records automatically: when you mark one record, related records inherit the same color. These records behave as one group, so changing or removing the color updates the whole group, and inherited marks are recalculated automatically if the relation later disappears.
 
@@ -280,12 +286,14 @@ repeat: every day # create recurring records
 
 Plugin data is mostly stored in the vault config directory, usually `.obsidian/`.
 
-- `epochgram-index.json` → timeline/index data.
-- `epochgram-search.json` → search cache.
-- `epochgram-summaries.json` → AI summaries and epochs.
-- `epochgram-semantics.json` → embeddings store.
-- `epochgram-topics.json` → topic similarity store.
-- `plugins/epochgram/data.json` → settings and view state.
+| File | Description |
+| --- | --- |
+| `epochgram-index.json` | Timeline/index data. |
+| `epochgram-search.json` | Search cache. |
+| `epochgram-summaries.json` | AI summaries and epochs. |
+| `epochgram-semantics.json` | Embeddings store. |
+| `epochgram-topics.json` | Topic similarity store. |
+| `plugins/epochgram/data.json` | Settings and view state. |
 
 If Obsidian Sync is enabled, this data should synchronize between devices as long as **⛭ Sync → Vault configuration sync → Other file types** is turned on. License data is stored separately in `localStorage` and is not synced through the vault config.
 
@@ -337,4 +345,4 @@ Epochgram also provides **Rebuild** and **Reset** popups for rebuilding or clear
   - **Similarity**: embeddings/topic models and runtime files may be downloaded on first use via `@xenova/transformers` (for example from [Hugging Face](https://huggingface.co)) and ONNX Runtime Web WASM from [jsDelivr](https://cdn.jsdelivr.net/npm/onnxruntime-web@1.14.0/dist/).
 - All vault data is processed locally on your device and is NEVER sent over the internet.
 - Source code is closed.
-- License: MIT (see [LICENSE](LICENSE)).
+- License: MIT (see [LICENSE](LICENSE)).  
