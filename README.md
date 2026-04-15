@@ -17,7 +17,6 @@ A Timemap of Your Mind
 <p align="center"><img src="images/epochgram-full.png" alt="Epochgram screenshot"></p>
 </br>
 
-> [!IMPORTANT]
 > <font color="#c14d58">Pain</font>. Your vault fills up with quick capture notes. A week later, you've lost the thread. A month later, you can't reconstruct the story — and you don't see the themes, the slow stretches, or the bursts of activity.</br></br>
 > <font color="#c14d58">Solution</font>. Epochgram turns your notes into a scalable timeline retrospective. Browse day by day to scan changes in order, spot bigger patterns across unsorted notes, and edit directly on the timeline — so you can focus on what really matters.</br></br>
 > <font color="#c14d58">Epochgram Pro</font> adds even more overview:
@@ -55,23 +54,23 @@ A Timemap of Your Mind
 
 | Shortcut | Description |
 | --- | --- |
-| **Click / tap record** | Open the file |
-| **Click / tap date** | Open the daily note |
-| **Ctrl + click record** | Open the file in a new tab |
+| **Click** record | Open the file |
+| **Click** date | Open the daily note |
+| **Ctrl/Cmd+Click** record | Open the file in a new tab |
 | | |
-| **Right-click / long-tap record or date** | Open the context menu |
-| **Right-click / long-tap empty space** | Toggle Epochs view (Pro) |
+| **Right-Click** or **Long-Tap** record or date | Open the context menu |
+| **Right-Click** or **Long-Tap** empty space | Toggle Epochs view (Pro) |
 | | |
-| **Double-click / double-tap empty space** | Scroll to Today |
-| **Double-click / double-tap date** | Create a new daily note |
+| **Double-Click** empty space | Scroll to Today |
+| **Double-Click** date | Create a new daily note |
 | | |
-| **Wheel / pan** | Scroll |
-| **Ctrl + wheel / pinch** | Zoom |
-| **Alt + wheel / Alt + Up/Down / two-finger tap** | Jump to the next or previous similar record |
-| **Shift + wheel** | Zoom around the current record |
+| **Wheel** or **Pan** | Scroll |
+| **Ctrl/Cmd+Wheel** or **Pinch** | Zoom |
+| **Alt/Option+Wheel/Up/Down** or **Two-Finger-Tap** | Jump to the next/previous similar record |
+| **Shift+Wheel** | Zoom around the current record |
 | | |
-| **Alt + hover** | Show the file preview |
-| **Drag and drop record** | Change its date |
+| **Alt/Option+Hover** record | Show the file preview |
+| **Drag-N-Drop** record | Change its date |
 
 ### Activating Pro
 - Follow the instructions on [epochgram.com/pro](https://www.epochgram.com/pro) to get your activation key by email.
@@ -88,14 +87,13 @@ The timeline is a scrollable, zoomable surface that collects records from all fi
 | --- | --- |
 | <img src="images/pen.svg" width="16" height="16" alt=""> **Tracked changes** | Per-block edit history excluding YAML. Requires **⛭ Track changes** (Pro). |
 | <img src="images/calendar.svg" width="16" height="16" alt=""> **Content dates** | Parsed content date (ranges), including <img src="images/recurring.svg" width="16" height="16" alt=""> **Recurring dates** (Pro). |
-| -- Anchors -- | - - |
+| -- Anchors -- | |
 | **Filename dates** | Parsed filename date. |
 | **Frontmatter dates** | YAML `date` property. |
 | **Created dates** | File creation time. |
 
 Each file has one anchor record that represents its canonical date. All other record types are optional. Drag and drop works only for anchor records, it updates the YAML `date` property, and the filename for daily notes.
 
-> [!NOTE]
 > ```text
 > `my_note.md` → anchored by file creation date
 >
@@ -143,7 +141,7 @@ A search bar at the bottom lets you search timeline records and shows the number
 | Search shortcut | Description |
 | --- | --- |
 | **Enter** | Open the matched file. |
-| **Alt + Enter** | Filter timeline records by the current query. |
+| **Alt/Option+Enter** | Filter timeline records by the current query. |
 | **Marked** | Show only marked records. |
 | **"exact"** | Find exact string. |
 
@@ -207,9 +205,7 @@ repeat: FREQ=DAILY;COUNT=5 # RRULE
 
 <p><img src="images/similarity.png" alt="Similarity"></p>
 
-Once you have a few solid notes, **Similarity** helps connect them to related records. It is used for record highlighting and mark inheritance.
-
-Epochgram includes multiple intelligent similarity settings that work on all platforms, including iOS and Android:
+Similarity helps find related records. When you open a note, similar records on the timeline are highlighted using the current theme color. Epochgram includes multiple similarity settings that work across all platforms, including iOS and Android:
 
 | Settings | Description |
 | --- | --- |
@@ -220,21 +216,17 @@ Epochgram includes multiple intelligent similarity settings that work on all pla
 | **⛭ Topic threshold** | Use a zero-shot [default model](https://huggingface.co/MoritzLaurer/deberta-v3-xsmall-zeroshot-v1.1-all-33) for similarity grouping. When you assign a topic to a note, Epochgram finds related records across the vault. Useful for broad themes like travel, projects, health, or photography, where notes may share meaning without direct links or tags. |
 
 > [!TIP]
-Model picker: use ⛭ next to Semantic threshold or Topic threshold to set a Hugging Face model ID, or <img src="images/globe.svg" width="18" height="18" alt=""> to browse models in your browser. On first use, similarity models/runtime may be downloaded.
+> Use **⛭** to open the model picker, or <img src="images/globe.svg" width="18" height="18" alt=""> to browse Hugging Face models.
 
-> [!NOTE]
-> Building semantic vectors and running topic classification can take a long time on slower machines. Long-running jobs show their progress in the status bar — hover over the progress item to see all jobs, or click it to cancel.
-
-When you open a record, all related records on the timeline are highlighted using the current theme color.
-
-> [!TIP]
-> **Alt + scroll** → move through related records.
+Building semantic vectors and running topic classification can take a long time on slower machines. Long-running jobs show their progress in the status bar — hover over the progress item to see all jobs, or click it to cancel.
 
 **Similarity** also groups related records automatically: when you mark one record, related records inherit the same color. These records behave as one group, so changing or removing the color updates the whole group, and inherited marks are recalculated automatically if the relation later disappears.
 
+In addition to the standard red-to-violet palette, an extended palette is available in the submenu. This makes it easy to choose colors by activity. For example, I use <font color="#ADD8E6">glacier</font> for ski trip reports. ⌘ Epochgram: Toggle mark for current file → assign the next unique color from the palette.
+
 > [!TIP]
-> **⌘ Epochgram: Toggle mark for current file** → assign the next unique color from the palette.</br></br>
-> In addition to the standard red-to-violet palette, an extended palette is available in the submenu. This makes it easy to choose colors by activity. For example, I use <font color="#ADD8E6">glacier</font> for ski trip reports.
+> **Alt/Option+Wheel/Up/Down** or **Two-Finger-Tap** → move through related records.</br>
+> **⌘ Epochgram: Toggle mark for current file** → assign the next unique color from the palette.
 
 ## AI Bridge (Pro, desktop-only)
 
@@ -298,7 +290,7 @@ Plugin data is mostly stored in the vault config directory, usually `.obsidian/`
 If Obsidian Sync is enabled, this data should synchronize between devices as long as **⛭ Sync → Vault configuration sync → Other file types** is turned on. License data is stored separately in `localStorage` and is not synced through the vault config.
 
 > [!TIP]
-> **Double-click** a setting name/description → reset it to default.
+> **Double-Click** a setting name/description → reset it to default.
 
 Epochgram also provides **Rebuild** and **Reset** popups for rebuilding or clearing stored data:
 
@@ -341,8 +333,8 @@ Epochgram also provides **Rebuild** and **Reset** popups for rebuilding or clear
 - **Epochgram Pro**:
 	- Requires an account, payment, and internet access for license validation; your email address, license key, and basic server-side telemetry may be processed (see [TERMS](https://www.epochgram.com/terms)).
   - Is not affiliated with Obsidian Sync, Publish, or other Obsidian paid services.
-	- **AI Bridge**: Epochgram starts a local server on `http://127.0.0.1` and opens a local bridge page in Google Chrome to use Chrome's on-device Summarizer API. The bridge communication stays on your device. Chrome [may download](https://developer.chrome.com/docs/ai/summarizer-api) its built-in model(s) (Gemini Nano) the first time you use these APIs. Epochgram may check common OS install paths to locate the Google Chrome executable and open the AI Bridge automatically.
+	- **AI Bridge**: Epochgram starts a local server on `http://127.0.0.1` and opens a local bridge page in Google Chrome to use Chrome's on-device Summarizer API. The bridge communication stays on your device. Chrome [may download](https://developer.chrome.com/docs/ai/summarizer-api) its built-in model(s) (Gemini Nano) the first time you use these APIs.
   - **Similarity**: embeddings/topic models and runtime files may be downloaded on first use via `@xenova/transformers` (for example from [Hugging Face](https://huggingface.co)) and ONNX Runtime Web WASM from [jsDelivr](https://cdn.jsdelivr.net/npm/onnxruntime-web@1.14.0/dist/).
 - All vault data is processed locally on your device and is NEVER sent over the internet.
 - Source code is closed.
-- License: MIT (see [LICENSE](LICENSE)).  
+- License: MIT (see [LICENSE](LICENSE)).
