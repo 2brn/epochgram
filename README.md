@@ -95,21 +95,19 @@ The timeline is a scrollable, zoomable surface that collects records from all fi
 Each file has one anchor record that represents its canonical date. All other record types are optional. Drag and drop works only for anchor records, it updates the YAML `date` property, and the filename for daily notes.
 
 > ```text
-> -- FROM FILENAMES --
+> # EXAMPLE OF SOURCES
+> # FROM FILE PROPS:
 >
-> `my_note.md` # ⚓︎ cdate
+> `my_note.md`			 ⚓︎ cdate
+> `daily-01.01.2026.md`	 ⚓︎ filename
 >
-> `daily-01.01.2026.md` # ⚓︎ filename
->
-> -- FROM CONTENT --
+> # FROM CONTENT:
 >
 > ---
-> date: 2026-02-02 # ⚓︎ YAML `date`
+> date: 2026-02-02		 ⚓︎ frontmatter
 > ---
-> 
-> May 1, 2026 diary # 🗓 parsed content
-> 
-> Added new line... # ✐ tracked change
+> May 1, 2026 diary		 🗓 parsed content
+> Added new line...		 ✐ tracked change
 > ```
 
 Each record appears as `note name ⸱ summary` (when **⛭ Show note name** is enabled). The summary is either the first _N_ words, markdown-aware (**⛭ Summary length** setting) or an AI summary (Pro). A custom summary can be set with YAML (`description: ...`) or from the context menu; manual summaries are never overwritten by AI, and clearing the field removes the override.
