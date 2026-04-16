@@ -36,8 +36,8 @@ A Timemap of Your Mind
 - [Review State](#review-state)
 - [Recurring (Pro)](#recurring-pro)
 - [Similarity (Pro)](#similarity-pro)
-- [AI Bridge (Pro, desktop-only)](#ai-bridge-pro-desktop-only)
-- [AI Summaries & Epochs (Pro, desktop-only)](#ai-summaries--epochs-pro-desktop-only)
+- [AI Bridge (Pro)](#ai-bridge-pro-desktop-only)
+- [AI Summaries & Epochs (Pro)](#ai-summaries--epochs-pro-desktop-only)
 - [Custom YAML](#custom-yaml)
 - [Settings & Data](#settings--data)
 - [FAQ](#faq)
@@ -95,20 +95,24 @@ The timeline is a scrollable, zoomable surface that collects records from all fi
 Each file has one anchor record that represents its canonical date. All other record types are optional. Drag and drop works only for anchor records, it updates the YAML `date` property, and the filename for daily notes.
 
 > ```text
-> `my_note.md` → anchored by file creation date
+> -- FROM FILENAMES --
 >
-> `daily-01.01.2026.md` → anchored by filename
+> `my_note.md` # ⚓︎ cdate
+>
+> `daily-01.01.2026.md` # ⚓︎ filename
+>
+> -- FROM CONTENT --
 >
 > ---
-> date: 2026-02-02 # → anchored by YAML `date`
+> date: 2026-02-02 # ⚓︎ YAML `date`
 > ---
 > 
-> May 1, 2026 diary record → record by parsed content
+> May 1, 2026 diary # 🗓 parsed content
 > 
-> Added new line... → record by tracked change on the date of the change
+> Added new line... # ✐ tracked change
 > ```
 
-Each record appears as *note name ⸱ summary* (when **⛭ Show note name** is enabled). The summary is either the first _N_ words, markdown-aware (**⛭ Summary length** setting) or an AI summary (Pro). A custom summary can be set with YAML (`description: ...`) or from the context menu; manual summaries are never overwritten by AI, and clearing the field removes the override.
+Each record appears as `note name ⸱ summary` (when **⛭ Show note name** is enabled). The summary is either the first _N_ words, markdown-aware (**⛭ Summary length** setting) or an AI summary (Pro). A custom summary can be set with YAML (`description: ...`) or from the context menu; manual summaries are never overwritten by AI, and clearing the field removes the override.
 
 Timeline draws today as <img src="images/circle-today.svg" width="18" height="18" alt="">, weekdays as <img src="images/circle.svg" width="18" height="18" alt=""> and weekends as <img src="images/circle-filled.svg" width="18" height="18" alt="">. Entries are shown stacked or side by side when space allows, long entries are truncated with `…`. If space runs out, the day collapses to a few records and shows the rest as `(+n)`. When zoomed out, records collapse into placeholder bars <img src="images/rectangle-horizontal.svg" width="18" height="18" alt="">, with height based on record count.
 
@@ -136,7 +140,7 @@ There are collapsible filters under the <img src="images/settings.svg" width="18
 | | |
 | <img src="images/hourglass.svg" width="18" height="18" alt=""> | Toggle Epochs view (Pro). |
 
-A search bar at the bottom lets you search timeline records and shows the number of matches. Click it or run **⌘ Epochgram: Search timeline**. Search covers file names, content, AI summaries, epochs, with support for fuzzy search.
+A search bar at the bottom lets you search timeline records and shows the number of matches. Click it or run **⌘ Epochgram: Search timeline**. Search covers file names, content, AI summaries, Epochs, with support for fuzzy search.
   
 | Search shortcut | Description |
 | --- | --- |
@@ -161,8 +165,8 @@ Record context menu:
 | **<img src="images/square-pen.svg" width="18" height="18" alt=""> Edit summary** | Edit the record summary. |
 | **<img src="images/sparkles.svg" width="18" height="18" alt=""> Summarize AI** | Summarize the record on-device with Chrome AI Bridge (Pro, desktop-only). |
 | **<img src="images/tag.svg" width="18" height="18" alt=""> Edit topic…** | Open the topics assignment popup; to remove topics, clear the input (Pro). |
-| **<img src="images/pin.svg" width="18" height="18" alt=""> Pin** | Pin the file at the *Today* position; same **⌘ Epochgram: Toggle pin for current file**. |
-| **<img src="images/highlighter.svg" width="18" height="18" alt=""> Mark** | Highlight similar records with a color; same **⌘ Epochgram: Toggle mark for current file**. |
+| **<img src="images/pin.svg" width="18" height="18" alt=""> Pin** | Pin the file at the *Today* position; or **⌘ Epochgram: Toggle pin for current file**. |
+| **<img src="images/highlighter.svg" width="18" height="18" alt=""> Mark** | Highlight similar records with a color; or **⌘ Epochgram: Toggle mark for current file**. |
 | **<img src="images/pencil-ruler.svg" width="18" height="18" alt=""> Draft**</br>**<img src="images/eye.svg" width="18" height="18" alt=""> Review**</br>**<img src="images/eye-off.svg" width="18" height="18" alt=""> Hide** | Change the file review state. |
 | **<img src="images/pen-line.svg" width="18" height="18" alt=""> Rename…** | Rename the file in the vault. |
 | **<img src="images/folder-tree.svg" width="18" height="18" alt=""> Move to…** | Move the file to another folder. |
@@ -175,9 +179,9 @@ Record context menu:
 
 <p><img src="images/review.png" alt="Review"></p>
 
-Epochgram is designed around the [C.O.D.E.](https://fortelabs.com/blog/basboverview/) process (capture → organize → distill → express). New or indexed files appear as *Draft*. After organizing the file and extracting the key points, the record can be marked as **Reviewed**. If the file changes later, the record returns to *Draft*, indicating it may need review again.
+Epochgram is designed around the [C.O.D.E.](https://fortelabs.com/blog/basboverview/) process (capture → organize → distill → express). New or indexed files appear as ***Draft***. After organizing the file and extracting the key points, the record can be marked as **Reviewed**. If the file changes later, the record returns to *Draft*, indicating it may need review again.
 
-Not every record deserves space on the timeline. Some, such as minor tracked changes, can be marked **Hidden**. Hidden records either disappear from the timeline or are muted when the corresponding filter is on.
+Not every record deserves space on the timeline. Some, such as minor tracked changes, can be marked **Hidden**. Hidden records either disappear from the timeline or are muted when the <img src="images/eye.svg" width="18" height="18" alt=""> filter is on.
 
 > [!TIP]
 > **⌘ Epochgram: Review all** → mark all records across the vault as reviewed.</br>
@@ -196,6 +200,7 @@ repeat: every N days
 repeat: every week on mon,tue
 repeat: every N weeks on mon,tue
 repeat: every month on D
+repeat: every month on -D # D days from end of month; -1 = last day
 repeat: every year on MM-DD
 repeat: FREQ=DAILY;COUNT=5 # RRULE
 ---
@@ -222,7 +227,7 @@ Building semantic vectors and running topic classification can take a long time 
 
 **Similarity** also groups related records automatically: when you mark one record, related records inherit the same color. These records behave as one group, so changing or removing the color updates the whole group, and inherited marks are recalculated automatically if the relation later disappears.
 
-In addition to the standard red-to-violet palette, an extended palette is available in the submenu. This makes it easy to choose colors by activity. For example, I use <font color="#ADD8E6">glacier</font> for ski trip reports. ⌘ Epochgram: Toggle mark for current file → assign the next unique color from the palette.
+In addition to the standard red-to-violet palette, an extended palette is available in the submenu. This makes it easy to choose colors by activity. For example, I use <font color="#ADD8E6">glacier</font> for ski trip reports.
 
 > [!TIP]
 > **Alt/Option+Wheel/Up/Down** or **Two-Finger-Tap** → move through related records.</br>
@@ -232,7 +237,7 @@ In addition to the standard red-to-violet palette, an extended palette is availa
 
 <p align="center"><img src="images/bridge.png" alt="AI Bridge screenshot"></p>
 
-Epochgram Pro includes an **AI Bridge** that uses Google Chrome's on-device AI APIs for local summarization. When started, it runs a small local server on an available port at `http://127.0.0.1`. The bridge page can be opened from **⌘ Epochgram: Open AI bridge**, from the `⌀ AI` status bar button (red = disconnected), or automatically on startup if **⛭ Open Bridge AI on startup** is enabled. This page processes summary jobs in Chrome and returns the results to the plugin. All summarization data stays **only on your device** and is not sent to external services.
+Epochgram Pro includes an **AI Bridge** that uses Google Chrome's on-device AI APIs for local summarization. When started, it runs a small local server on an available port at `http://127.0.0.1`. The bridge page can be opened from **⌘ Epochgram: Open AI bridge**, from the **⌀ AI** status bar button (red = disconnected), or automatically on startup if **⛭ Open Bridge AI on startup** is enabled. This page processes summary jobs in Chrome and returns the results to the plugin. All summarization data stays **only on your device** and is not sent to external services.
 
 On first use, Chrome may need a user gesture to download the built-in Gemini Nano model, and the drive with your Chrome profile [should have](https://developer.chrome.com/docs/ai/summarizer-api#hardware-requirements) at least **22 GB** of free space. The bridge page also serves as a control panel, showing connection and model status, queue progress, the current text preview, the latest result, and a chart with progress in gray and processing speed in blue. Keep it open while summaries are running. You can also adjust API settings and prompt/context texts. For larger notes, Epochgram can split input into chunks, summarize them separately, then merge the results.
 
@@ -247,11 +252,11 @@ You can use context placeholders. File summaries support `{{filePath}}` (full fi
 
 **⛭ Auto summarize** → when enabled, Epochgram automatically summarizes a record through the AI Bridge each time the file changes. Even when disabled, you can still run summarization for a specific record from its context menu.
 
-**⛭ Generate epochs** → when enabled, Epochgram creates a zoomable time map that groups many days into larger period summaries, helping you see the bigger picture and spot patterns without reading the timeline day by day. Epochs are generated hierarchically from day up to year, in essence, summaries of summaries. If highlighted records are present, epochs are colored by the most common highlight color in that range. You can also edit or regenerate epochs from the context menu.
+**⛭ Generate Epochs** → when enabled, Epochgram creates a zoomable time map that groups many days into larger period summaries, helping you see the bigger picture and spot patterns without reading the timeline day by day. Epochs are generated hierarchically from day up to year, in essence, summaries of summaries. If highlighted records are present, Epochs are colored by the most common highlight color in that range. You can also edit or regenerate Epochs from the context menu.
 
 > [!TIP]
-> **⌘ Epochgram: Summarize all** → generate all missing AI summaries and epochs.</br>
-> **⌘ Epochgram: Export epochs** → export as standalone HTML to your daily notes folder.
+> **⌘ Epochgram: Summarize all** → generate all missing AI summaries and Epochs.</br>
+> **⌘ Epochgram: Export Epochs** → export as standalone HTML to your daily notes folder.
 
 ## Custom YAML
 
@@ -264,11 +269,12 @@ Epochgram supports the following custom YAML properties:
 date: 2026-01-01 # override the anchor date
 description: my summary # override the summary
 noindex: # exclude this file from all indexing
-notracked: # don't use tracked changes for this file
+notracked: # don't track changes for this file
 noparsed: # don't parse dates from this file's content
 nosimilar: # don't match this file by similarity
 similar: [links, tags, title, semantics, topics] # match similarity only by these relations
 repeat: every day # create recurring records
+recur: every day # repeat alias
 ---
 ```
 
@@ -282,7 +288,7 @@ Plugin data is mostly stored in the vault config directory, usually `.obsidian/`
 | --- | --- |
 | `epochgram-index.json` | Timeline/index data. |
 | `epochgram-search.json` | Search cache. |
-| `epochgram-summaries.json` | AI summaries and epochs. |
+| `epochgram-summaries.json` | AI summaries and Epochs. |
 | `epochgram-semantics.json` | Embeddings store. |
 | `epochgram-topics.json` | Topic similarity store. |
 | `plugins/epochgram/data.json` | Settings and view state. |
@@ -295,27 +301,27 @@ If Obsidian Sync is enabled, this data should synchronize between devices as lon
 Epochgram also provides **Rebuild** and **Reset** popups for rebuilding or clearing stored data:
 
 - **⛭ Rebuild**
-    - **⛭ All** → rebuild all data
-    - **⛭ Index** → rebuild the index; useful if something is broken or after an update
-    - **⛭ Search** → rebuild the [MiniSearch](https://github.com/lucaong/minisearch) cache
-    - **⛭ Semantics** → rebuild embedding vectors
-    - **⛭ Topics** → reclassify topics
-    - **⛭ AI summaries** → queue all files for AI summary generation
-    - **⛭ Epochs** → queue all epochs for regeneration
+    - **⛭ All** → rebuild all data.
+    - **⛭ Index** → rebuild the index; useful if something is broken or after an update.
+    - **⛭ Search** → rebuild the [MiniSearch](https://github.com/lucaong/minisearch) cache.
+    - **⛭ Semantics** → rebuild embedding vectors.
+    - **⛭ Topics** → reclassify topics.
+    - **⛭ AI summaries** → queue all files for AI summary generation.
+    - **⛭ Epochs** → queue all Epochs for regeneration.
 - **⛭ Reset**
-    - **⛭ All** → reset all data and settings to defaults, keep license data, then rerun indexing
-    - **⛭ Settings** → reset all settings to defaults
-    - **⛭ Data files** → clear data files and schedule regeneration
-    - **⛭ Search** → clear the search cache
-    - **⛭ Pinned** → unpin all items
-    - **⛭ Marks** → remove all marks
-    - **⛭ Reviews** → set all records to draft
-    - **⛭ Semantics** → remove all embedding vectors
-    - **⛭ Topics** → remove all topics and classification data
-    - **⛭ Tracked changes** → remove all tracked changes
-    - **⛭ Manual summaries** → remove all manual summaries in the index
-    - **⛭ AI summaries** → remove all AI summaries and use default "first N words"
-    - **⛭ Epochs** → remove all epochs
+    - **⛭ All** → reset all data and settings to defaults, keep license data, then rerun indexing.
+    - **⛭ Settings** → reset all settings to defaults.
+    - **⛭ Data files** → clear data files and schedule regeneration.
+    - **⛭ Search** → clear the search cache.
+    - **⛭ Pinned** → unpin all items.
+    - **⛭ Marks** → remove all marks.
+    - **⛭ Reviews** → set all records to draft.
+    - **⛭ Semantics** → remove all embedding vectors.
+    - **⛭ Topics** → remove all topics and classification data.
+    - **⛭ Tracked changes** → remove all tracked changes.
+    - **⛭ Manual summaries** → remove all manual summaries in the index.
+    - **⛭ AI summaries** → remove all AI summaries and use default "first N words".
+    - **⛭ Epochs** → remove all Epochs.
 
 ## FAQ
 
@@ -323,18 +329,18 @@ Epochgram also provides **Rebuild** and **Reset** popups for rebuilding or clear
 > Check the docs first. If you still cannot find relevant information, feel free to [open an issue on GitHub](https://github.com/2brn/Epochgram/issues). For private matters such as license, email me at [hi@epochgram.com](mailto:hi@epochgram.com).
 
 > **What should I do if Epochgram feels slow?**  
-> On huge vaults or slower machines, performance may degrade. Try setting **⛭ Semantic threshold** and **⛭ Topic threshold** to `0`, disable **⛭ Auto summarize** and **⛭ Generate epochs**. You can also uncheck **⛭ Enable animation** or reset plugin data.
+> On huge vaults or slower machines, performance may degrade. Try setting **⛭ Semantic threshold** and **⛭ Topic threshold** to `0`, disable **⛭ Auto summarize** and **⛭ Generate Epochs**. You can also uncheck **⛭ Enable animation** or reset plugin data.
 
 > **What should I do if some records are missing?**  
 > Try rebuilding the index or reload Obsidian.
 
 ## Disclosures
 
-- **Epochgram Pro**:
-	- Requires an account, payment, and internet access for license validation; your email address, license key, and basic server-side telemetry may be processed (see [TERMS](https://www.epochgram.com/terms)).
+- Epochgram Pro:
+	- Requires an payment and internet access for license validation; your email address, license key, and basic server-side telemetry may be processed (see [TERMS](https://www.Epochgram.com/terms)).
   - Is not affiliated with Obsidian Sync, Publish, or other Obsidian paid services.
-	- **AI Bridge**: Epochgram starts a local server on `http://127.0.0.1` and opens a local bridge page in Google Chrome to use Chrome's on-device Summarizer API. The bridge communication stays on your device. Chrome [may download](https://developer.chrome.com/docs/ai/summarizer-api) its built-in model(s) (Gemini Nano) the first time you use these APIs.
-  - **Similarity**: embeddings/topic models and runtime files may be downloaded on first use via `@xenova/transformers` (for example from [Hugging Face](https://huggingface.co)) and ONNX Runtime Web WASM from [jsDelivr](https://cdn.jsdelivr.net/npm/onnxruntime-web@1.14.0/dist/).
+  - AI Bridge: Epochgram starts a local server on `http://127.0.0.1` and opens a local bridge page in Google Chrome to use Chrome's on-device Summarizer API. The bridge communication stays on your device. Chrome [may download](https://developer.chrome.com/docs/ai/summarizer-api) its built-in model(s) (Gemini Nano) the first time you use these APIs.
+  - Similarity: embeddings/topic models and runtime files may be downloaded on first use via `@xenova/transformers` (for example from [Hugging Face](https://huggingface.co)) and ONNX Runtime Web WASM from [jsDelivr](https://cdn.jsdelivr.net/npm/onnxruntime-web@1.14.0/dist/).
 - All vault data is processed locally on your device and is NEVER sent over the internet.
 - Source code is closed.
 - License: MIT (see [LICENSE](LICENSE)).
