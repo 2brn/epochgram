@@ -146,7 +146,7 @@ A search bar at the bottom lets you search timeline records and shows the number
 | --- | --- |
 | **Enter** | Open the matched file. |
 | **Alt/Option+Enter** | Filter timeline records by the current query. |
-| **Marked** | Show only marked records. |
+| **!marked** | Show only marked records. |
 | **"exact"** | Find exact string. |
 
 ## Actions
