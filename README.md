@@ -215,11 +215,12 @@ Similarity helps find related records. When you open a note, similar records on 
 | **⛭ Links** | Treat notes as related through inbound and outbound links. |
 | **⛭ Tags** | Treat notes as related when they share tags. |
 | **⛭ Title threshold** | Use Jaro–Winkler matching to group notes with similar names or paths. Higher values match more; `0` disables it. |
-| **⛭ Semantic threshold** | Use an embedding [default model](https://huggingface.co/TaylorAI/bge-micro-v2) to find notes with similar meaning across the vault. Useful for notes that describe the same idea in different words. |
+| **⛭ Semantic threshold** | Use an embedding [default model](https://huggingface.co/Xenova/all-MiniLM-L6-v2) to find notes with similar meaning across the vault. Useful for notes that describe the same idea in different words. |
 | **⛭ Topic threshold** | Use a zero-shot [default model](https://huggingface.co/MoritzLaurer/deberta-v3-xsmall-zeroshot-v1.1-all-33) for similarity grouping. When you assign a topic to a note, Epochgram finds related records across the vault. Useful for broad themes like travel, projects, health, or photography, where notes may share meaning without direct links or tags. |
 
 > [!TIP]
-> Use **⛭** to open the model picker, or <img src="images/globe.svg" width="18" height="18" alt=""> to browse Hugging Face models.
+> Use **⛭** to open the model picker, or <img src="images/globe.svg" width="18" height="18" alt=""> to browse Hugging Face models.</br>
+> Use only trusted models; third-party models, downloads, and licenses are your responsibility.
 
 Building semantic vectors and running topic classification can take a long time on slower machines. Long-running jobs show their progress in the status bar — hover over the progress item to see all jobs, or click it to cancel.
 
@@ -338,7 +339,7 @@ Epochgram also provides **Rebuild** and **Reset** popups for rebuilding or clear
 	- Requires an payment and internet access for license validation; your email address, license key, and basic server-side telemetry may be processed (see [TERMS](https://www.Epochgram.com/terms)).
   - Is not affiliated with Obsidian Sync, Publish, or other Obsidian paid services.
   - AI Bridge: Epochgram starts a local server on `http://127.0.0.1` and opens a local bridge page in Google Chrome to use Chrome's on-device Summarizer API. The bridge communication stays on your device. Chrome [may download](https://developer.chrome.com/docs/ai/summarizer-api) its built-in model(s) (Gemini Nano) the first time you use these APIs.
-  - Similarity: embeddings/topic models and runtime files may be downloaded on first use via `@xenova/transformers` (for example from [Hugging Face](https://huggingface.co)) and ONNX Runtime Web WASM from [jsDelivr](https://cdn.jsdelivr.net/npm/onnxruntime-web@1.14.0/dist/).
+  - Similarity: embeddings/topic models and runtime files may be downloaded on first use via `@huggingface/transformers` (for example from [Hugging Face](https://huggingface.co)) and ONNX Runtime Web WASM from [jsDelivr](https://cdn.jsdelivr.net/npm/onnxruntime-web@1.26.0-dev.20260410-5e55544225/dist/).
 - All vault data is processed locally on your device and is NEVER sent over the internet.
 - Source code is closed.
 - License: MIT (see [LICENSE](LICENSE)).
