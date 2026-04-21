@@ -31,13 +31,14 @@ A Timemap of Your Mind
 
 - [Get Started](#get-started)
 - [Timeline](#timeline)
-- [Filters & Search](#filters--search)
+- [Filters](#filters)
+- [Search](#search)
 - [Actions](#actions)
 - [Review State](#review-state)
 - [Recurring (Pro)](#recurring-pro)
 - [Similarity (Pro)](#similarity-pro)
 - [AI Bridge (Pro)](#ai-bridge-pro-desktop-only)
-- [AI Summaries & Epochs (Pro)](#ai-summaries--epochs-pro-desktop-only)
+- [Epochs (Pro)](#ai-summaries--epochs-pro-desktop-only)
 - [Custom YAML](#custom-yaml)
 - [Settings & Data](#settings--data)
 - [FAQ](#faq)
@@ -79,7 +80,10 @@ A Timemap of Your Mind
 
 ## Timeline
 
-<p><img src="images/timeline.png" alt="Timeline"></p>
+<p align="center">
+<img src="images/scroll.gif" height="360" alt="Timeline scroll" />
+<img src="images/zoom.gif" height="360" alt="Timeline zoom" />
+</p>
 
 The timeline is a scrollable, zoomable surface that collects records from all files in the vault, excluding folders ignored in Obsidian settings. It detects dates and date ranges in different formats and renders *one record per file per day*, in the following priority order:
 
@@ -93,6 +97,12 @@ The timeline is a scrollable, zoomable surface that collects records from all fi
 | **Created dates** | File creation time. |
 
 Each file has one anchor record that represents its canonical date. All other record types are optional. Drag and drop works only for anchor records, it updates the YAML `date` property, and the filename for daily notes.
+
+<p align="center">
+<img src="images/create.gif" height="360" alt="Create note">
+<img src="images/dragndrop.gif" height="360" alt="Drag-n-drop">
+<!-- <img src="images/tracked.gif" height="360" alt="Create note"> -->
+</p>
 
 > ```text
 > # EXAMPLE OF SOURCES
@@ -117,9 +127,11 @@ Timeline draws today as <img src="images/circle-today.svg" width="18" height="18
 > [!TIP]
 > A top label shows the current date, and a vertical red line marks the distance from Today — at the default zoom, each day of redshift represents one month.
 
-## Filters & Search
+## Filters
 
-<p><img src="images/filters-search.png" alt="Filters and Search"></p>
+<p align="center">
+<img src="images/filters.gif" height="360" alt="Filters" />
+</p>
 
 There are collapsible filters under the <img src="images/settings.svg" width="18" height="18" alt=""> button.
 
@@ -138,6 +150,12 @@ There are collapsible filters under the <img src="images/settings.svg" width="18
 | | |
 | <img src="images/hourglass.svg" width="18" height="18" alt=""> | Toggle Epochs view (Pro). |
 
+## Search
+
+<p align="center">
+<img src="images/search.gif" height="360" alt="Search" />
+</p>
+
 A search bar at the bottom lets you search timeline records and shows the number of matches. Click it or run **⌘ Epochgram: Search timeline**. Search covers file names, content, AI summaries, Epochs, with support for fuzzy search.
   
 | Search shortcut | Description |
@@ -149,7 +167,9 @@ A search bar at the bottom lets you search timeline records and shows the number
 
 ## Actions
 
-<p><img src="images/actions.png" alt="Actions"></p>
+<p align="center">
+<img src="images/actions.gif" height="360" alt="Actions">
+</p>
 
 > [!TIP]
 > Enable **⛭ Simple mode** for a minimal UI: red marks, hide/show review, toggle filters, and fewer controls.
@@ -175,8 +195,6 @@ Record context menu:
 
 ## Review State
 
-<p><img src="images/review.png" alt="Review"></p>
-
 Epochgram is designed around the [C.O.D.E.](https://fortelabs.com/blog/basboverview/) process (capture → organize → distill → express). New or indexed files appear as ***Draft***. After organizing the file and extracting the key points, the record can be marked as **Reviewed**. If the file changes later, the record returns to *Draft*, indicating it may need review again.
 
 Not every record deserves space on the timeline. Some, such as minor tracked changes, can be marked **Hidden**. Hidden records either disappear from the timeline or are muted when the <img src="images/eye.svg" width="18" height="18" alt=""> filter is on.
@@ -187,7 +205,7 @@ Not every record deserves space on the timeline. Some, such as minor tracked cha
 
 ## Recurring (Pro)
 
-<p><img src="images/recurring.png" alt="Recurring"></p>
+<p align="center"><img src="images/recurring.gif" height="360" alt="Recurring"></p>
 
 You can create recurring records, which will appear on the timeline. To add one, set the `repeat` or `recur` property in YAML. Supported formats (see [RRULE](https://icalendar.org/iCalendar-RFC-5545/3-8-5-3-recurrence-rule.html)):
 
@@ -206,7 +224,10 @@ repeat: FREQ=DAILY;COUNT=5 # RRULE
  
 ## Similarity (Pro)
 
-<p><img src="images/similarity.png" alt="Similarity"></p>
+<p align="center">
+  <img src="images/semantics.gif" height="360" alt="Semantics">
+  <img src="images/topics.gif" height="360" alt="Topics">
+</p>
 
 Similarity helps find related records. When you open a note, similar records on the timeline are highlighted using the current theme color. Epochgram includes multiple similarity settings that work across all platforms, including iOS and Android:
 
@@ -228,13 +249,17 @@ Building semantic vectors and running topic classification can take a long time 
 
 In addition to the standard red-to-violet palette, an extended palette is available in the submenu. This makes it easy to choose colors by activity. For example, I use <font color="#ADD8E6">glacier</font> for ski trip reports.
 
+<p align="center">
+  <img src="images/scrollnav.gif" height="360" alt="Scroll to similar">
+</p>
+
 > [!TIP]
 > **Alt/Option+Wheel/Up/Down** or **Two-Finger-Tap** → move through related records.</br>
 > **⌘ Epochgram: Toggle mark for current file** → assign the next unique color from the palette.
 
 ## AI Bridge (Pro, desktop-only)
 
-<p align="center"><img src="images/bridge.png" alt="AI Bridge screenshot"></p>
+<p align="center"><img src="images/epochs.gif" height="360" alt="Epochs"></p>
 
 Epochgram Pro includes an **AI Bridge** that uses Google Chrome's on-device AI APIs for local summarization. When started, it runs a small local server on an available port at `http://127.0.0.1`. The bridge page can be opened from **⌘ Epochgram: Open AI bridge**, from the **⌀ AI** status bar button (red = disconnected), or automatically on startup if **⛭ Open Bridge AI on startup** is enabled. This page processes summary jobs in Chrome and returns the results to the plugin. All summarization data stays **only on your device** and is not sent to external services.
 
@@ -247,8 +272,6 @@ You can use context placeholders. File summaries support `{{filePath}}` (full fi
 
 ## AI Summaries & Epochs (Pro, desktop-only)
 
-<p><img src="images/epochs.png" alt="Epochs"></p>
-
 **⛭ Auto summarize** → when enabled, Epochgram automatically summarizes a record through the AI Bridge each time the file changes. Even when disabled, you can still run summarization for a specific record from its context menu.
 
 **⛭ Generate Epochs** → when enabled, Epochgram creates a zoomable time map that groups many days into larger period summaries, helping you see the bigger picture and spot patterns without reading the timeline day by day. Epochs are generated hierarchically from day up to year, in essence, summaries of summaries. If highlighted records are present, Epochs are colored by the most common highlight color in that range. You can also edit or regenerate Epochs from the context menu.
@@ -258,8 +281,6 @@ You can use context placeholders. File summaries support `{{filePath}}` (full fi
 > **⌘ Epochgram: Export Epochs** → export as standalone HTML to your daily notes folder.
 
 ## Custom YAML
-
-<p><img src="images/yaml.png" alt="Yaml"></p>
 
 Epochgram supports the following custom YAML properties:
 
@@ -279,7 +300,7 @@ recur: every day # repeat alias
 
 ## Settings & Data
 
-<p><img src="images/settings.png" alt="Settings"></p>
+<p align="center"><img src="images/settings.gif" height="360" alt="Settings"></p>
 
 Plugin data is mostly stored in the vault config directory, usually `.obsidian/`.
 
