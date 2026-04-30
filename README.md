@@ -46,8 +46,8 @@ A Timemap of Your Mind
 
 ## Get Started
 
-- Install via the [Obsidian Community plugins](https://obsidian.md/plugins?id=epochgram).
-- Or use [BRAT](https://www.epochgram.com/brat) to get releases from the [Epochgram GitHub](https://github.com/2brn/Epochgram).
+<!-- - Install via the [Obsidian Community plugins](https://obsidian.md/plugins?id=epochgram). -->
+- Install [BRAT](https://obsidian.md/plugins?id=brat) and use [Obsidian protocol](https://www.epochgram.com/brat) to get releases from the [Epochgram GitHub](https://github.com/2brn/Epochgram).
 - Click the <img src="images/epochgram_bw.svg" width="18" height="18" alt="Epochgram"> ribbon icon or run **⌘ Epochgram: Open timeline** to show the timeline in the right panel.
 - To open it automatically on launch, enable **⛭ Open timeline on startup**.
 
