@@ -120,7 +120,7 @@ Each file has one anchor record that represents its canonical date. All other re
 > Added new line...		 ✐ tracked change
 > ```
 
-Each record appears as `note name ⸱ summary` (when **⛭ Show note name** is enabled). The summary is either the first _N_ words, markdown-aware (**⛭ Summary length** setting) or an AI summary (Pro). A custom summary can be set with YAML (`description: ...`) or from the context menu; manual summaries are never overwritten by AI, and clearing the field removes the override.
+Each record appears as `note name ⸱ summary` (when **⛭ Show note name** is enabled). The summary is either the first _N_ words, markdown-aware (**⛭ Summary length** setting) or an AI summary (Pro). A manual summary can be set with YAML (`description: ...`) or from the context menu; manual summaries are never overwritten by AI.
 
 Timeline draws today as <img src="images/circle-today.svg" width="18" height="18" alt="">, weekdays as <img src="images/circle.svg" width="18" height="18" alt=""> and weekends as <img src="images/circle-filled.svg" width="18" height="18" alt="">. Entries are shown stacked or side by side when space allows, long entries are truncated with `…`. If space runs out, the day collapses to a few records and shows the rest as `(+n)`. When zoomed out, records collapse into placeholder bars <img src="images/rectangle-horizontal.svg" width="18" height="18" alt="">, with height based on record count.
 
@@ -174,15 +174,14 @@ A search bar at the bottom lets you search timeline records and shows the number
 > [!TIP]
 > Enable **⛭ Simple mode** for a minimal UI: red marks, hide/show review, toggle filters, and fewer controls.
 
-Files in the vault are never modified unless you run an explicit file action. All attributes are stored in Epochgram data files, not in vault files.
+Files in the vault are never modified unless you run an explicit file action. All attributes *except the date and manual summary* are stored in Epochgram data files, not in vault files.
 
 Record context menu:
 
 | Menu item | Description |
 | --- | --- |
-| **<img src="images/square-pen.svg" width="18" height="18" alt=""> Edit summary** | Edit the record summary. |
-| **<img src="images/sparkles.svg" width="18" height="18" alt=""> Summarize AI** | Summarize the record on-device with Chrome AI Bridge (Pro, desktop-only). |
-| **<img src="images/tag.svg" width="18" height="18" alt=""> Edit topic…** | Open the topics assignment popup; to remove topics, clear the input (Pro). |
+| **<img src="images/square-pen.svg" width="18" height="18" alt=""> Summary…** | Update the file YAML `description`. |
+| **<img src="images/tag.svg" width="18" height="18" alt=""> Topic** | Open the topics assignment popup; to remove topics, clear the input (Pro). |
 | **<img src="images/pin.svg" width="18" height="18" alt=""> Pin** | Pin the file at the *Today* position; or **⌘ Epochgram: Toggle pin for current file**. |
 | **<img src="images/highlighter.svg" width="18" height="18" alt=""> Mark** | Highlight similar records with a color; or **⌘ Epochgram: Toggle mark for current file**. |
 | **<img src="images/pencil-ruler.svg" width="18" height="18" alt=""> Draft**</br>**<img src="images/eye.svg" width="18" height="18" alt=""> Review**</br>**<img src="images/eye-off.svg" width="18" height="18" alt=""> Hide** | Change the file review state. |
@@ -274,7 +273,7 @@ You can use context placeholders. File summaries support `{{filePath}}` (full fi
 
 **⛭ Auto summarize** → when enabled, Epochgram automatically summarizes a record through the AI Bridge each time the file changes. Even when disabled, you can still run summarization for a specific record from its context menu.
 
-**⛭ Generate Epochs** → when enabled, Epochgram creates a zoomable time map that groups many days into larger period summaries, helping you see the bigger picture and spot patterns without reading the timeline day by day. Epochs are generated hierarchically from day up to year, in essence, summaries of summaries. If highlighted records are present, Epochs are colored by the most common highlight color in that range. You can also edit or regenerate Epochs from the context menu.
+**⛭ Generate Epochs** → when enabled, Epochgram creates a zoomable time map that groups many days into larger period summaries, helping you see the bigger picture and spot patterns without reading the timeline day by day. Epochs are generated hierarchically from day up to year, in essence, summaries of summaries. If highlighted records are present, Epochs are colored by the most common highlight color in that range. You can regenerate a specific Epoch from the context menu.
 
 > [!TIP]
 > **⌘ Epochgram: Summarize all** → generate all missing AI summaries and Epochs.</br>
@@ -294,7 +293,7 @@ noparsed: # don't parse dates from this file's content
 nosimilar: # don't match this file by similarity
 similar: [links, tags, title, semantics, topics] # match similarity only by these relations
 repeat: every day # create recurring records
-recur: every day # repeat alias
+recur: every day # same as repeat
 ---
 ```
 
