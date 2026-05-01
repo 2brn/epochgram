@@ -141,7 +141,7 @@ There are collapsible filters under the <img src="images/settings.svg" width="18
 | <img src="images/pencil-ruler.svg" width="18" height="18" alt=""> | Drafts. |
 | <img src="images/eye.svg" width="18" height="18" alt=""> | Drafts, reviewed, and hidden. |
 | | |
-| <img src="images/history.svg" width="18" height="18" alt=""> | Show tracked changes. |
+| <img src="images/history.svg" width="18" height="18" alt=""> | Show tracked changes (Pro). |
 | | |
 | <img src="images/calendar.svg" width="18" height="18" alt=""> | Show content dates, ranges, and recurring. |
 | <img src="images/square-code.svg" width="18" height="18" alt=""> | Show content dates including YAML. |
@@ -271,9 +271,9 @@ You can use context placeholders. File summaries support `{{filePath}}` (full fi
 
 ## AI Summaries & Epochs (Pro, desktop-only)
 
-**⛭ Auto summarize** → when enabled, Epochgram automatically summarizes a record through the AI Bridge each time the file changes. Even when disabled, you can still run summarization for a specific record from its context menu.
+**⛭ Auto summarize** → when enabled, Epochgram automatically summarizes timeline records through the AI Bridge whenever the file changes. It does not modify the file content.
 
-**⛭ Generate Epochs** → when enabled, Epochgram creates a zoomable time map that groups many days into larger period summaries, helping you see the bigger picture and spot patterns without reading the timeline day by day. Epochs are generated hierarchically from day up to year, in essence, summaries of summaries. If highlighted records are present, Epochs are colored by the most common highlight color in that range. You can regenerate a specific Epoch from the context menu.
+**⛭ Generate Epochs** → when enabled, Epochgram creates a zoomable time map that groups many days into larger period summaries, helping you see the bigger picture without reading the timeline day by day. Epochs are generated hierarchically from day up to year, in essence, summaries of summaries. If highlighted records are present, Epochs are colored by the most common highlight color in that range. You can regenerate a specific Epoch from the context menu.
 
 > [!TIP]
 > **⌘ Epochgram: Summarize all** → generate all missing AI summaries and Epochs.</br>
@@ -338,7 +338,6 @@ Epochgram also provides **Rebuild** and **Reset** popups for rebuilding or clear
     - **⛭ Semantics** → remove all embedding vectors.
     - **⛭ Topics** → remove all topics and classification data.
     - **⛭ Tracked changes** → remove all tracked changes.
-    - **⛭ Manual summaries** → remove all manual summaries in the index.
     - **⛭ AI summaries** → remove all AI summaries and use default "first N words".
     - **⛭ Epochs** → remove all Epochs.
 
@@ -356,7 +355,7 @@ Epochgram also provides **Rebuild** and **Reset** popups for rebuilding or clear
 ## Disclosures
 
 - Epochgram Pro:
-	- Requires an payment and internet access for license validation; your email address, license key, and basic server-side telemetry may be processed (see [TERMS](https://www.Epochgram.com/terms)).
+	- Requires an payment and internet access for license validation; your email address, license key, and basic server-side telemetry may be processed (see [TERMS](https://www.epochgram.com/terms)).
   - Is not affiliated with Obsidian Sync, Publish, or other Obsidian paid services.
   - AI Bridge: Epochgram starts a local server on `http://127.0.0.1` and opens a local bridge page in Google Chrome to use Chrome's on-device Summarizer API. The bridge communication stays on your device. Chrome [may download](https://developer.chrome.com/docs/ai/summarizer-api) its built-in model(s) (Gemini Nano) the first time you use these APIs.
   - Similarity: embeddings/topic models and runtime files may be downloaded on first use via `@huggingface/transformers` (for example from [Hugging Face](https://huggingface.co)) and ONNX Runtime Web WASM from [jsDelivr](https://cdn.jsdelivr.net/npm/onnxruntime-web@1.26.0-dev.20260410-5e55544225/dist/).
