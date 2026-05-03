@@ -23,7 +23,7 @@ A Timemap of Your Mind
 > - On-device AI summaries via Google Chrome.
 > - Epochs: a zoomable time map, from daily detail to a year overview.
 > - Find related notes through links, tags, titles, and semantic similarity.
-> - Topic clustering and highlighted related groups.
+> - Topic clustering and marked related groups.
 > - Tracked content edits.
 > - Recurring events.
 
@@ -58,18 +58,14 @@ A Timemap of Your Mind
 | **Click** record | Open the file |
 | **Click** date | Open the daily note |
 | **Ctrl/Cmd+Click** record | Open the file in a new tab |
-| | |
 | **Right-Click** or **Long-Tap** record or date | Open the context menu |
 | **Right-Click** or **Long-Tap** empty space | Toggle Epochs view (Pro) |
-| | |
 | **Double-Click** empty space | Scroll to Today |
 | **Double-Click** date | Create a new daily note |
-| | |
 | **Wheel** or **Pan** | Scroll |
 | **Ctrl/Cmd+Wheel** or **Pinch** | Zoom |
 | **Alt/Option+Wheel/Up/Down** or **Two-Finger-Tap** | Jump to the next/previous similar record |
 | **Shift+Wheel** | Zoom around the current record |
-| | |
 | **Alt/Option+Hover** record | Show the file preview |
 | **Drag-N-Drop** record | Change its date |
 
@@ -95,6 +91,9 @@ The timeline is a scrollable, zoomable surface that collects records from all fi
 | **Filename dates** | Parsed filename date. |
 | **Frontmatter dates** | YAML `date` property. |
 | **Created dates** | File creation time. |
+
+> [!TIP]
+> Enable **⛭ Parse dates in properties** to extract dates from YAML frontmatter. The `date` property is always parsed.
 
 Each file has one anchor record that represents its canonical date. All other record types are optional. Drag and drop works only for anchor records, it updates the YAML `date` property, and the filename for daily notes.
 
@@ -137,17 +136,10 @@ There are collapsible filters under the <img src="images/settings.svg" width="18
 
 | Filter | Description |
 | --- | --- |
-| <img src="images/scan-eye.svg" width="18" height="18" alt=""> | Drafts & reviewed. |
-| <img src="images/pencil-ruler.svg" width="18" height="18" alt=""> | Drafts. |
-| <img src="images/eye.svg" width="18" height="18" alt=""> | Drafts, reviewed, and hidden. |
-| | |
+| <img src="images/scan-eye.svg" width="18" height="18" alt=""> | Show drafts only. |
 | <img src="images/history.svg" width="18" height="18" alt=""> | Show tracked changes (Pro). |
-| | |
 | <img src="images/calendar.svg" width="18" height="18" alt=""> | Show content dates, ranges, and recurring. |
-| <img src="images/square-code.svg" width="18" height="18" alt=""> | Show content dates including YAML. |
-| | |
 | <img src="images/paperclip.svg" width="18" height="18" alt=""> | Show non-text files. |
-| | |
 | <img src="images/hourglass.svg" width="18" height="18" alt=""> | Toggle Epochs view (Pro). |
 
 ## Search
@@ -163,6 +155,8 @@ A search bar at the bottom lets you search timeline records and shows the number
 | **Enter** | Open the matched file. |
 | **Alt/Option+Enter** | Filter timeline records by the current query. |
 | **!marked** | Show only marked records. |
+| **!hidden** | Show only hidden records. |
+| **!similar** | Show only similar records to currently opened file. |
 | **"exact"** | Find exact string. |
 
 ## Actions
@@ -170,9 +164,6 @@ A search bar at the bottom lets you search timeline records and shows the number
 <p align="center">
 <img src="images/actions.gif" height="360" alt="Actions">
 </p>
-
-> [!TIP]
-> Enable **⛭ Simple mode** for a minimal UI: red marks, hide/show review, toggle filters, and fewer controls.
 
 Files in the vault are never modified unless you run an explicit file action. All attributes *except the date and manual summary* are stored in Epochgram data files, not in vault files.
 
@@ -183,7 +174,7 @@ Record context menu:
 | **<img src="images/square-pen.svg" width="18" height="18" alt=""> Summary…** | Update the file YAML `description`. |
 | **<img src="images/tag.svg" width="18" height="18" alt=""> Topic** | Open the topics assignment popup; to remove topics, clear the input (Pro). |
 | **<img src="images/pin.svg" width="18" height="18" alt=""> Pin** | Pin the file at the *Today* position; or **⌘ Epochgram: Toggle pin for current file**. |
-| **<img src="images/highlighter.svg" width="18" height="18" alt=""> Mark** | Highlight similar records with a color; or **⌘ Epochgram: Toggle mark for current file**. |
+| **<img src="images/highlighter.svg" width="18" height="18" alt=""> Mark** | Mark similar records with a color; or **⌘ Epochgram: Toggle mark for current file**. |
 | **<img src="images/pencil-ruler.svg" width="18" height="18" alt=""> Draft**</br>**<img src="images/eye.svg" width="18" height="18" alt=""> Review**</br>**<img src="images/eye-off.svg" width="18" height="18" alt=""> Hide** | Change the file review state. |
 | **<img src="images/pen-line.svg" width="18" height="18" alt=""> Rename…** | Rename the file in the vault. |
 | **<img src="images/folder-tree.svg" width="18" height="18" alt=""> Move to…** | Move the file to another folder. |
@@ -194,12 +185,12 @@ Record context menu:
 
 ## Review State
 
-Epochgram is designed around the [C.O.D.E.](https://fortelabs.com/blog/basboverview/) process (capture → organize → distill → express). New or indexed files appear as ***Draft***. After organizing the file and extracting the key points, the record can be marked as **Reviewed**. If the file changes later, the record returns to *Draft*, indicating it may need review again.
+Epochgram is designed around the [C.O.D.E.](https://fortelabs.com/blog/basboverview/) process (capture → organize → distill → express). New or indexed files appear as ***Draft***. After organizing the file and extracting the key points, the record can be set as **Reviewed**. If the file changes later, the record returns to *Draft*, indicating it may need review again.
 
-Not every record deserves space on the timeline. Some, such as minor tracked changes, can be marked **Hidden**. Hidden records either disappear from the timeline or are muted when the <img src="images/eye.svg" width="18" height="18" alt=""> filter is on.
+Not every record deserves space on the timeline. Some, such as minor tracked changes, can be set **Hidden**. Hidden records disappear from the timeline by default. Use **`!hidden`** in search to show only hidden records — they are rendered muted.
 
 > [!TIP]
-> **⌘ Epochgram: Review all** → mark all records across the vault as reviewed.</br>
+> **⌘ Epochgram: Review all** → set all records across the vault as reviewed.</br>
 > **⌘ Epochgram: Toggle visibility for current file** → hide or show all records from the current file.
 
 ## Recurring (Pro)
@@ -228,7 +219,7 @@ repeat: FREQ=DAILY;COUNT=5 # RRULE
   <img src="images/topics.gif" height="360" alt="Topics">
 </p>
 
-Similarity helps find related records. When you open a note, similar records on the timeline are highlighted using the current theme color. Epochgram includes multiple similarity settings that work across all platforms, including iOS and Android:
+Similarity helps find related records. When you open a note, similar records on the timeline are marked using the current theme color. Epochgram includes multiple similarity settings that work across all platforms, including iOS and Android:
 
 | Settings | Description |
 | --- | --- |
@@ -273,11 +264,10 @@ You can use context placeholders. File summaries support `{{filePath}}` (full fi
 
 **⛭ Auto summarize** → when enabled, Epochgram automatically summarizes timeline records through the AI Bridge whenever the file changes. It does not modify the file content.
 
-**⛭ Generate Epochs** → when enabled, Epochgram creates a zoomable time map that groups many days into larger period summaries, helping you see the bigger picture without reading the timeline day by day. Epochs are generated hierarchically from day up to year, in essence, summaries of summaries. If highlighted records are present, Epochs are colored by the most common highlight color in that range. You can regenerate a specific Epoch from the context menu.
+**⛭ Generate Epochs** → when enabled, Epochgram creates a zoomable time map that groups many days into larger period summaries, helping you see the bigger picture without reading the timeline day by day. Epochs are generated hierarchically from day up to year, in essence, summaries of summaries. If marked records are present, Epochs are colored by the most common mark color in that range. You can regenerate a specific Epoch from the context menu.
 
 > [!TIP]
 > **⌘ Epochgram: Summarize all** → generate all missing AI summaries and Epochs.</br>
-> **⌘ Epochgram: Export Epochs** → export as standalone HTML to your daily notes folder.
 
 ## Custom YAML
 
