@@ -74,7 +74,7 @@ Note: view preferences (review filter mode, attachments/tracked/parsed/YAML-fron
 - Indexing core: `indexer/indexer.ts` (stable entry) and `indexer/indexer-class.ts` (implementation).
 
 ## Release Workflow (Verified)
-- On semver tag push (e.g. `1.0.0`, no leading `v`) or manual dispatch, GitHub Actions runs tests + `npm run build:production` (includes `npm run lint`), prepares release assets, and publishes the GitHub Release to `2brn/epochgram` (see `.github/workflows/release.yml`).
+- On semver tag push (e.g. `1.0.0`, no leading `v`) or manual dispatch, GitHub Actions runs tests + `npm run build:production`, prepares release assets, and publishes the GitHub Release to `2brn/epochgram` (see `.github/workflows/release.yml`).
 - GitHub Release publishes only the 3 Obsidian-supported plugin files: `manifest.json`, `main.js`, `styles.css` (removes legacy `export-epochs-standalone.js` and non-plugin assets like README/LICENSE/versions.json).
 - **Artifact attestations:** Each of the 3 plugin files is cryptographically attested using `actions/attest@v4` to establish build provenance and allow users to verify authenticity via `gh attestation verify`.
 - CI install steps set `ONNXRUNTIME_NODE_INSTALL=skip` during `npm ci` to avoid optional `onnxruntime-node` NuGet download failures on hosted runners.

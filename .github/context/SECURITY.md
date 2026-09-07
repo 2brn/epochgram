@@ -12,7 +12,6 @@ Epochgram Pro runs inside an Obsidian plugin bundle. A determined local attacker
   - `devicePublicKey`
   - `deviceName`
   - `pluginVersion`
-  - `buildHash`
 - The backend returns a server-signed activation certificate.
 - The signed certificate is feature-scoped; current feature names are `trackChanges`, `recurring`, `summarizeAI`, `generateEpochs`, `aiBridge`, and `similarity`.
 - The plugin stores only device-local activation state:
@@ -27,7 +26,6 @@ Epochgram Pro runs inside an Obsidian plugin bundle. A determined local attacker
   - verify install ID
   - verify device public key
   - verify plugin version
-  - verify build hash
   - verify validity window
 - Update-time revalidation uses `POST /api/pro/validate` with a challenge signed by the local device private key.
 - Refreshed certificates must bind the issued challenge and carry a monotonic license generation.
@@ -37,7 +35,7 @@ Epochgram Pro runs inside an Obsidian plugin bundle. A determined local attacker
 The current design is intended to resist:
 
 - copying a synced activation blob from one vault/device to another
-- replaying a certificate across plugin versions or release builds
+- replaying a certificate across plugin versions
 - simple string-edit bypasses that assume one global `isPro` flag
 - naive endpoint stubbing that only returns `valid: true`
 
@@ -51,7 +49,6 @@ The current design does not claim to resist:
 
 - Per-feature runtime guards instead of a single global feature gate
 - Production runtime trust no longer contains a Vitest/test-mode compatibility bypass
-- Release-specific build hash embedded by the build pipeline
 - Install-bound and device-public-key-bound certificates
 - Offline local signature verification
 - Challenge-response refresh after plugin update
@@ -66,7 +63,6 @@ The current design does not claim to resist:
 - The server signing private key must stay server-side only.
 - The plugin embeds only the public verification key.
 - Revocation and device-limit enforcement remain backend responsibilities.
-- Build hash changes require backend awareness for the corresponding release.
 
 ## Known Limits
 

@@ -23,7 +23,6 @@ This is a “what to open first” map of the codebase.
 - `plugin/timeline-search-cache.ts` — Loads/saves the MiniSearch cache (`epochgram-search.json`).
 - `plugin/license.ts` — Activation, local certificate verification, update-time challenge-response revalidation, and runtime Pro state.
 - `plugin/pro-trust.ts` — Signed certificate parsing/verification, runtime trust cache, and per-feature certificate introspection.
-- `plugin/release-fingerprint.ts` — Release fingerprint/build hash helpers (salt removed; build hash is derived from installed files or manifest fallback); no longer required for Pro certificate verification.
 
 ## plugin/similarity/
 - `plugin/similarity/store.ts` — Reads/writes `epochgram-semantics.json` (semantic vectors; multi-model `models` map).
@@ -35,6 +34,7 @@ This is a “what to open first” map of the codebase.
 - `ui/epoch-canvas.ts` — Timeline canvas and interactions (delegates to `ui/epoch-canvas/*`).
 - `ui/timeline-search.ts` — Timeline search query parser (fuzzy text, quoted phrases, excluded quoted phrases, date-range filter tokens) and badge formatting.
 - `ui/modals/timeline-search-modal.ts` — Modal with a search input used to update the timeline search query.
+- `ui/search-highlight.ts` — Applies a temporary editor decoration to matching text in a note opened from a search suggestion.
 - `ui/mark-colors.ts` — Mark color palette and grouping.
 
 ## search/

@@ -10,7 +10,7 @@ Implement a certificate-based activation flow with these rules:
 
 - The plugin contacts the backend only:
   - on first activation
-  - after a plugin update or release build hash change
+  - after a plugin update
 - Same-version use stays fully offline.
 - The backend signs activation certificates with a server private key.
 - The plugin verifies certificates locally with an embedded server public key.
@@ -42,7 +42,6 @@ These facts are already implemented in the plugin repo and must be treated as th
   - `devicePublicKey`
   - `deviceName`
   - `pluginVersion`
-  - `buildHash`
 
 ### Activation success response
 
@@ -76,7 +75,6 @@ The decoded claims payload must contain:
   "installId": "...",
   "devicePublicKey": "...",
   "pluginVersion": "0.4.4",
-  "buildHash": "...",
   "features": [
     "trackChanges",
     "recurring",
@@ -109,7 +107,6 @@ Feature semantics the backend must honor:
   - `devicePublicKey`
   - `deviceName`
   - `pluginVersion`
-  - `buildHash`
   - `challenge`
   - `challengeSignature`
   - `certificate`
@@ -121,7 +118,6 @@ The plugin signs this exact logical payload with its device private key before c
   "challenge": "...",
   "pluginId": "obsidian-epochgram",
   "pluginVersion": "...",
-  "buildHash": "...",
   "installId": "...",
   "devicePublicKey": "..."
 }
@@ -137,7 +133,7 @@ The plugin signs this exact logical payload with its device private key before c
 - Optional:
   - `holder`
 
-The returned certificate must be freshly signed for the new plugin version/build hash.
+The returned certificate must be freshly signed for the new plugin version.
 
 ### Failure semantics expected by the plugin
 
@@ -164,7 +160,6 @@ Use this as a strict implementation checklist. Every unchecked item is a plugin/
   - [ ] `devicePublicKey`
   - [ ] plugin/product ID (`audience` / `pluginId`)
   - [ ] `pluginVersion`
-  - [ ] `buildHash`
   - [ ] granted feature list
 - [ ] Derive the granted feature list from backend plan/entitlement policy explicitly, including whether `recurring` is enabled.
 
@@ -183,8 +178,8 @@ Use this as a strict implementation checklist. Every unchecked item is a plugin/
 - [ ] `POST /api/pro/validate` verifies that the certificate still maps to an active, non-revoked entitlement.
 - [ ] `POST /api/pro/validate` verifies that the challenge signature matches the stored device public key for the claimed install/device pair.
 - [ ] `POST /api/pro/validate` verifies that the install/device pairing is still allowed for that entitlement.
-- [ ] `POST /api/pro/validate` does not trust `installId`, `devicePublicKey`, `pluginVersion`, `buildHash`, or feature decisions from the request unless they are validated against backend state.
-- [ ] If validation succeeds, return HTTP `2xx` with `valid: true` and a freshly signed certificate for the current `pluginVersion` and `buildHash`.
+- [ ] `POST /api/pro/validate` does not trust `installId`, `devicePublicKey`, `pluginVersion`, or feature decisions from the request unless they are validated against backend state.
+- [ ] If validation succeeds, return HTTP `2xx` with `valid: true` and a freshly signed certificate for the current `pluginVersion`.
 - [ ] Every refreshed certificate returned by `POST /api/pro/validate` includes `refreshChallenge` equal to the exact request `challenge`.
 - [ ] Never return a refreshed certificate without `refreshChallenge`.
 - [ ] Never echo a different challenge value.
@@ -224,7 +219,7 @@ Use this as a strict implementation checklist. Every unchecked item is a plugin/
 ### Tests and verification
 
 - [ ] Add or update tests proving activation returns a signed certificate.
-- [ ] Add or update tests proving certificate claims are bound to install ID, device public key, plugin version, and build hash.
+- [ ] Add or update tests proving certificate claims are bound to install ID, device public key, and plugin version.
 - [ ] Add or update tests proving `/api/pro/validate` verifies the signed challenge.
 - [ ] Add or update tests proving successful validation returns a fresh certificate.
 - [ ] Add or update tests proving refreshed certificates contain the exact request `challenge` in `refreshChallenge`.
@@ -240,7 +235,7 @@ If the current backend still returns the older activation contract, the current 
 
 - `licenseGeneration` on all certificate claims
 - `refreshChallenge` on certificates returned by `/api/pro/validate`
-- a certificate body bound to the current `installId`, `devicePublicKey`, `pluginVersion`, and `buildHash`
+- a certificate body bound to the current `installId`, `devicePublicKey`, and `pluginVersion`
 
 Also note:
 
@@ -289,7 +284,7 @@ If anything is not repo-verified, mark it as `Unknown` and point to the file/sym
 6. Keep status-code behavior aligned with current plugin expectations.
 7. Add or update tests for:
    - activation returns a signed certificate
-   - certificate claims are bound to install ID, device public key, plugin version, and build hash
+   - certificate claims are bound to install ID, device public key, and plugin version
   - recurring expansion is granted only when the certificate includes `recurring`
    - update validation verifies the signed challenge
    - successful validation returns a fresh certificate

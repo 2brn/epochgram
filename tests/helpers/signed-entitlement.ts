@@ -1,8 +1,6 @@
 import { createPublicKey, createSign } from "node:crypto";
 import type { EntitlementClaims, SignedEntitlementEnvelope } from "../../src/plugin/pro-trust";
 
-const FIXTURE_BUILD_HASH = "a".repeat(64);
-
 const TEST_PRIVATE_KEY_PEM = `-----BEGIN PRIVATE KEY-----
 MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQg4EIAVrK0jziKif3y
 wTAgMlFJHRCG/lLq9oppMrbNZ/+hRANCAARfDQzkBPAiAn2mbhSWqWEaXzKXUAPm
@@ -30,7 +28,6 @@ export function buildEntitlementClaims(overrides: Partial<EntitlementClaims> = {
 		installId: "install-test",
 		devicePublicKey: "device-public-test",
 		pluginVersion: "0.4.3-test",
-		buildHash: FIXTURE_BUILD_HASH,
 		features: ["trackChanges", "recurring", "summarizeAI", "generateEpochs", "aiBridge", "similarity"],
 		issuedAt: "2030-01-01T00:00:00.000Z",
 		holder: "Fixture",

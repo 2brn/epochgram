@@ -508,7 +508,6 @@ describe("license: signed activation certificates", () => {
 		const forgedEnvelope = buildSignedEntitlementEnvelope(buildEntitlementClaims({
 			installId: "install-forged",
 			devicePublicKey: "device-public-forged",
-			buildHash: "wrong-build"
 		}));
 		plugin.settings.activationEnvelope = JSON.stringify(forgedEnvelope);
 		plugin.settings.activationWitness = "forged-witness";

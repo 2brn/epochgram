@@ -61,13 +61,13 @@
 	  - In Epochs view, suggestions include epoch records in the current zoom bucket, and can also include normal (non-epoch) record matches.
       - Epoch suggestions display as `YYYY-MM-DD - YYYY-MM-DD ⸱ <summary>` when a summary exists.
       - Record suggestions render with a primary title line (note name) and a smaller metadata line (folder path without filename and summary).
-      - Selecting a suggestion focuses and opens that specific record.
+      - Selecting a suggestion focuses and opens that specific record; for a text-search query, it also applies a temporary yellow highlight to the first matching text in the opened note when available.
           - The suggestions list always ends with a `(filter <query>)` action for non-empty input, which applies the current query without opening a file.
         - For empty input, suggestions prefer recently opened files (when available); otherwise suggestions show the most recent records. The list ends with a `(clear)` item.
     - `Enter` selects the highlighted suggestion (opens only; does not apply the query).
     - `Alt+Enter` applies the current query without opening a file (`Option+Enter` on macOS).
     - Selecting a match scrolls the timeline to that match and opens the record.
-  - Selecting a search suggestion scrolls the timeline to the chosen (or best matching) record.
+  - Selecting a search suggestion scrolls the timeline to the chosen (or best matching) record and attempts to apply a temporary yellow highlight to the matching search text in the opened note.
 - Ribbon icon: `epochgram-logo` → Epochgram” (see `plugin/lifecycle.ts`).
 - Hover link source registered under `this.manifest.id` (see `plugin/lifecycle.ts`).
 - File context menu items (see `plugin/view.ts`):

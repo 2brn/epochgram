@@ -74,7 +74,6 @@ export function renderGeneralViewSettings(containerEl: HTMLElement, plugin: Epoc
 		slider
 			.setLimits(0, 100, 1)
 			.setValue(currentCompactModeMinWidth)
-			.setDynamicTooltip()
 			.onChange(async (value) => {
 				if (suppressCompactModeMinWidthOnChange) return;
 				const rounded = Math.max(0, Math.min(100, Math.round(value)));
@@ -119,7 +118,6 @@ export function renderGeneralViewSettings(containerEl: HTMLElement, plugin: Epoc
 		slider
 			.setLimits(1, 50, 1)
 			.setValue(currentSearchResults)
-			.setDynamicTooltip()
 			.onChange(async (value) => {
 				if (suppressSearchResultsOnChange) return;
 				const rounded = Math.max(1, Math.min(50, Math.round(value)));
@@ -336,7 +334,6 @@ export function renderIndexerSettings(containerEl: HTMLElement, plugin: EpochPlu
 		slider
 			.setLimits(0, 12, 1)
 			.setValue(currentFilenameWords)
-			.setDynamicTooltip()
 			.onChange(async (value) => {
 				if (suppressFilenameSliderOnChange) return;
 				const rounded = Math.round(value);
@@ -384,7 +381,6 @@ export function renderIndexerSettings(containerEl: HTMLElement, plugin: EpochPlu
 		slider
 			.setLimits(0, 12, 1)
 			.setValue(currentSummaryWords)
-			.setDynamicTooltip()
 			.onChange(async (value) => {
 				if (suppressSummarySliderOnChange) return;
 				const rounded = Math.round(value);

@@ -20,6 +20,7 @@ import { focusDateIfNeeded } from "./epoch-canvas-focus";
 import { FolderTreeModal, TextPromptModal, confirmDeleteFileIfNeeded } from "./modals";
 import { formatDate } from "utils";
 import { getYamlDatePropertyKey } from "../plugin/frontmatter-keys";
+import { highlightSearchText } from "./search-highlight";
 
 type CanvasActionsAppLike = App & {
 	vault: App["vault"] & {
@@ -193,11 +194,16 @@ export async function openDateNote(
 	return true;
 }
 
+type OpenFileOptions = {
+	highlightQuery?: string;
+};
+
 export async function openEntry(
 	canvas: EpochCanvas,
 	entry: DateEntry,
 	ev: MouseEvent | undefined,
-	suppressFocusHover: boolean
+	suppressFocusHover: boolean,
+	options?: OpenFileOptions
 ): Promise<void> {
 	const state = actionState(canvas);
 	const line = Math.max(0, entry.blockStart ?? 0);
@@ -205,14 +211,15 @@ export async function openEntry(
 		state.suppressNextFocusHover = entry.file;
 		state.suppressNextFocusScroll = entry.file;
 	}
-	await openFileAtLine(canvas, entry.file, line, ev);
+	await openFileAtLine(canvas, entry.file, line, ev, options);
 }
 
 export async function openFileAtLine(
 	canvas: EpochCanvas,
 	filePath: string,
 	line: number,
-	ev: MouseEvent | undefined
+	ev: MouseEvent | undefined,
+	options?: OpenFileOptions
 ): Promise<void> {
 	const state = actionState(canvas);
 	const app = state.plugin.app;
@@ -300,6 +307,8 @@ export async function openFileAtLine(
 		editor.focus();
 		editor.setCursor({ line: safeLine, ch: 0 });
 		editor.scrollIntoView({ from: { line: safeLine, ch: 0 }, to: { line: safeLine, ch: 0 } }, true);
+		const highlightQuery = String(options?.highlightQuery ?? "").trim();
+		if (highlightQuery) highlightSearchText(editor, highlightQuery, safeLine);
 	}
 }
 

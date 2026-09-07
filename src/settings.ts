@@ -50,6 +50,11 @@ export class EpochSettingTab extends PluginSettingTab {
 		return [];
 	}
 
+	private refreshDisplay(): void {
+		const display = (this as unknown as { display?: () => void }).display;
+		display?.call(this);
+	}
+
 	display(): void {
 		const { containerEl } = this;
 		containerEl.empty();
@@ -60,7 +65,7 @@ export class EpochSettingTab extends PluginSettingTab {
 
 		const { itemsEl: indexerItems } = createSettingGroup(containerEl, "Indexer");
 
-		renderProPanel(containerEl, this.app, this.plugin, () => this.display());
+		renderProPanel(containerEl, this.app, this.plugin, () => this.refreshDisplay());
 		try {
 			const proGroup = containerEl.querySelector<HTMLElement>(":scope > .setting-group.epoch-pro-settings-group");
 			if (proGroup && containerEl.firstElementChild !== proGroup) {
@@ -70,7 +75,7 @@ export class EpochSettingTab extends PluginSettingTab {
 			// ignore
 		}
 		renderIndexerSettings(indexerItems, this.plugin);
-		renderMaintenanceSettings(indexerItems, this.app, this.plugin, () => this.display());
+		renderMaintenanceSettings(indexerItems, this.app, this.plugin, () => this.refreshDisplay());
 
 		const { itemsEl: versionItems } = createSettingGroup(containerEl);
 		const versionSetting = new Setting(versionItems)

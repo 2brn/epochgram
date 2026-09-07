@@ -71,6 +71,7 @@ describe("Timeline search suggestion selection", () => {
 		expect(focusFiltered).toHaveBeenCalledWith("notes/a.md");
 		expect(setActiveFile).toHaveBeenCalledWith("notes/a.md", 12, { suppressFocus: true });
 		expect(openEntryAction).toHaveBeenCalledTimes(1);
+		expect(openEntryAction.mock.calls[0]?.[4]).toEqual({ highlightQuery: "alpha" });
 	});
 
 	it("passes ctrl-enter modifiers to open in new tab", async () => {

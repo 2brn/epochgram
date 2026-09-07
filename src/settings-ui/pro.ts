@@ -540,7 +540,6 @@ export function renderProPanel(
 			slider
 				.setLimits(MIN, MAX, STEP)
 				.setValue(canUse ? titleThr : 0)
-				.setDynamicTooltip()
 				.setDisabled(!canUse)
 				.onChange(async (value) => {
 					if (!canUse) return;
@@ -620,7 +619,6 @@ export function renderProPanel(
 			slider
 				.setLimits(SIMILARITY_MIN, SIMILARITY_MAX, SIMILARITY_STEP)
 				.setValue(canUse ? currentSimilarity : SIMILARITY_MIN)
-				.setDynamicTooltip()
 				.setDisabled(!canUse)
 				.onChange(async (value) => {
 					if (!canUse) return;
@@ -703,7 +701,6 @@ export function renderProPanel(
 			slider
 				.setLimits(MIN, MAX, STEP)
 				.setValue(canUse ? current : MIN)
-				.setDynamicTooltip()
 				.setDisabled(!canUse)
 				.onChange(async (value) => {
 					if (!canUse) return;

@@ -432,7 +432,6 @@ export function openSearchModal(view: SearchViewLike): void {
 			if (!filePath) return;
 			pushLastOpenedFromSearch(filePath);
 			const q = String(query || "");
-			void q;
 			// Scroll to the chosen record (don't snap the canvas).
 			try {
 				const now = window.performance?.now?.() ?? Date.now();
@@ -451,7 +450,7 @@ export function openSearchModal(view: SearchViewLike): void {
 			try {
 				const maybeEv = ev as { ctrlKey?: boolean; metaKey?: boolean } | undefined;
 				const evt = maybeEv && (maybeEv.ctrlKey || maybeEv.metaKey) ? (ev as unknown as MouseEvent) : undefined;
-				void openEntryAction(view.canvas as unknown as Parameters<typeof openEntryAction>[0], entry, evt, true);
+				void openEntryAction(view.canvas as unknown as Parameters<typeof openEntryAction>[0], entry, evt, true, { highlightQuery: q });
 			} catch {
 				// ignore
 			}

@@ -1,59 +1,5 @@
 const fs = require("fs");
 const path = require("path");
-const os = require("os");
-const crypto = require("crypto");
-
-function sha256Hex(value) {
-	return crypto.createHash("sha256").update(value).digest("hex");
-}
-
-function isRecord(value) {
-	return !!value && typeof value === "object" && !Array.isArray(value);
-}
-
-function stableStringifyJson(value) {
-	if (value == null) return "null";
-	if (typeof value === "string") return JSON.stringify(value);
-	if (typeof value === "number") return Number.isFinite(value) ? String(value) : "null";
-	if (typeof value === "boolean") return value ? "true" : "false";
-	if (Array.isArray(value)) return `[${value.map((entry) => stableStringifyJson(entry)).join(",")}]`;
-	if (!isRecord(value)) return "null";
-	const keys = Object.keys(value).sort();
-	return `{${keys.map((key) => `${JSON.stringify(key)}:${stableStringifyJson(value[key])}`).join(",")}}`;
-}
-
-function computeBuildHashFromPackagedFiles(outDir) {
-	const mainJsPath = path.join(outDir, "main.js");
-	const manifestPath = path.join(outDir, "manifest.json");
-	if (!fs.existsSync(mainJsPath) || !fs.existsSync(manifestPath)) return null;
-
-	const mainJsBuf = fs.readFileSync(mainJsPath);
-	const mainJsDigest = sha256Hex(mainJsBuf);
-
-	const manifestRaw = fs.readFileSync(manifestPath, "utf8");
-	let manifestObj;
-	try {
-		manifestObj = JSON.parse(manifestRaw);
-	} catch {
-		return null;
-	}
-	if (!isRecord(manifestObj)) return null;
-
-	const manifestForHash = { ...manifestObj };
-	delete manifestForHash.epochgramBuildHash;
-	const canonicalManifestForHash = stableStringifyJson(manifestForHash);
-	const manifestDigest = sha256Hex(Buffer.from(canonicalManifestForHash, "utf8"));
-	const buildHash = sha256Hex(`${mainJsDigest}:${manifestDigest}`);
-	return buildHash;
-}
-
-function writePackagedManifestBuildHash(outDir) {
-	try {
-		return computeBuildHashFromPackagedFiles(outDir);
-	} catch {
-		return null;
-	}
-}
 
 function parseArgs(argv) {
 	const args = {
@@ -243,9 +189,7 @@ function copyPackagedFiles(repoRoot, outDir, options = {}) {
 		}
 	}
 
-	const buildHash = writePackagedManifestBuildHash(outDir);
-
-	return { copiedFiles, buildHash };
+	return { copiedFiles };
 }
 
 function touchHotReloadFile(dir) {
@@ -269,7 +213,6 @@ function main() {
 	const packageDir = path.join(repoRoot, "production", pluginName);
 	const packaged = copyPackagedFiles(repoRoot, packageDir);
 	const packagedFiles = packaged.copiedFiles;
-	const packagedBuildHash = packaged.buildHash;
 
 	let deployedDir = null;
 	let deployedFiles = null;
@@ -292,7 +235,7 @@ function main() {
 				const deployed = copyPackagedFiles(repoRoot, dir, { preserve: ["data.json"] });
 				const files = deployed.copiedFiles;
 				touchHotReloadFile(dir);
-				deployedDirs.push({ dir, files, buildHash: deployed.buildHash });
+				deployedDirs.push({ dir, files });
 			}
 			// Back-compat: keep single-dir fields when only one deploy target exists.
 			if (deployedDirs.length === 1) {
@@ -303,7 +246,6 @@ function main() {
 	}
     
 	const summary = {
-		buildHash: packagedBuildHash,
 		packageDir: path.relative(repoRoot, packageDir).replace(/\\/g, "/"),
 		packagedFiles,
 		deployedDir: deployedDir ? deployedDir : null,

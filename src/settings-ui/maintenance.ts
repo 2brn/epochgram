@@ -101,11 +101,10 @@ export function renderMaintenanceSettings(containerEl: HTMLElement, app: App, pl
 						}
 				})
 		)
-		.addButton((btn) =>
-			btn
-				.setButtonText("Reset")
-				.setWarning()
-				.onClick(async () => {
+		.addButton((btn) => {
+			btn.setButtonText("Reset");
+			btn.buttonEl?.classList?.add("mod-warning");
+			btn.onClick(async () => {
 						try {
 							if (state.__epochMaintenanceInFlight) return;
 							state.__epochMaintenanceInFlight = true;
@@ -175,6 +174,6 @@ export function renderMaintenanceSettings(containerEl: HTMLElement, app: App, pl
 								// ignore
 							}
 						}
-				})
-		);
+				});
+		});
 }
