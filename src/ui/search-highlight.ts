@@ -115,6 +115,7 @@ export function highlightSearchText(editor: SearchEditor, query: string, preferr
 			try {
 				editorView.dispatch({ effects: clearSearchHighlight.of(null) });
 			} catch {
+				// The editor may have been detached before the timer fired.
 			}
 			clearTimers.delete(editorView);
 		}, 5000);
