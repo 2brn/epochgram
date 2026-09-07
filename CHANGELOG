@@ -1,5 +1,8 @@
 # Epochgram changelog
 
+## [1.8.20] - 2026-09-07
+- Fixed linter warning.
+
 ## [1.8.19] - 2026-09-07
 - Added temporary yellow text highlighting and line focus when opening a matching timeline search suggestion, without modifying Markdown.
 - Removed obsolete build-hash packaging and licensing references.
