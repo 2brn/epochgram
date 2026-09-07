@@ -1,5 +1,10 @@
 # Epochgram changelog
 
+## [1.8.19] - 2026-09-07
+- Added temporary yellow text highlighting and line focus when opening a matching timeline search suggestion, without modifying Markdown.
+- Removed obsolete build-hash packaging and licensing references.
+- Resolved lint warnings and updated release/context documentation.
+
 ## [1.8.18] - 2026-08-31
 - Added a dedicated bell icon on the timeline for ICS calendar sync (synced) events, documented in the README.
 - Fixed a caching bug where already-indexed records could lose newly derived flags (e.g. the new sync icon) on reindex/rebuild when file content was unchanged.
