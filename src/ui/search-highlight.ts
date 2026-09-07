@@ -68,15 +68,59 @@ function positionAt(content: string, offset: number): EditorPosition {
 	};
 }
 
+function getPreferredOffset(content: string, preferredLine: number): number {
+	const line = Math.max(0, Math.floor(Number(preferredLine) || 0));
+	const lines = content.split("\n");
+	let preferredOffset = 0;
+	for (let i = 0; i < Math.min(line, lines.length - 1); i++) preferredOffset += lines[i].length + 1;
+	return preferredOffset;
+}
+
+function findCandidateRanges(content: string, query: string, preferredLine: number): SearchTextRange[] {
+	const candidates = getHighlightCandidates(query);
+	if (candidates.length === 0) return [];
+	const preferredOffset = getPreferredOffset(content, preferredLine);
+	const ranges: SearchTextRange[] = [];
+
+	for (const candidate of candidates) {
+		const match = findCandidateIndex(content, candidate, preferredOffset);
+		if (match) {
+			ranges.push(match);
+			continue;
+		}
+		if (preferredOffset > 0) {
+			const fallback = findCandidateIndex(content, candidate, 0);
+			if (fallback) ranges.push(fallback);
+		}
+	}
+
+	// Exact phrases and their individual terms can overlap. CodeMirror expects
+	// decoration ranges to be non-overlapping, so coalesce those ranges.
+	ranges.sort((a, b) => a.start - b.start || a.end - b.end);
+	const merged: SearchTextRange[] = [];
+	for (const range of ranges) {
+		const previous = merged[merged.length - 1];
+		if (previous && range.start <= previous.end) {
+			previous.end = Math.max(previous.end, range.end);
+		} else {
+			merged.push({ ...range });
+		}
+	}
+	return merged;
+}
+
+export function findSearchTextRanges(content: string, query: string, preferredLine: number = 0): SearchTextRange[] {
+	const text = String(content || "");
+	if (!text) return [];
+	return findCandidateRanges(text, query, preferredLine);
+}
+
 export function findSearchTextRange(content: string, query: string, preferredLine: number = 0): SearchTextRange | null {
 	const text = String(content || "");
 	if (!text) return null;
 	const candidates = getHighlightCandidates(query);
 	if (candidates.length === 0) return null;
-	const line = Math.max(0, Math.floor(Number(preferredLine) || 0));
-	const lines = text.split("\n");
-	let preferredOffset = 0;
-	for (let i = 0; i < Math.min(line, lines.length - 1); i++) preferredOffset += lines[i].length + 1;
+	const preferredOffset = getPreferredOffset(text, preferredLine);
 
 	for (const candidate of candidates) {
 		const match = findCandidateIndex(text, candidate, preferredOffset);
@@ -105,10 +149,12 @@ export function highlightSearchText(editor: SearchEditor, query: string, preferr
 		if (!editorView || !ensureSearchHighlightField(editorView)) return false;
 		const content = String(editor.getValue() || "");
 		const range = findSearchTextRange(content, query, preferredLine);
-		if (!range) return false;
+		const ranges = findSearchTextRanges(content, query, preferredLine);
+		if (!range || ranges.length === 0) return false;
 
-		const decoration = Decoration.mark({ class: "epochgram-search-highlight" }).range(range.start, range.end);
-		editorView.dispatch({ effects: setSearchHighlight.of(Decoration.set(decoration)) });
+		const mark = Decoration.mark({ class: "epochgram-search-highlight" });
+		const decorations = ranges.map((match) => mark.range(match.start, match.end));
+		editorView.dispatch({ effects: setSearchHighlight.of(Decoration.set(decorations)) });
 		const previousTimer = clearTimers.get(editorView);
 		if (previousTimer != null) window.clearTimeout(previousTimer);
 		const timer = window.setTimeout(() => {

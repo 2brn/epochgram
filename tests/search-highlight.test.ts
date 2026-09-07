@@ -1,11 +1,20 @@
 import { describe, expect, it } from "vitest";
-import { findSearchTextRange, highlightSearchText } from "../src/ui/search-highlight";
+import { findSearchTextRange, findSearchTextRanges, highlightSearchText } from "../src/ui/search-highlight";
 
 describe("search highlighting", () => {
 	it("finds an exact phrase from the search query", () => {
 		const content = "First line\nThe Important phrase is here.";
 
 		expect(findSearchTextRange(content, '"important phrase"')).toEqual({ start: 15, end: 31 });
+	});
+
+	it("finds each word in an unquoted multi-word query", () => {
+		const content = "First line\nImportant phrase is here.";
+
+		expect(findSearchTextRanges(content, "important phrase")).toEqual([
+			{ start: 11, end: 20 },
+			{ start: 21, end: 27 }
+		]);
 	});
 
 	it("prefers a match near the selected record and ignores query operators", () => {

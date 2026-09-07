@@ -1,5 +1,8 @@
 # Epochgram changelog
 
+## [1.8.21] - 2026-09-07
+- Fixed note search highlighting for unquoted multi-word queries.
+
 ## [1.8.20] - 2026-09-07
 - Fixed linter warning.
 
